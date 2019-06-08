@@ -4,16 +4,17 @@ const viewCard = (props) => {
     const style = {
         border: '1px solid lightgray',
         boxShadow: '0px 2px 2px #cccccc',
-        padding: '11px',
-        width: 'auto',
+        width: props.width,
         height: 'auto',
-        textAlign: 'center'
+        textAlign: 'center',
+        marginTop: '20px',
+        padding: '10px',
+        marginRight: '10px',
+        display: props.display
     }
 
     return (
-        <div style = {style}>
-            <p>{props.text}</p>
-        </div>
+        <p style={style}>{props.text}</p>
     );
 }
 

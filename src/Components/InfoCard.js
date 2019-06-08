@@ -15,10 +15,14 @@ const generalInfo = () => {
                 <h4>Status</h4>
                 <p>Seeking internships/co-op</p>
             </div>
-            <div className = 'style1'>
+            <div>
                 <h4>Interests</h4>
+                <Card text='Machine Learning' width='128px' display='inline-block'/>
+                <Card text='Software security' width='120px' display='inline-block'/>
+                <Card text='Full stack development' width='160px'/>
+                <Card text='Data science' width='100px' display='inline-block'/>
+                <Card text='Web development' width='124px' display='inline-block'/>
             </div>
-            <Card text="Machine Learning" width = '1000px'/>
         </div>
     );
 }
