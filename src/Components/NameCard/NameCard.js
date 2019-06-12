@@ -1,6 +1,6 @@
 import React from 'react';
-import '../Assets/NameCard.css';
-import profilePicture from '../Assets/profilePicture.jpg';
+import './NameCard.css';
+import profilePicture from '../../Assets/profilePicture.jpg';
 
 const Name = () => {
     return(
@@ -12,4 +12,4 @@ const Name = () => {
     );
 }
 
-export default Name
+export default Name;
