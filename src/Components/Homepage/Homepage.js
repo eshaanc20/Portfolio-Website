@@ -8,8 +8,11 @@ const homepage = () => {
     const style = {
         display: 'flex',
         flexWrap: 'wrap', 
-        justifyContent: 'space-evenly'
-
+        justifyContent: 'space-evenly',
+        width: '92%',
+        paddingBottom: '14px',
+        paddingTop: '20px',
+        marginLeft: '4vw',
     }
     return(
         <div>

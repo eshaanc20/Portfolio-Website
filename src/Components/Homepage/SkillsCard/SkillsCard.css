@@ -3,15 +3,13 @@
     height: 450px;
     border: 1px solid lightgray;
     box-shadow: 0px 2px 2px #cccccc;
-    margin-top: 14px;
     margin-right: 4vw;
-    margin-left: -28px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding-left: 38px;
-    padding-top: 4px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: stretch;
     padding-right: 10px;
+    margin-bottom: 24px;
 }
