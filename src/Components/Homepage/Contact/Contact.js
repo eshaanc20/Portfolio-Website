@@ -12,7 +12,7 @@ const Contact = () => {
         <div className = 'flexBox'>
             <h4>Contact Me</h4>
             <TextField 
-                label='Email' 
+                label='Name' 
                 style={style}/>
             <TextField 
                 label='Message' 

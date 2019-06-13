@@ -6,10 +6,11 @@ const skills = () => {
     return(
         <div className = 'skills'>
             <h4>Skills</h4>
-            <div style={{display:'flex',flexWrap:'wrap'}}>
+            <div style={{display:'flex',flexWrap:'wrap', marginTop: '2px'}}>
                 <Card text='Python'/>
                 <Card text='Deep neural networks'/>
                 <Card text='NumPy'/>
+                <Card text='openCV'/>
                 <Card text='Javascript'/>
                 <Card text='HTML'/>
                 <Card text='CSS'/>
@@ -17,9 +18,9 @@ const skills = () => {
                 <Card text='NodeJS'/>
                 <Card text='Axios'/>
                 <Card text='Web development'/>
+                <Card text='C#'/>
                 <Card text='Front-end development'/>
                 <Card text='Autodesk Inventor'/>
-                <Card text='C#'/>
             </div>
         </div>
     );
