@@ -12,3 +12,6 @@
     align-content: stretch;
     margin-bottom: 24px;
 }
+.skills:hover{
+    box-shadow: 0px 10px 10px #cccccc;
+}

@@ -6,7 +6,7 @@ const skills = () => {
     return(
         <div className = 'skills'>
             <h4>Skills</h4>
-            <div style={{display:'flex',flexWrap:'wrap', marginTop: '2px'}}>
+            <div style={{display:'flex',flexWrap:'wrap', marginTop: '4px'}}>
                 <Card text='Python'/>
                 <Card text='Deep neural networks'/>
                 <Card text='NumPy'/>

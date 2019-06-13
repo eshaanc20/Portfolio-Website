@@ -13,8 +13,7 @@ const homepage = () => {
         width: '98%',
         paddingBottom: '14px',
         paddingTop: '20px',
-        marginLeft: '14px',
-        border: '1px solid black'
+        marginLeft: '16px',
     }
     return(
         <div>

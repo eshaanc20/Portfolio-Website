@@ -3,7 +3,7 @@ import './Connect.css';
 
 const connect = () => {
     return(
-        <div className = 'Connect'>
+        <div className = 'connect'>
             <h4>Connect</h4>
         </div>
     );
