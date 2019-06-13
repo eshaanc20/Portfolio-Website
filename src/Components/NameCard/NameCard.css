@@ -1,12 +1,12 @@
 .nameCard{
     width: 92%;
-    height: auto;
     background-color: inherit;
     border: 1px solid lightgray;
     margin-left: 4vw;
     margin-right: 4vw;
     box-shadow: 0px 2px 2px #cccccc;
     display: inline-block;
+    overflow: hidden;
 }
 .name {
     font-family: 'Courier New', Courier, monospace;
@@ -16,10 +16,11 @@
 }
 .statusTag {
     font-size: 22px;
-    padding-top: 35px;
+    padding-top: 37px;
     margin-right: 38px;
     float: right;
-    font-family: Georgia, 'Times New Roman', Times, serif
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-bottom: 24px;
 }
 .profilePicture {
     width: auto;

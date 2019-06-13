@@ -22,6 +22,7 @@ const generalInfo = () => {
                 <Card text='Full stack development'/>
                 <Card text='Data science'/>
                 <Card text='Web development'/>
+                <Card text='Finance'/>
             </div>
         </div>
     );
