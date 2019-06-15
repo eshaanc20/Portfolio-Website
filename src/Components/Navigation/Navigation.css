@@ -1,0 +1,11 @@
+.navigation{
+    width: 100%;
+    height: auto;
+    background-color: rgb(80, 80, 80);
+    color: white;
+    text-align: right;
+    padding: 20px;
+}
+a{
+    margin-right: 40px;
+}
