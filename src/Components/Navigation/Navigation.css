@@ -3,8 +3,7 @@
     height: auto;
     background-color: white;
     box-shadow: 0px 4px 4px #cccccc;
-    display: flex;
-    flex-wrap: wrap;
+    display: inline-block;
 }
 a{
     height: 20px;
@@ -12,19 +11,21 @@ a{
     padding: 20px;
     margin-top: 12px;
     text-decoration: none;
-    float: right;
     margin-bottom: 2px;
-    display: flex;
-    flex-wrap: wrap;
 }
 a:hover{
     border-bottom: 4px solid darkcyan;
 }
 .navigationName{
-    margin-top: 25px;
+    margin-top: 20px;
     margin-left: 18px;
     float: left;
+    margin-bottom: 20px;
 }
 .Nav{
-    width: 93%;
+    float: right;
+    padding-top: 28px;
+    margin-bottom: 24px;
+    margin-left: 20px;
+    margin-right: 1vw;
 }
