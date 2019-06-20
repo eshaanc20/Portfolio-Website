@@ -13,7 +13,7 @@
     text-decoration: none;
     margin-bottom: 2px;
 }
-a:hover{
+.nav:hover{
     border-bottom: 4px solid darkcyan;
 }
 .navigationName{
