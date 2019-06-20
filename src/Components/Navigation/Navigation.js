@@ -6,13 +6,13 @@ const navigation = (props) => {
         <div className = 'navigation'>
             <p className='navigationName'>Eshaan</p>
             <div className = 'Nav'>
-                <a href='/'>Home</a>
-                <a href='/education'>Education</a>
-                <a href='/experience'>Experience</a>
-                <a href='/skills'>Skills</a>
-                <a href='/projects'>Projects</a>
-                <a href='/online-courses'>Online courses</a>
-                <a href='/contact'>Contact</a>
+                <a className='nav' href='/'>Home</a>
+                <a className='nav' href='/education'>Education</a>
+                <a className='nav' href='/experience'>Experience</a>
+                <a className='nav' href='/skills'>Skills</a>
+                <a className='nav' href='/projects'>Projects</a>
+                <a className='nav' href='/online-courses'>Online courses</a>
+                <a className='nav'href='/contact'>Contact</a>
             </div>
         </div>
     );
