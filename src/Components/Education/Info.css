@@ -12,8 +12,8 @@
     margin-top: 20px;
 }
 .progress{
-    margin-top: 24px;
-    height: 400px;
+    height: 280px;
+    margin-top: 64px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .information{
@@ -23,8 +23,11 @@
     padding-right: 40px;
     padding-left: 40px;
     height: 100%;
-    padding-top: 11px;
+    padding-top: 18px;
     padding-bottom: 28px;
     font-size: 24px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.p4{
+    margin-top: 11px;
 }

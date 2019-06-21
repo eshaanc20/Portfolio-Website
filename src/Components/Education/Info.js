@@ -17,11 +17,11 @@ const education = () => {
             </div>
             <div className='information'>
                 <IoMdCode className='icon'/>
-                <p className='program'>Software Engineering and Management</p>
+                <p className='p4'>Software Engineering and Management</p>
                 <IoIosSchool className='icon'/>
-                <p>McMaster University</p>
+                <p className='p4'>McMaster University</p>
                 <IoIosCalendar className='icon'/>
-                <p>2018-2023</p>
+                <p className='p4'>2018-2023</p>
             </div>
         </div>
     );
