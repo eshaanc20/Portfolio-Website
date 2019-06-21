@@ -8,8 +8,8 @@ const homepage = () => {
         <div className = 'homepage'>
             <img className='profile' alt='' src={ProfilePicture}/>
             <p className='name'>Eshaan Chaudhari</p>
-            <p>Software Engineering and Management Student</p>
-            <p>McMaster University</p>
+            <p className='p1'>Software Engineering and Management Student</p>
+            <p className='p1'>McMaster University</p>
             <a className='connect'>
                 <IoLogoLinkedin/>
             </a>

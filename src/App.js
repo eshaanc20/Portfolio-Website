@@ -1,8 +1,9 @@
 import React from 'react';
 import {Component} from 'react';
+import {BrowserRouter, Route} from 'react-router-dom';
 import Homepage from './Components/Homepage/Homepage.js';
 import Navigation from './Components/Navigation/Navigation.js';
-import {BrowserRouter, Route} from 'react-router-dom';
+import Education from './Components/Education/Education.js';
 
 class App extends Component{
   render() {
@@ -11,6 +12,7 @@ class App extends Component{
         <div>
           <Navigation/>
           <Route path='/' exact render={()=> <Homepage/>}/>
+          <Route path='/Education' exact render={()=> <Education/>}/>
         </div>
       </BrowserRouter>
     );

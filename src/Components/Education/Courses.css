@@ -1,0 +1,30 @@
+.a{
+    border: 1px solid lightgray;
+    box-shadow: 0px 4px 4px #cccccc;
+    width: auto;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    margin-top: 24px;
+}
+.a2{
+    padding: 14px;
+}
+.courses{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.courses1{
+    display: flex;
+    flex-wrap: wrap;
+    width: 520px;
+    padding: 24px;
+    padding-top: 12px;
+}
+.p2{
+    font-size: 24px;
+    margin-top: 0px;
+    padding: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: lightgray;
+}

@@ -1,0 +1,30 @@
+import React from 'react';
+import './Info.css';
+import {IoMdCode, IoIosSchool, IoIosCalendar} from 'react-icons/io';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+
+
+const education = () => {
+    return(
+        <div className='info'>
+            <div>
+                <CircularProgressbar value={40} text={'Second year'} className='progress' styles={buildStyles({
+                    textSize: '10px',
+                    textColor: 'black',
+                    pathColor: 'maroon',
+                })}/>
+            </div>
+            <div className='information'>
+                <IoMdCode className='icon'/>
+                <p className='program'>Software Engineering and Management</p>
+                <IoIosSchool className='icon'/>
+                <p>McMaster University</p>
+                <IoIosCalendar className='icon'/>
+                <p>2018-2023</p>
+            </div>
+        </div>
+    );
+}
+
+export default education;

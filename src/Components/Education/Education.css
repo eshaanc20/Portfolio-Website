@@ -1,0 +1,10 @@
+.education{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 4px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 34px;
+    text-align: center;
+}
