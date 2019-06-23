@@ -12,24 +12,45 @@ const skillsList = [
     'Fast learner', 'Adaptable'
 ]
 
-const cardComponent = skillsList.map(skill => {
-    return(
-        <Card text={skill}/>
-    );
-})
+let filterList = skillsList;
 
-const skills = () => {
-    return(
-        <div className='skillspage'>
-            <div className='skillsName'>
-                <p className='skillsTitle'>Skills</p>
-                <TextField className='search' label='Search' margin='normal'/>
+class Skills extends React.Component {
+    state = {
+        search: null
+    }
+
+    inputEvent = (event) => {
+        filterList = skillsList.filter(skill => {
+            return skill.indexOf(this.state.search) !== -1
+        })
+        this.setState({
+            search: event.target.value
+        })
+    }
+
+    render() {
+        if (this.state.search === '') {
+            filterList = skillsList;
+        }
+
+        const cardComponent = filterList.map(skill => {
+            return(
+                <Card text={skill}/>
+            );
+        })
+
+        return(
+            <div className='skillspage'>
+                <div className='skillsName'>
+                    <p className='skillsTitle'>Skills</p>
+                    <TextField className='search' label='Search' onChange={this.inputEvent} margin='normal'/>
+                </div>
+                <div className='skills'>
+                    {cardComponent}
+                </div>
             </div>
-            <div className='skills'>
-                {cardComponent}
-            </div>
-        </div>
-    );
+        );
+    }
 }
 
-export default skills;
+export default Skills;

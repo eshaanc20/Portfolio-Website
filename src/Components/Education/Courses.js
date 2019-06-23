@@ -16,9 +16,9 @@ const courses = () => {
                         <Card text='Computer Architecture'/>
                         <Card text='Discrete Mathematics with Applications I'/>
                         <Card text='Discrete Mathematics with Application II'/>
-                        <Card text='Software Design I - Introduction to Software Developement'/>
                         <Card text='Software Engineering Practice and Experience: Software Development Skills'/>
                         <Card text='Software Engineering Practice and Experience: Binding Theory to Practice'/>
+                        <Card text='Software Design I - Introduction to Software Developement'/>
                         <Card text='Engineering Math III'/>
                         <Card text='Introduction to Marketing'/>
                     </div>
