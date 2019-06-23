@@ -6,12 +6,10 @@
     display: inline-block;
 }
 .nav{
-    height: 20px;
     color: black;
     padding: 20px;
-    margin-top: 12px;
+    height: 100%;
     text-decoration: none;
-    margin-bottom: 2px;
 }
 .nav:hover{
     border-bottom: 4px solid darkcyan;
@@ -20,14 +18,13 @@
     margin-top: 20px;
     margin-left: 18px;
     float: left;
-    margin-bottom: 20px;
+    margin-bottom: auto;
     font-size: 24px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 .Nav{
     float: right;
-    padding-top: 28px;
-    margin-bottom: 24px;
-    margin-left: 20px;
-    margin-right: 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4px;
 }

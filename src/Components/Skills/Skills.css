@@ -1,0 +1,26 @@
+.skillspage{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: auto;
+    margin-left: 90px;
+    margin-right: 90px;
+    padding: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 34px;
+}
+.skillsName{
+    width: 100%;
+}
+.skillsTitle{
+    margin-bottom: 0px;
+    float: left;
+}
+.search{
+    float: right;
+    width: 200px;
+}
+.skills{
+    display: flex;
+    flex-wrap: wrap;
+}
