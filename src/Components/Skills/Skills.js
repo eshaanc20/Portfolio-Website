@@ -4,9 +4,9 @@ import TextField from '@material-ui/core/TextField';
 import Card from '../Education/Card.js';
 
 const skillsList = [
-    'ReactJS', 'Python', 'Deep Neural Networks', 'Regularization', 'Numpy',
-    'HTML', 'CSS', 'JavaScript', 'NodeJS', 'React Native', 'Axios',
-    'npm', 'openCV', 'C#', 'Git', 'Debugging', 'Autodesk inventor',
+    'ReactJS', 'Python', 'Deep Neural Networks', 'Regularization', 'NumPy',
+    'HTML', 'CSS', 'JavaScript', 'Material-ui', 'NodeJS', 'Asynchronous', 'HTTP requests', 
+    'React Native', 'Axios', 'npm', 'openCV', 'C#', 'Git', 'Debugging', 'Autodesk inventor',
     'Web development', 'Front-end development', 'Machine Learning',
     'Back-end development', 'Communication', 'Multitasking', 'Teamwork',
     'Fast learner', 'Adaptable'

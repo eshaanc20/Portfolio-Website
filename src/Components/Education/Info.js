@@ -12,7 +12,7 @@ const education = () => {
                 <CircularProgressbar value={40} text={'Second year'} className='progress' styles={buildStyles({
                     textSize: '10px',
                     textColor: 'black',
-                    pathColor: 'maroon',
+                    pathColor: 'darkgreen',
                 })}/>
             </div>
             <div className='information'>
