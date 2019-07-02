@@ -6,6 +6,7 @@ import Navigation from './Components/Navigation/Navigation.js';
 import Education from './Components/Education/Education.js';
 import Experience from './Components/Experience/Experience.js';
 import Skills from './Components/Skills/Skills.js';
+import Projects from './Components/Projects/Projects.js'
 
 class App extends Component{
   render() {
@@ -17,6 +18,7 @@ class App extends Component{
           <Route path='/Education' exact render={()=> <Education/>}/>
           <Route path='/Experience' exact render={()=> <Experience/>}/>
           <Route path='/Skills' exact render={()=> <Skills/>}/>
+          <Route path='/Projects' exact render={()=> <Projects/>}/>
         </div>
       </BrowserRouter>
     );
