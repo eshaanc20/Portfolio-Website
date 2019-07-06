@@ -4,7 +4,6 @@ import './Projects.css'
 const projects = () => {
     return(
         <div>
-
         </div>
     );
 }
