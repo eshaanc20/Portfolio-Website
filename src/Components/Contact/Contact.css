@@ -1,0 +1,18 @@
+.contactContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+    margin-top: 200px;
+}
+.contactInfo{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid lightgray;
+    padding-right: 20px;
+    padding-left: 20px;
+    box-shadow: 0px 2px 2px #cccccc
+}
+#email{
+    margin-right: 40px;
+}
