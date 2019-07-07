@@ -2,6 +2,7 @@
     width: auto;
     padding-bottom: 28px;
     margin-bottom: 28px;
+    margin-top: 24px;
 }
 .a2{
     padding: 14px;
@@ -33,7 +34,7 @@
     padding-bottom: 11px;
     padding-left: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    border-bottom: 8px solid maroon;
+    border-bottom: 4px solid maroon;
     margin-bottom: 4px;
     text-align: left;
     font-weight: 500;
