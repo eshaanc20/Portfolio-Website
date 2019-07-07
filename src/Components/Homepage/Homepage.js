@@ -2,6 +2,7 @@ import React from 'react';
 import './Homepage.css';
 import ProfilePicture from '../../Assets/profilePicture.jpg';
 import {IoLogoLinkedin, IoLogoGithub} from 'react-icons/io';
+import Button from '@material-ui/core/Button';
 
 const homepage = () => {
     return(
@@ -16,6 +17,23 @@ const homepage = () => {
             <a className='connect'>
                 <IoLogoGithub className='connect'/>
             </a>
+            <div>
+                <Button 
+                    variant='contained' 
+                    style={{
+                        marginRight:'20px', 
+                        backgroundColor:'darkgreen',
+                        color: 'white'
+                    }}
+                >Contact</Button>
+                <Button 
+                    variant='contained'
+                    style={{
+                        backgroundColor:'darkcyan',
+                        color: 'white'
+                    }}
+                >View Resume</Button>
+            </div>
         </div>
     );
 }
