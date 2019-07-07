@@ -25,7 +25,8 @@ const homepage = () => {
                         backgroundColor:'darkgreen',
                         color: 'white'
                     }}
-                >Contact</Button>
+                ><a href='/contact' style={{textDecoration:'none', color:'white'}}>Contact</a>
+                </Button>
                 <Button 
                     variant='contained'
                     style={{
