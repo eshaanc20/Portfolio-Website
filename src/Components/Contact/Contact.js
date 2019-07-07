@@ -12,7 +12,28 @@ class Contact extends React.Component {
                     <p>647-639-7482</p>
                 </div>
                 <div className='contactCard'>
-
+                    <h2 id='contactTitle'>Contact</h2>
+                    <TextField
+                        style={{width: '320px'}}
+                        variant='outlined'
+                        label='Name'
+                    />
+                    <TextField
+                        style={{width: '320px'}}
+                        variant='outlined'
+                        label='Email address'
+                    />
+                    <TextField
+                        style={{width: '320px'}}
+                        variant='outlined'
+                        label='Message'
+                        multiline
+                        rows= '8'
+                    />
+                    <Button
+                        variant='contained'
+                        style={{width: '320px'}}
+                    >Send</Button>
                 </div>
             </div>
         );
