@@ -14,7 +14,7 @@ const education = () => {
                     textColor: 'black',
                     pathColor: 'darkgreen',
                 })}/>
-                <p style={{fontSize:'20px',marginTop:'0px'}}>Cumulative GPA: 3.7/4.0</p>
+                <p style={{fontSize:'22px',marginTop:'0px'}}>Cumulative GPA: 3.7/4.0</p>
             </div>
             <div className='information'>
                 <IoMdCode className='icon'/>

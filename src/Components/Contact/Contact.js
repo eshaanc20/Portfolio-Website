@@ -4,6 +4,10 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 class Contact extends React.Component {
+
+    eventHandler = (event) => {
+    }
+
     render() {
         return(
             <div className='contactContainer'>
@@ -14,17 +18,18 @@ class Contact extends React.Component {
                 <div className='contactCard'>
                     <h2 id='contactTitle'>Contact</h2>
                     <TextField
-                        style={{width: '320px'}}
+                        style={{width: '328px'}}
                         variant='outlined'
                         label='Name'
+                        id='contactName'
                     />
                     <TextField
-                        style={{width: '320px'}}
+                        style={{width: '328px'}}
                         variant='outlined'
                         label='Email address'
                     />
                     <TextField
-                        style={{width: '320px'}}
+                        style={{width: '328px'}}
                         variant='outlined'
                         label='Message'
                         multiline
@@ -32,7 +37,8 @@ class Contact extends React.Component {
                     />
                     <Button
                         variant='contained'
-                        style={{width: '320px'}}
+                        style={{width: '328px'}}
+                        onClick={this.eventHandler}
                     >Send</Button>
                 </div>
             </div>
