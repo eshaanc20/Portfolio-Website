@@ -35,7 +35,7 @@ const courses = () => {
                         <Card text='Introductory Mechanics'/>
                         <Card text='Waves, Electrcity and Magnetic Fields'/>
                         <Card text='Microeconomics'/>
-                        <Card text='Introduction to Pyschology'/>
+                        <Card text='Introduction to Psychology'/>
                         <Card text='General Chemistry for Engineering I'/>
                         <Card text='Structure and Properties of Materials'/>
                     </div>
