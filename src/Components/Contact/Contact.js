@@ -17,29 +17,37 @@ class Contact extends React.Component {
                 </div>
                 <div className='contactCard'>
                     <h2 id='contactTitle'>Contact</h2>
-                    <TextField
-                        style={{width: '328px'}}
-                        variant='outlined'
-                        label='Name'
-                        id='contactName'
-                    />
-                    <TextField
-                        style={{width: '328px'}}
-                        variant='outlined'
-                        label='Email address'
-                    />
-                    <TextField
-                        style={{width: '328px'}}
-                        variant='outlined'
-                        label='Message'
-                        multiline
-                        rows= '8'
-                    />
-                    <Button
-                        variant='contained'
-                        style={{width: '328px'}}
-                        onClick={this.eventHandler}
-                    >Send</Button>
+                    <form action="https://formspree.io/eshaanchaudhari@hotmail.com" method="POST">
+                        <TextField
+                            style={{width: '328px'}}
+                            variant='outlined'
+                            label='Name'
+                            id='contactName'
+                            name="name"
+                            type="text"
+                        />
+                        <TextField
+                            style={{width: '328px', marginTop:'20px'}}
+                            variant='outlined'
+                            label='Email address'
+                            type="email"
+                            name="_replyto"
+                        />
+                        <TextField
+                            style={{width: '328px', marginTop:'20px'}}
+                            variant='outlined'
+                            label='Message'
+                            multiline
+                            
+                            rows= '8'
+                        />
+                        <Button
+                            variant='contained'
+                            style={{width: '328px', marginTop:'20px'}}
+                            onClick={this.eventHandler}
+                            type='submit'
+                        >Send</Button>
+                    </form>
                 </div>
             </div>
         );

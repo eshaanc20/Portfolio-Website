@@ -7,13 +7,13 @@
     margin-bottom: 0px;
 }
 .nav{
-    color: black;
+    color: white;
     padding: 20px;
     height: 100%;
     text-decoration: none;
 }
 .nav:hover{
-    border-bottom: 4px solid darkcyan;
+    border-bottom: 4px solid white;
 }
 .navigationName{
     margin-top: 20px;
