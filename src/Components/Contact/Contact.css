@@ -25,6 +25,7 @@
     padding-top: 8px;
     padding-bottom: 10px;
     height: 500px;
+    transition-duration: 0.4s;
 }
 .contactCard:hover{
     border: 1px solid lightgray;

@@ -8,7 +8,7 @@ const courses = () => {
             <p className='p2'>Courses</p>
             <div className='courses'>
                 <div className='a2'>
-                    <p className='p1'>Second Year</p>
+                    <p className='p1'>Current Courses</p>
                     <div className='courses1'>
                         <Card text='Data Structures and Algorithms'/>
                         <Card text='Digital Systems and Interfacing'/>
@@ -24,7 +24,7 @@ const courses = () => {
                     </div>
                 </div>
                 <div className='a2'>
-                    <p className='p1'>First Year</p>
+                    <p className='p1'>Past Courses</p>
                     <div className='courses1'>
                         <Card text='Engineering Computation'/>
                         <Card text='Engineering Design and Graphics'/>

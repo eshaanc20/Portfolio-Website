@@ -9,6 +9,23 @@ const experience = () => {
         <div className='timeline'>
             <VerticalTimeline>
                 <VerticalTimelineElement
+                    date='06/2019 - 08/2019'
+                    iconStyle={{ background: 'white' }}
+                    icon={<IoIosBriefcase/>}
+                >
+                    <h3 className='title'>Software Developer</h3>
+                    <h4 className='subtitle'>Helping Hands</h4>
+                    <p className='content'>
+                        <ul>
+                            <li>Frontend web development using React with Material-UI</li>
+                            <li>Worked with multiple APIs such as Mapbox and Google Maps using axios</li>
+                            <li>Developed skills with using git such as branches, pull requests and code reviews</li>
+                            <li>Implemented an updated version of the web application from new design</li>
+                            <li>Created an email filter using App Script</li>
+                        </ul>
+                    </p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement
                     date='04/2019 - present'
                     iconStyle={{ background: 'white' }}
                     icon={<IoIosSchool/>}
