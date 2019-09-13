@@ -3,6 +3,7 @@ import './Homepage.css';
 import ProfilePicture from '../../Assets/profilePicture.jpg';
 import {IoLogoLinkedin, IoLogoGithub} from 'react-icons/io';
 import Button from '@material-ui/core/Button';
+import Resume from '../../Eshaan_Chaudhari_Resume.pdf';
 
 const homepage = () => {
     return(
@@ -33,6 +34,8 @@ const homepage = () => {
                         backgroundColor:'darkcyan',
                         color: 'white'
                     }}
+                    href = {Resume}
+                    target = '_blank'
                 >View Resume</Button>
             </div>
         </div>
