@@ -1,0 +1,14 @@
+.cards-1{
+  border: 1px solid #cccccc;
+  box-shadow: 0px 2px 2px lightgray;
+  margin-right: 2px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 12px;
+  padding-right: 14px;
+  padding-left: 14px;
+  margin-left: 10px;
+  margin-top: 12px;
+  max-width: 200px;
+  background: white;
+  border-radius: 5px;
+}
