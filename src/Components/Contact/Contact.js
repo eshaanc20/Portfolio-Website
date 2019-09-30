@@ -43,7 +43,7 @@ class Contact extends React.Component {
                         />
                         <Button
                             variant='contained'
-                            style={{width: '328px', marginTop:'20px'}}
+                            style={{width: '328px', marginTop:'20px', backgroundColor: 'darkcyan', color: 'white'}}
                             onClick={this.eventHandler}
                             type='submit'
                         >Send</Button>

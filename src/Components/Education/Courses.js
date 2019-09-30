@@ -23,7 +23,7 @@ const courses = () => {
                         <Card text='Introduction to Marketing'/>
                     </div>
                 </div>
-                <div className='a2'>
+                <div className='a1'>
                     <p className='p1'>Past Courses</p>
                     <div className='courses1'>
                         <Card text='Engineering Computation'/>
