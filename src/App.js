@@ -8,6 +8,7 @@ import Experience from './Components/Experience/Experience.js';
 import Skills from './Components/Skills/Skills.js';
 import Projects from './Components/Projects/Projects.js';
 import Contact from './Components/Contact/Contact.js';
+import Certifications from './Components/Certifications/Certifications.js';
 
 class App extends Component{
   render() {
@@ -20,6 +21,7 @@ class App extends Component{
           <Route path='/Experience' exact render={()=> <Experience/>}/>
           <Route path='/Skills' exact render={()=> <Skills/>}/>
           <Route path='/Projects' exact render={()=> <Projects/>}/>
+          <Route path='/Certifications' exact render={()=> <Certifications/>}/>
           <Route path='/Contact' exact render={()=> <Contact/>}/>
         </div>
       </BrowserRouter>

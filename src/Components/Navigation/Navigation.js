@@ -11,7 +11,7 @@ const navigation = (props) => {
                 <a className='nav' href='/experience'>Experience</a>
                 <a className='nav' href='/skills'>Skills</a>
                 <a className='nav' href='/projects'>Projects</a>
-                <a className='nav' href='/online-courses'>Online courses</a>
+                <a className='nav' href='/certifications'>Certifications</a>
                 <a className='nav'href='/contact'>Contact</a>
             </div>
         </div>

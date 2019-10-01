@@ -71,7 +71,7 @@ const projects = () => {
                   </Button>
                 </div>
               </Card>
-              <Card style={{width: '90%', maxWidth: '400px', paddingRight: '20px', paddingLeft: '20px', marginTop: '25px', height: '405px', marginRight: '50px'}}>
+              <Card style={{width: '90%', maxWidth: '400px', paddingRight: '20px', paddingLeft: '20px', marginTop: '40px', height: '405px', marginRight: '50px'}}>
                 <CardContent>
                   <p style={{textAlign: 'center', fontSize: '25px'}}>
                     eyeSight
@@ -98,7 +98,7 @@ const projects = () => {
                   </Button>
                 </div>
               </Card>
-              <Card style={{width: '90%', maxWidth: '400px', paddingRight: '20px', paddingLeft: '20px', marginTop: '25px', height: '405px'}}>
+              <Card style={{width: '90%', maxWidth: '400px', paddingRight: '20px', paddingLeft: '20px', marginTop: '40px', height: '405px'}}>
                 <CardContent>
                   <p style={{textAlign: 'center', fontSize: '25px'}}>
                     Fit Together
@@ -122,7 +122,7 @@ const projects = () => {
                   </Button>
                 </div>
               </Card>
-              <Card style={{width: '90%', maxWidth: '400px', paddingRight: '20px', paddingLeft: '20px', height: '405px', marginTop: '25px'}}>
+              <Card style={{width: '90%', maxWidth: '400px', paddingRight: '20px', paddingLeft: '20px', height: '405px', marginTop: '40px'}}>
                 <CardContent>
                   <p style={{textAlign: 'center', fontSize: '25px'}}>
                     Finger Prosthetic
