@@ -2,6 +2,8 @@ import React from 'react';
 import './Contact.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import EmailIcon from '@material-ui/icons/Email';
+import PhoneIcon from '@material-ui/icons/Phone';
 
 class Contact extends React.Component {
 
@@ -12,7 +14,9 @@ class Contact extends React.Component {
         return(
             <div className='contactContainer'>
                 <div className='contactInfo'>
+                    <EmailIcon style={{marginTop:'12px', fontSize:'28px', marginRight:'5px'}}></EmailIcon>
                     <p id='email'>eshaanchaudhari@hotmail.com</p>
+                    <PhoneIcon style={{marginTop:'12px', fontSize:'28px', marginRight:'5px'}}/>
                     <p>647-639-7482</p>
                 </div>
                 <div className='contactCard'>
@@ -23,13 +27,13 @@ class Contact extends React.Component {
                             variant='outlined'
                             label='Name'
                             id='contactName'
-                            name="name"
+                            name="Name"
                             type="text"
                         />
                         <TextField
                             style={{width: '328px', marginTop:'20px'}}
                             variant='outlined'
-                            label='Email address'
+                            label='Email'
                             type="email"
                             name="_replyto"
                         />
@@ -37,8 +41,8 @@ class Contact extends React.Component {
                             style={{width: '328px', marginTop:'20px'}}
                             variant='outlined'
                             label='Message'
+                            name="Message"
                             multiline
-                            
                             rows= '8'
                         />
                         <Button
