@@ -1,21 +1,24 @@
 import React from 'react';
 import './Navigation.css';
+import AppBar from '@material-ui/core/AppBar';
+import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
-const navigation = (props) => {
+const Navigation = () => {
     return(
-        <div className = 'navigation' style={{backgroundColor:'black', color:'white'}}>
-            <p className='navigationName'>Eshaan</p>
-            <div className = 'Nav'>
-                <a className='nav' href='/'>Home</a>
-                <a className='nav' href='/education'>Education</a>
-                <a className='nav' href='/experience'>Experience</a>
-                <a className='nav' href='/skills'>Skills</a>
-                <a className='nav' href='/projects'>Projects</a>
-                <a className='nav' href='/certifications'>Certifications</a>
-                <a className='nav'href='/contact'>Contact</a>
+        <AppBar style={{backgroundColor: '#16549c'}}>
+            <div className='Navigation'>
+                <p style={{fontSize: '20px', marginLeft: '20px'}}>Eshaan</p>
+                <div className='Navigation-options'>
+                    <a className="navigation-option">Education</a>
+                    <a className="navigation-option">Experience</a>
+                    <a className="navigation-option">Skills</a>
+                    <a className="navigation-option">Projects</a>
+                    <a className="navigation-option">Certifications</a>
+                    <a className="navigation-option">Contact</a>
+                </div>
             </div>
-        </div>
-    );
+        </AppBar>
+    )
 }
 
-export default navigation;
+export default Navigation;

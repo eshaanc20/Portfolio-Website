@@ -6,13 +6,11 @@ import Typing from 'react-typing-animation';
 import Button from '@material-ui/core/Button';
 import Resume from '../../Eshaan_Chaudhari_Resume.pdf';
 
-const homepage = () => {
+const Homepage = () => {
     return(
         <div className = 'homepage'>
             <img className='profile' alt='' src={ProfilePicture}/>
-            <Typing speed={100}>
-                <p className='name'>Eshaan Chaudhari</p>
-            </Typing>
+            <p className='name'>Eshaan Chaudhari</p>
             <p className='p1'>Software Engineering and Management Student</p>
             <p className='p1'>McMaster University</p>
             <a className='connect' href = 'https://linkedin.com/in/eshaan-chaudhari'>
@@ -25,9 +23,10 @@ const homepage = () => {
             <Button 
                     variant='contained'
                     style={{
-                        backgroundColor:'darkcyan',
+                        backgroundColor:'#0889a3',
                         marginRight:'20px',
-                        color: 'white'
+                        color: 'white',
+                        fontSize: '16px'
                     }}
                     href = {Resume}
                     target = '_blank'
@@ -35,14 +34,15 @@ const homepage = () => {
                 <Button 
                     variant='contained' 
                     style={{
-                        backgroundColor:'darkgreen',
-                        color: 'white'
+                        backgroundColor:'#0972b8',
+                        color: 'white',
+                        fontSize: '16px'
                     }}
                 ><a href='/contact' style={{textDecoration:'none', color:'white'}}>Contact</a>
                 </Button>
             </div>
         </div>
-    );
+    )
 }
 
-export default homepage;
+export default Homepage;

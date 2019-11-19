@@ -1,10 +1,68 @@
-.education{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding: 4px;
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-top: 34px;
+.Education{
+    padding: 10px;
+    width: 87%;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    max-width: 1600px;
+}
+.education-title{
+    font-size: 34px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+}
+.progress{
+    height: 250px;
+    margin-top: 65px;
+    margin-bottom: 48px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.icon{
+    font-size: 34px;
+    margin-top: 20px;
+}
+.education-info{
+    border: 1px solid lightgray;
+    box-shadow: 0px 10px 10px #cccccc;
+    padding-right: 40px;
+    padding-left: 40px;
+    height: 100%;
+    padding-top: 18px;
+    padding-bottom: 28px;
+    font-size: 24px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
+    background-color: white;
+    border-radius: 12px;
+}
+.classes{
+    border: 1px solid lightgray;
+    max-width: 200px;
+    padding-right: 40px;
+    padding-left: 40px;
+    height: 100%;
+    padding-top: 18px;
+    padding-bottom: 28px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+}
+.course{
+    border: 1px solid #cccccc;
+    box-shadow: 0px 2px 2px lightgray;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    padding-right: 14px;
+    padding-left: 14px;
+    margin-top: 16px;
+    max-width: 200px;
+    background: white;
+    border-radius: 5px;
+    background-color: rgb(245, 245, 245);
+}
+.classes-title{
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
