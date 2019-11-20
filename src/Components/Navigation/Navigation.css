@@ -1,31 +1,23 @@
-.navigation{
-    width: 100%;
-    height: auto;
-    background-color: white;
-    box-shadow: 0px 4px 4px #cccccc;
-    display: inline-block;
-    margin-bottom: 0px;
-}
-.nav{
-    color: white;
-    padding: 20px;
-    height: 100%;
-    text-decoration: none;
-}
-.nav:hover{
-    border-bottom: 4px solid white;
-}
-.navigationName{
-    margin-top: 20px;
-    margin-left: 18px;
-    float: left;
-    margin-bottom: auto;
-    font-size: 24px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
-}
-.Nav{
-    float: right;
+.Navigation{
     display: flex;
+    justify-content: space-between;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.Navigation-options{
+    display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    margin-top: 4px;
+}
+.navigation-option{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 18px;
+    transition-duration: 0.2s;
+}
+.navigation-option:hover{
+    border-bottom: 4px solid white;
+    cursor: pointer;
 }

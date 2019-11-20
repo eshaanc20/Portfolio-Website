@@ -1,16 +1,18 @@
 .contactContainer{
     margin: auto;
-    margin-top: 60px;
 }
 .contactInfo{
     border: 1px solid lightgray;
     display: flex;
     padding-right: 20px;
     padding-left: 18px;
-    box-shadow: 0px 2px 2px #cccccc;
-    width: 450px;
+    box-shadow: 0px 5px 5px #cccccc;
+    width: 480px;
     margin: auto;
     justify-content: center;
+    background-color: #16549c;
+    color: white;
+    font-size: 18px;
 }
 #email{
     margin-right: 40px;
@@ -23,22 +25,36 @@
     align-items: center;
     margin-top: 40px;
     border: 1px solid lightgray;
-    background-color: #f5f5f5;
+    background-color: white;
     justify-content: space-evenly;
     padding-top: 8px;
     padding-bottom: 10px;
+    box-shadow: 0 4px 4px #cccccc;
     height: 500px;
     transition-duration: 0.4s;
     width: 420px;
 }
 .contactCard:hover{
-    border: 1px solid lightgray;
-    box-shadow: 0 4px 4px #cccccc;
-    background-color: white;
+    box-shadow: 0 20px 20px #cccccc;
 }
 
 #contactTitle{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin-bottom: 0px;
     margin-top: 0px;
+}
+
+.Contact{
+    padding: 10px;
+    width: 92%;
+    margin-left: 70px;
+    max-width: 1600px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 800px) {
+    .Contact{
+        margin-left: 10px;
+    }
 }

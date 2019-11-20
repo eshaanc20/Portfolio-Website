@@ -1,12 +1,11 @@
 .homepage{
-    position: absolute;
     margin: auto;
-    top: 200px;
-    right: 0;
-    left: 0;
-    width: 500px;
-    height: 200px;
+    margin-top: 150px;
+    width: 800px;
     text-align: center;
+    height: 100vh;
+    max-height: 550px;
+    padding: 20px;
 }
 .profile{
     width: 140px;
@@ -15,14 +14,14 @@
 }
 .name{
     font-family: 'Courier New', Courier, monospace;
-    font-size: 34px;
+    font-size: 45px;
     margin-top: 14px;
     margin-bottom: 4px;
 }
 .p1{
     margin-top: 14px;
     margin-bottom: 4px;
-    font-size: 24px;
+    font-size: 30px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .connect{

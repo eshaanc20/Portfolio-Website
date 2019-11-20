@@ -4,13 +4,18 @@ import ProfilePicture from '../../Assets/profilePicture.jpg';
 import {IoLogoLinkedin, IoLogoGithub} from 'react-icons/io';
 import Typing from 'react-typing-animation';
 import Button from '@material-ui/core/Button';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { Link } from 'react-scroll';
 import Resume from '../../Eshaan_Chaudhari_Resume.pdf';
 
-const homepage = () => {
+AOS.init();
+
+const Homepage = () => {
     return(
         <div className = 'homepage'>
             <img className='profile' alt='' src={ProfilePicture}/>
-            <Typing speed={100}>
+            <Typing speed={5}>
                 <p className='name'>Eshaan Chaudhari</p>
             </Typing>
             <p className='p1'>Software Engineering and Management Student</p>
@@ -25,9 +30,10 @@ const homepage = () => {
             <Button 
                     variant='contained'
                     style={{
-                        backgroundColor:'darkcyan',
+                        backgroundColor:'#0889a3',
                         marginRight:'20px',
-                        color: 'white'
+                        color: 'white',
+                        fontSize: '16px'
                     }}
                     href = {Resume}
                     target = '_blank'
@@ -35,14 +41,21 @@ const homepage = () => {
                 <Button 
                     variant='contained' 
                     style={{
-                        backgroundColor:'darkgreen',
-                        color: 'white'
+                        backgroundColor:'#0972b8',
+                        color: 'white',
+                        fontSize: '16px'
                     }}
-                ><a href='/contact' style={{textDecoration:'none', color:'white'}}>Contact</a>
+                >
+                    <Link
+                    to='Contact'
+                    smooth={true}
+                    >
+                        Contact
+                    </Link>
                 </Button>
             </div>
         </div>
-    );
+    )
 }
 
-export default homepage;
+export default Homepage;
