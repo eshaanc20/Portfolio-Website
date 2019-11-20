@@ -1,7 +1,7 @@
 .Skills{
     padding: 10px;
     width: 87%;
-    margin-left: 100px;
+    margin-left: 70px;
     margin-bottom: 20px;
     max-width: 1600px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -53,4 +53,10 @@
     background: white;
     border-radius: 5px;
     background-color: rgb(245, 245, 245);
+}
+@media (max-width: 800px) {
+    .Skills{
+        margin-left: 10px;
+        width: 95%;
+    }
 }

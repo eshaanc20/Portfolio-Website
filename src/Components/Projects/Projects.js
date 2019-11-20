@@ -19,7 +19,7 @@ const Projects = () => {
                     <p>Projects</p>
                 </div>
             </div>
-            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '10px'}}>
+            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '10px'}} data-aos="fade-up">
                 <div className='project-info'>
                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
                         <p style={{fontSize: '26px', fontWeight: 'bold'}}>eyeSight</p>
@@ -42,7 +42,7 @@ const Projects = () => {
                     <Project project='eyeSight' height='280px' width='160px'/>
                 </div>
             </div>
-            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}}>
+            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}} data-aos="fade-up">
                 <div className='project-info'>
                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
                         <p style={{fontSize: '26px', fontWeight: 'bold'}}>Devkit</p>
@@ -68,7 +68,7 @@ const Projects = () => {
                     <Project project='Devkit' height='240px' width='400px'/>
                 </div>
             </div>
-            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}}>
+            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}} data-aos="fade-up">
                 <div className='project-info'>
                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
                         <p style={{fontSize: '26px', fontWeight: 'bold'}}>Finger Prosthetic</p>
@@ -91,7 +91,7 @@ const Projects = () => {
                     <Project project='Inventor' height='240px' width='400px'/>
                 </div>
             </div>
-            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}}>
+            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}} data-aos="fade-up">
                 <div className='project-info'>
                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
                         <p style={{fontSize: '26px', fontWeight: 'bold'}}>Announce</p>
@@ -115,7 +115,7 @@ const Projects = () => {
                     <Project project='Announce' height='240px' width='400px'/>
                 </div>
             </div>
-            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}}>
+            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}} data-aos="fade-up">
                 <div className='project-info'>
                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
                         <p style={{fontSize: '26px', fontWeight: 'bold'}}>Fit Together</p>

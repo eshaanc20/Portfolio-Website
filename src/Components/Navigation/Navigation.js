@@ -13,6 +13,7 @@ const Navigation = () => {
                         <Link
                             to='Education'
                             smooth={true}
+                            style={{padding: '10px'}}
                         >
                             Education
                         </Link>
@@ -21,6 +22,7 @@ const Navigation = () => {
                         <Link
                             to='Experiences'
                             smooth={true}
+                            style={{padding: '10px'}}
                         >
                             Experience
                         </Link>
@@ -29,6 +31,7 @@ const Navigation = () => {
                         <Link
                             to='Skills'
                             smooth={true}
+                            style={{padding: '10px'}}
                         >
                             Skills
                         </Link>
@@ -37,6 +40,7 @@ const Navigation = () => {
                         <Link
                             to='Projects'
                             smooth={true}
+                            style={{padding: '10px'}}
                         >
                             Projects
                         </Link>
@@ -45,6 +49,7 @@ const Navigation = () => {
                         <Link
                             to='Certifications'
                             smooth={true}
+                            style={{padding: '10px'}}
                         >
                             Certifications
                         </Link>
@@ -53,6 +58,7 @@ const Navigation = () => {
                         <Link
                             to='Contact'
                             smooth={true}
+                            style={{padding: '10px'}}
                         >
                             Contact
                         </Link>

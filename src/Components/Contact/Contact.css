@@ -47,8 +47,14 @@
 .Contact{
     padding: 10px;
     width: 92%;
-    margin-left: 100px;
+    margin-left: 70px;
     max-width: 1600px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin-bottom: 40px;
+}
+
+@media (max-width: 800px) {
+    .Contact{
+        margin-left: 10px;
+    }
 }

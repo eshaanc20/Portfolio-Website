@@ -1,5 +1,4 @@
 import React from 'react';
-import CreateIcon from '@material-ui/icons/Create';
 import Certification from './Certification';
 import { FaAward } from "react-icons/fa";
 import './Certifications.css';
@@ -19,7 +18,7 @@ const Certifications = () => {
                     <p>Certifications</p>
                 </div>
             </div>
-            <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+            <div style={{display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap'}} data-aos="fade-up">
                 <Certification 
                     course='Course1'
                     name="Neural Networks and Deep Learning"

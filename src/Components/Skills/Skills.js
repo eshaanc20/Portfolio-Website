@@ -21,7 +21,7 @@ const Skills = () => {
                 }}/>
                 <p className='skills-title'>Skills</p>
             </div>
-            <div className='skills1'>
+            <div className='skills1' data-aos="fade-up">
                 <div className='languages'>
                     <p style={{
                         fontSize: '25px', 
@@ -42,6 +42,8 @@ const Skills = () => {
                                         {skill}
                                     </div>
                                 )
+                            } else {
+                                return null;
                             }
                         })}
                     </div>
@@ -66,11 +68,13 @@ const Skills = () => {
                                             {skill}
                                         </div>
                                     )
+                                } else {
+                                    return null;
                                 }
                             })}
                         </div>
                 </div>
-                <div className='tools'>
+                <div className='tools' data-aos="fade-up">
                     <p style={{
                         fontSize: '25px', 
                         marginTop:'0px', 
@@ -90,11 +94,13 @@ const Skills = () => {
                                         {skill}
                                     </div>
                                 )
+                            } else {
+                                return null;
                             }
                         })}
                     </div>
                 </div>
-                <div className='tools'>
+                <div className='tools' data-aos="fade-up">
                     <p style={{
                         fontSize: '25px', 
                         marginTop:'0px', 
@@ -114,6 +120,8 @@ const Skills = () => {
                                         {skill}
                                     </div>
                                 )
+                            } else {
+                                return null;
                             }
                         })}
                     </div>

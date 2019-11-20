@@ -25,7 +25,7 @@ const Education = () => {
                 }}/>
                 <p className='education-title'>Education</p>
             </div>
-            <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+            <div style={{display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap'}} data-aos="fade-up">
                 <div style={{textAlign: 'center'}}>
                     <CircularProgressbar 
                         value={40} 
@@ -38,7 +38,7 @@ const Education = () => {
                     })}/>
                     <p style={{fontSize:'20px',marginTop:'0px'}}>Cumulative GPA: 3.8/4.0</p>
                 </div>
-                <div className='education-info'>
+                <div className='education-info' style={{marginTop: '40px', marginBottom: '40px'}}>
                     <IoMdCode className='icon'/>
                     <p className='p4'>Software Engineering and Management</p>
                     <IoIosSchool className='icon'/>

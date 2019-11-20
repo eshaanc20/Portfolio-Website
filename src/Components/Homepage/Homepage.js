@@ -4,14 +4,20 @@ import ProfilePicture from '../../Assets/profilePicture.jpg';
 import {IoLogoLinkedin, IoLogoGithub} from 'react-icons/io';
 import Typing from 'react-typing-animation';
 import Button from '@material-ui/core/Button';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { Link } from 'react-scroll';
 import Resume from '../../Eshaan_Chaudhari_Resume.pdf';
+
+AOS.init();
 
 const Homepage = () => {
     return(
         <div className = 'homepage'>
             <img className='profile' alt='' src={ProfilePicture}/>
-            <p className='name'>Eshaan Chaudhari</p>
+            <Typing speed={5}>
+                <p className='name'>Eshaan Chaudhari</p>
+            </Typing>
             <p className='p1'>Software Engineering and Management Student</p>
             <p className='p1'>McMaster University</p>
             <a className='connect' href = 'https://linkedin.com/in/eshaan-chaudhari'>
