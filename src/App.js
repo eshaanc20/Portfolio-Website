@@ -6,6 +6,8 @@ import Education from './Components/Education/Education';
 import Experience from './Components/Experience/Experience';
 import Skills from './Components/Skills/Skills';
 import Projects from './Components/Projects/Projects';
+import Certifications from './Components/Certifications/Certifications';
+import Contact from './Components/Contact/Contact';
 
 class App extends Component{
   render() {
@@ -17,6 +19,8 @@ class App extends Component{
           <Experience/>
           <Skills/>
           <Projects/>
+          <Certifications/>
+          <Contact/>
         </div>
     );
   }
