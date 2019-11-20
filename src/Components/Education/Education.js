@@ -38,7 +38,7 @@ const Education = () => {
                     })}/>
                     <p style={{fontSize:'20px',marginTop:'0px'}}>Cumulative GPA: 3.8/4.0</p>
                 </div>
-                <div className='education-info' style={{marginTop: '40px', marginBottom: '40px'}}>
+                <div className='education-info'>
                     <IoMdCode className='icon'/>
                     <p className='p4'>Software Engineering and Management</p>
                     <IoIosSchool className='icon'/>
