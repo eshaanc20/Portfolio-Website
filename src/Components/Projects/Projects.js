@@ -3,6 +3,10 @@ import CreateIcon from '@material-ui/icons/Create';
 import Button from '@material-ui/core/Button';
 import Project from './Project.js';
 import './Projects.css';
+import { IoLogoJavascript, IoLogoCss3 } from 'react-icons/io';
+import { FaReact, FaHtml5, FaPython, FaGitSquare, FaNpm, FaNodeJs } from "react-icons/fa";
+import { DiHeroku } from "react-icons/di";
+
 
 const Projects = () => {
     return(
@@ -29,9 +33,17 @@ const Projects = () => {
                     <ul style={{fontSize: '18px'}}>
                         <li>App detects the most dominant colors in an image and provides information about other colors</li>
                         <li>Helps individuals that have difficulties identifying colors</li>
-                        <li>Created front-end of the app using React Native with Expo's camera module</li>
-                        <li>Created back-end algorithm using Flask and python with OpenCV and NumPy</li>
+                        <li>Used React Native with Expo’s camera module for front-end and used base64 to send images to the back-end</li>
+                        <li>Created a python back-end algorithm using Flask and deployed it to Heroku</li>
+                        <li>Used OpenCV and NumPy</li>
                     </ul>
+                    <div style={{fontSize: '40px', display: 'flex', width: '250px', justifyContent: 'space-between'}}>
+                        <FaReact style={{color: '#2fc2f7'}}/>
+                        <FaPython style={{color: '#1868c4'}}/>
+                        <DiHeroku style={{color: '#b655f2'}}/>
+                        <FaNpm style={{color: '#ff524f'}}/>
+                        <FaGitSquare/>
+                    </div>
                     <div style={{textAlign: 'right', paddingRight: '5px', paddingBottom: '15px', marginTop: '20px'}}>
                         <Button href="https://github.com/eshaanc20/eyeSight" target='_blank' variant="contained" style={{color: 'white', backgroundColor: '#0889a3', marginLeft: '12px', fontSize: '14px'}}>
                             Github
@@ -55,6 +67,15 @@ const Projects = () => {
                         <li>Created back-end using express.js and set up multiple get and post requests</li>
                         <li>Deployed the app to firebase and the back-end to Heroku</li>
                     </ul>
+                    <div style={{fontSize: '40px', display: 'flex', width: '400px', justifyContent: 'space-between'}}>
+                        <FaReact style={{color: '#2fc2f7'}}/>
+                        <FaNodeJs style={{color: 'green'}}/>
+                        <IoLogoJavascript style={{color: '#f0cf13'}}/>
+                        <FaHtml5 style={{color: '#f54c0f'}}/>
+                        <IoLogoCss3 style={{color: '#0f99f5'}}/>
+                        <FaNpm style={{color: '#ff524f'}}/>
+                        <FaGitSquare/>
+                    </div>
                     <div style={{textAlign: 'right', paddingRight: '5px', paddingBottom: '20px', marginTop: '20px'}}>
                         <Button href="https://devkit-ce752.firebaseapp.com" variant="contained" target='_blank' style={{backgroundColor: '#0972b8', color: 'white', fontSize: '14px'}}> 
                             Project
@@ -105,6 +126,11 @@ const Projects = () => {
                         <li>First software project which helped me learn web development</li>
                         <li>Developed skills such as problem solving and analytical skills</li>
                     </ul>
+                    <div style={{fontSize: '40px', display: 'flex', width: '140px', justifyContent: 'space-between'}}>
+                        <FaHtml5 style={{color: '#f54c0f'}}/>
+                        <IoLogoCss3 style={{color: '#0f99f5'}}/>
+                        <IoLogoJavascript style={{color: '#f0cf13'}}/>
+                    </div>
                     <div style={{textAlign: 'right', paddingRight: '5px', paddingBottom: '20px', marginTop: '20px'}}>
                         <Button href="https://github.com/eshaanc20/Announce" variant="contained" target='_blank' style={{color: 'white', backgroundColor: '#0889a3', marginLeft: '12px', fontSize: '14px'}}>
                             Github
