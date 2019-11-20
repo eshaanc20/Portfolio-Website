@@ -15,7 +15,7 @@ const Homepage = () => {
     return(
         <div className = 'homepage'>
             <img className='profile' alt='' src={ProfilePicture}/>
-            <Typing speed={5}>
+            <Typing speed={100}>
                 <p className='name'>Eshaan Chaudhari</p>
             </Typing>
             <p className='p1'>Software Engineering and Management Student</p>
