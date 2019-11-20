@@ -6,7 +6,7 @@ import './Projects.css';
 
 const Projects = () => {
     return(
-        <div className='Projects'>
+        <div className='Projects' name='Projects' style={{paddingTop: '60px'}}>
              <div style={{display: 'flex', height: '100px'}}>
                 <CreateIcon 
                         style={{
@@ -19,8 +19,8 @@ const Projects = () => {
                     <p>Projects</p>
                 </div>
             </div>
-            <div style={{display: 'flex', flexWrap: 'wrap'}}>
-                <div className='project1-info'>
+            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '10px'}}>
+                <div className='project-info'>
                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
                         <p style={{fontSize: '26px', fontWeight: 'bold'}}>eyeSight</p>
                         <p style={{fontSize: '18px'}}>05/2019 – 11/2019</p>
@@ -42,8 +42,8 @@ const Projects = () => {
                     <Project project='eyeSight' height='280px' width='160px'/>
                 </div>
             </div>
-            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '28px'}}>
-                <div className='project2-info'>
+            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}}>
+                <div className='project-info'>
                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
                         <p style={{fontSize: '26px', fontWeight: 'bold'}}>Devkit</p>
                         <p style={{fontSize: '18px'}}>08/2019 – 09/2019</p>
@@ -68,8 +68,8 @@ const Projects = () => {
                     <Project project='Devkit' height='240px' width='400px'/>
                 </div>
             </div>
-            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '28px'}}>
-                <div className='project2-info'>
+            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}}>
+                <div className='project-info'>
                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
                         <p style={{fontSize: '26px', fontWeight: 'bold'}}>Finger Prosthetic</p>
                         <p style={{fontSize: '18px'}}>02/2019 – 04/2019</p>
@@ -91,8 +91,8 @@ const Projects = () => {
                     <Project project='Inventor' height='240px' width='400px'/>
                 </div>
             </div>
-            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '28px'}}>
-                <div className='project2-info'>
+            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}}>
+                <div className='project-info'>
                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
                         <p style={{fontSize: '26px', fontWeight: 'bold'}}>Announce</p>
                         <p style={{fontSize: '18px'}}>02/2017 – 02/2019</p>
@@ -115,8 +115,8 @@ const Projects = () => {
                     <Project project='Announce' height='240px' width='400px'/>
                 </div>
             </div>
-            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '28px'}}>
-                <div className='project2-info'>
+            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}}>
+                <div className='project-info'>
                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
                         <p style={{fontSize: '26px', fontWeight: 'bold'}}>Fit Together</p>
                         <p style={{fontSize: '18px'}}>01/2019 (DeltaHacks)</p>

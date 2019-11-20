@@ -1,7 +1,7 @@
 import React from 'react';
 import './Navigation.css';
 import AppBar from '@material-ui/core/AppBar';
-import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Link } from 'react-scroll';
 
 const Navigation = () => {
     return(
@@ -9,12 +9,54 @@ const Navigation = () => {
             <div className='Navigation'>
                 <p style={{fontSize: '20px', marginLeft: '20px'}}>Eshaan</p>
                 <div className='Navigation-options'>
-                    <a className="navigation-option">Education</a>
-                    <a className="navigation-option">Experience</a>
-                    <a className="navigation-option">Skills</a>
-                    <a className="navigation-option">Projects</a>
-                    <a className="navigation-option">Certifications</a>
-                    <a className="navigation-option">Contact</a>
+                    <p className="navigation-option">
+                        <Link
+                            to='Education'
+                            smooth={true}
+                        >
+                            Education
+                        </Link>
+                    </p>
+                    <p className="navigation-option">
+                        <Link
+                            to='Experiences'
+                            smooth={true}
+                        >
+                            Experience
+                        </Link>
+                    </p>
+                    <p className="navigation-option">
+                        <Link
+                            to='Skills'
+                            smooth={true}
+                        >
+                            Skills
+                        </Link>
+                    </p>
+                    <p className="navigation-option">
+                        <Link
+                            to='Projects'
+                            smooth={true}
+                        >
+                            Projects
+                        </Link>
+                    </p>
+                    <p className="navigation-option">
+                        <Link
+                            to='Certifications'
+                            smooth={true}
+                        >
+                            Certifications
+                        </Link>
+                    </p>
+                    <p className="navigation-option">
+                        <Link
+                            to='Contact'
+                            smooth={true}
+                        >
+                            Contact
+                        </Link>
+                    </p>
                 </div>
             </div>
         </AppBar>

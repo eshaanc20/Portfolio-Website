@@ -6,7 +6,7 @@ import './Certifications.css';
 
 const Certifications = () => {
     return(
-        <div className='Certifications'>
+        <div className='Certifications' style={{paddingTop: '60px'}}>
              <div style={{display: 'flex', height: '100px'}}>
                 <FaAward
                         style={{

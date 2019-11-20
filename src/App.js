@@ -12,7 +12,7 @@ import Contact from './Components/Contact/Contact';
 class App extends Component{
   render() {
     return (
-        <div style={{display: 'flex', flexDirection: 'column', backgroundColor: '#f0f0f0', height: '100%'}}>
+        <div style={{display: 'flex', flexDirection: 'column', backgroundColor: '#f0f0f0', height: '100%', width: '100%', overflow: 'hidden'}}>
           <Navigation/>
           <Homepage/>
           <Education/>

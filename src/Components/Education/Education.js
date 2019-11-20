@@ -14,8 +14,8 @@ const Education = () => {
         'Software Engineering Practice & Experience: Software Development'
     ]
     return(
-        <div className='Education'>
-            <div style={{display: 'flex', height: '100px'}}>
+        <div className='Education' name='Education' style={{paddingTop: '60px'}}>
+            <div style={{display: 'flex', height: '125px'}}>
                 <SchoolIcon 
                     style={{
                         color: '#0889a3', 

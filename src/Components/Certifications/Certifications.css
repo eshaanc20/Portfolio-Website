@@ -12,7 +12,11 @@
     padding: 4px 28px 28px 28px;
     width: 300px;
     margin-top: 90px;
+    transition-duration: 0.5s;
 }
 .Certificate{
     margin-top: -70px;
+}
+.Certification:hover{
+    box-shadow: 0px 20px 20px #cccccc;
 }

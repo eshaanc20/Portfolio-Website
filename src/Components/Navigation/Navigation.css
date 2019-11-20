@@ -4,11 +4,20 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .Navigation-options{
-    border: 1px solid black;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 .navigation-option{
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     font-size: 18px;
+    transition-duration: 0.2s;
+}
+.navigation-option:hover{
+    border-bottom: 4px solid white;
+    cursor: pointer;
 }

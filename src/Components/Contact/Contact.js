@@ -9,7 +9,7 @@ import ContactMailIcon from '@material-ui/icons/ContactMail';
 class Contact extends React.Component {
     render() {
         return(
-            <div className='Contact'>
+            <div className='Contact' name='Contact' style={{paddingTop: '60px'}}>
                 <div style={{display: 'flex', height: '100px'}}>
                     <ContactMailIcon
                             style={{

@@ -15,7 +15,7 @@ const Certifications = (props) => {
         course = Course3;
     }
     return(
-        <div className='Certification'>
+        <div name="Certification" className="Certification">
             <div className='Certificate'>
                 <img src={course} height='200px' width='300px' alt=''/>
             </div>

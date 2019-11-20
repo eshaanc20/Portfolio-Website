@@ -10,7 +10,7 @@ const Skills = () => {
         'Web development', 'Front-end developement', 'Back-end development', 'Neural Networks', 'Algorithms', 'Problem Solving',
     ]
     return(
-        <div className="skills">
+        <div className="Skills" name='Skills' style={{paddingTop: '60px'}}>
             <div style={{display: 'flex', height: '120px'}}>
                 <BuildIcon 
                     style={{

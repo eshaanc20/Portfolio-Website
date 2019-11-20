@@ -4,6 +4,7 @@ import ProfilePicture from '../../Assets/profilePicture.jpg';
 import {IoLogoLinkedin, IoLogoGithub} from 'react-icons/io';
 import Typing from 'react-typing-animation';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-scroll';
 import Resume from '../../Eshaan_Chaudhari_Resume.pdf';
 
 const Homepage = () => {
@@ -38,7 +39,13 @@ const Homepage = () => {
                         color: 'white',
                         fontSize: '16px'
                     }}
-                ><a href='/contact' style={{textDecoration:'none', color:'white'}}>Contact</a>
+                >
+                    <Link
+                    to='Contact'
+                    smooth={true}
+                    >
+                        Contact
+                    </Link>
                 </Button>
             </div>
         </div>

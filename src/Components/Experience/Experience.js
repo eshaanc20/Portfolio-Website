@@ -8,7 +8,7 @@ import WorkIcon from '@material-ui/icons/Work';
 
 const experience = () => {
     return(
-        <div className='timeline'>
+        <div className='timeline' name='Experiences' style={{paddingTop: '60px'}}>
             <div style={{display: 'flex', height: '100px'}}>
                 <WorkIcon 
                         style={{
