@@ -24,18 +24,21 @@ const Certifications = () => {
                     name="Neural Networks and Deep Learning"
                     Issued_Organization="Coursera"
                     date="June 2019"
+                    certificate="https://www.coursera.org/account/accomplishments/certificate/EG664QR863PV?utm_medium=certificate&utm_source=link&utm_campaign=copybutton_certificate"
                 />
                 <Certification 
                     course='Course2'
                     name="Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization"
                     Issued_Organization="Coursera"
                     date="August 2019"
+                    certificate="https://www.coursera.org/account/accomplishments/certificate/ANDAHXW42PM3?utm_medium=certificate&utm_source=link&utm_campaign=copybutton_certificate"
                 />
                 <Certification 
                     course='Course3'
                     name="Structuring Machine Learning Projects"
                     Issued_Organization="Coursera"
                     date="September 2019"
+                    certificate="https://www.coursera.org/account/accomplishments/certificate/WVE6MYCWFFHZ?utm_medium=certificate&utm_source=link&utm_campaign=copybutton_certificate"
                 />
             </div>
         </div>

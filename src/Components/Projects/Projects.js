@@ -51,7 +51,7 @@ const Projects = () => {
                     </div>
                 </div>
                 <div style={{display: 'flex', alignItems: 'center', margin: 'auto'}}>
-                    <Project project='eyeSight' height='280px' width='160px'/>
+                    <Project project='eyeSight' height='320px' width='180px'/>
                 </div>
             </div>
             <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}} data-aos="fade-up">

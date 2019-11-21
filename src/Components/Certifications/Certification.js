@@ -26,7 +26,7 @@ const Certifications = (props) => {
             <p style={{fontWeight: 'bold', fontSize: '20px'}}>Date</p>
             <p style={{fontSize: '18px'}}>{props.date}</p>
             <div style={{textAlign: 'center'}}>
-                <Button href={props.certificate} variant='contained' style={{backgroundColor: '#0889a3', color: 'white'}}>
+                <Button href={props.certificate} variant='contained' target='_blank' style={{backgroundColor: '#0889a3', color: 'white'}}>
                     View Certification
                 </Button>
             </div>
