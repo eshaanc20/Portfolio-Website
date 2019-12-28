@@ -4,8 +4,8 @@ import BuildIcon from '@material-ui/icons/Build';
 
 const Skills = () => {
     var skills = [
-        'JavaScript', 'Python', 'C', 'HTML', 'CSS', 'C#', 'MATLAB', 'Verilog', 'Bash',
-        'ReactJS', 'Node.js', 'Express.js', 'Keras', 'React Native', 'Flask', 'Material-UI', 'OpenCV', 'NumPy', 'TensorFlow', 'Axios',
+        'JavaScript', 'Python', 'C', 'HTML', 'CSS', 'TypeScript', 'C#', 'MATLAB', 'Verilog', 'Bash',
+        'React', 'Node.js', 'Express.js', 'Angular', 'Keras', 'React Native', 'Flask', 'Material-UI', 'OpenCV', 'NumPy', 'TensorFlow', 'Axios',
         'Git', 'Github', 'APIs', 'Heroku', 'Firebase', 'npm', 'Visual Studio Code', 'I2C', 'HC-12',
         'Web development', 'Front-end developement', 'Back-end development', 'Neural Networks', 'Algorithms', 'Problem Solving',
     ]
@@ -36,7 +36,7 @@ const Skills = () => {
                     >Languages</p>
                     <div style={{display: 'flex', flexWrap: 'wrap', paddingRight: '28px', paddingLeft: '28px'}}>
                         {skills.map((skill, index) => {
-                            if (index < 9) {
+                            if (index < 10) {
                                 return(
                                     <div className='skill'>
                                         {skill}
@@ -62,7 +62,7 @@ const Skills = () => {
                     >Libraries and Frameworks</p>
                         <div style={{display: 'flex', flexWrap: 'wrap', paddingRight: '28px', paddingLeft: '28px'}}>
                             {skills.map((skill, index) => {
-                                if (index < 20 && index > 8) {
+                                if (index < 22 && index > 9) {
                                     return(
                                         <div className='skill'>
                                             {skill}
@@ -88,7 +88,7 @@ const Skills = () => {
                     >Software Tools</p>
                     <div style={{display: 'flex', flexWrap: 'wrap', paddingRight: '28px', paddingLeft: '28px'}}>
                         {skills.map((skill, index) => {
-                            if (index > 19 && index < 29) {
+                            if (index > 21 && index < 31) {
                                 return(
                                     <div className='skill'>
                                         {skill}
@@ -114,7 +114,7 @@ const Skills = () => {
                     >Skills</p>
                     <div style={{display: 'flex', flexWrap: 'wrap', paddingRight: '28px', paddingLeft: '28px'}}>
                         {skills.map((skill, index) => {
-                            if (index > 28) {
+                            if (index > 30) {
                                 return(
                                     <div className='skill'>
                                         {skill}
