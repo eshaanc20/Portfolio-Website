@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from 'react-scroll';
-import Resume from '../../Eshaan_Chaudhari_Resume.pdf';
+import Resume from '../../Eshaan Chaudhari Resume.pdf';
 
 AOS.init();
 
@@ -15,7 +15,7 @@ const Homepage = () => {
     return(
         <div className = 'homepage'>
             <img className='profile' alt='' src={ProfilePicture}/>
-            <Typing speed={100}>
+            <Typing speed={150}>
                 <p className='name'>Eshaan Chaudhari</p>
             </Typing>
             <p className='p1'>Software Engineering and Management Student</p>
