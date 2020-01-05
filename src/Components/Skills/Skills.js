@@ -114,7 +114,7 @@ const Skills = () => {
                     >Skills</p>
                     <div style={{display: 'flex', flexWrap: 'wrap', paddingRight: '28px', paddingLeft: '28px'}}>
                         {skills.map((skill, index) => {
-                            if (index > 33) {
+                            if (index > 32) {
                                 return(
                                     <div className='skill'>
                                         {skill}
