@@ -4,6 +4,7 @@ import './Certifications.css';
 import Course1 from '../../Assets/Course1.png';
 import Course2 from '../../Assets/Course2.png';
 import Course3 from '../../Assets/Course3.png';
+import Course4 from '../../Assets/Course4.jpg';
 
 const Certifications = (props) => {
     var course = "Course";
@@ -13,7 +14,10 @@ const Certifications = (props) => {
         course = Course2;
     } else if (props.course === 'Course3') {
         course = Course3;
+    } else if (props.course === 'Course4') {
+        course = Course4;
     }
+    
     return(
         <div name="Certification" className="Certification">
             <div className='Certificate'>

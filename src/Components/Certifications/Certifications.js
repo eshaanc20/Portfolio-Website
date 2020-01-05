@@ -18,7 +18,14 @@ const Certifications = () => {
                     <p>Certifications</p>
                 </div>
             </div>
-            <div style={{display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap'}} data-aos="fade-up">
+            <div style={{display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap'}} data-aos="fade-up">
+                <Certification 
+                    course='Course4'
+                    name="React - The Complete Guide (incl Hooks, React Router, Redux)"
+                    Issued_Organization="Udemy"
+                    date="January 2020"
+                    certificate="http://ude.my/UC-J691493I"
+                />
                 <Certification 
                     course='Course1'
                     name="Neural Networks and Deep Learning"
