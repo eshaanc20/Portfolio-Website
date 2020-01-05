@@ -27,7 +27,7 @@ const Projects = () => {
             <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '10px'}} data-aos="fade-up">
                 <div className='project-info'>
                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
-                        <p style={{fontSize: '26px', fontWeight: 'bold'}}>Devkit</p>
+                        <p style={{fontSize: '26px', fontWeight: 'bold'}}>DevKit</p>
                         <p style={{fontSize: '18px'}}>08/2019 – 01/2020</p>
                     </div>
                     <p style={{fontSize: '20px', opacity: '0.6'}}>Web Application</p>
