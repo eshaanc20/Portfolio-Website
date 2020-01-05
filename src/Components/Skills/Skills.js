@@ -6,7 +6,7 @@ const Skills = () => {
     var skills = [
         'JavaScript', 'Python', 'C', 'HTML', 'CSS', 'TypeScript', 'C#', 'MATLAB', 'Verilog', 'Bash',
         'React', 'Node.js', 'Express.js', 'Angular', 'Keras', 'React Native', 'Flask', 'Material-UI', 'OpenCV', 'NumPy', 'TensorFlow', 'Axios',
-        'Git', 'Github', 'APIs', 'Heroku', 'Firebase', 'npm', 'Visual Studio Code', 'I2C', 'HC-12',
+        'MongoDB', 'Mongoose', 'Git', 'Github', 'APIs', 'Heroku', 'Firebase', 'npm', 'Visual Studio Code', 'I2C', 'HC-12',
         'Web development', 'Front-end developement', 'Back-end development', 'Neural Networks', 'Algorithms', 'Problem Solving',
     ]
     return(
@@ -88,7 +88,7 @@ const Skills = () => {
                     >Software Tools</p>
                     <div style={{display: 'flex', flexWrap: 'wrap', paddingRight: '28px', paddingLeft: '28px'}}>
                         {skills.map((skill, index) => {
-                            if (index > 21 && index < 31) {
+                            if (index > 21 && index < 33) {
                                 return(
                                     <div className='skill'>
                                         {skill}
@@ -114,7 +114,7 @@ const Skills = () => {
                     >Skills</p>
                     <div style={{display: 'flex', flexWrap: 'wrap', paddingRight: '28px', paddingLeft: '28px'}}>
                         {skills.map((skill, index) => {
-                            if (index > 30) {
+                            if (index > 33) {
                                 return(
                                     <div className='skill'>
                                         {skill}

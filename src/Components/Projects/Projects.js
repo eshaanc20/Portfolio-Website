@@ -6,6 +6,7 @@ import './Projects.css';
 import { IoLogoJavascript, IoLogoCss3 } from 'react-icons/io';
 import { FaReact, FaHtml5, FaPython, FaGitSquare, FaNpm, FaNodeJs } from "react-icons/fa";
 import { DiHeroku } from "react-icons/di";
+import MongoDBIcon from '../../Assets/MongoDB-icon.png';
 
 
 const Projects = () => {
@@ -24,6 +25,43 @@ const Projects = () => {
                 </div>
             </div>
             <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '10px'}} data-aos="fade-up">
+                <div className='project-info'>
+                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
+                        <p style={{fontSize: '26px', fontWeight: 'bold'}}>Devkit</p>
+                        <p style={{fontSize: '18px'}}>08/2019 – 01/2020</p>
+                    </div>
+                    <p style={{fontSize: '20px', opacity: '0.6'}}>Web Application</p>
+                    <ul style={{fontSize: '18px'}}>
+                        <li>Web application that helps find an optimal software tool such as APIs for a project based on requirements</li>
+                        <li>Used React with material-UI for front-end with axios for making asynchronous requests to the backend</li>
+                        <li>Created REST API for back-end using Node.js and Express.js</li>
+                        <li>Back-end manages MongoDB database using Mongoose and allows users to request to add software tools</li>
+                        <li>Deployed the app to firebase and the back-end to Heroku</li>
+                    </ul>
+                    <div style={{fontSize: '40px', display: 'flex', width: '500px', justifyContent: 'space-between'}}>
+                        <FaReact style={{color: '#2fc2f7'}}/>
+                        <FaNodeJs style={{color: 'green'}}/>
+                        <IoLogoJavascript style={{color: '#f0cf13'}}/>
+                        <FaHtml5 style={{color: '#f54c0f'}}/>
+                        <IoLogoCss3 style={{color: '#0f99f5'}}/>
+                        <FaNpm style={{color: '#ff524f'}}/>
+                        <FaGitSquare/>
+                        <img src={MongoDBIcon} style={{height: '40px', width: '100px'}}/>
+                    </div>
+                    <div style={{textAlign: 'right', paddingRight: '5px', paddingBottom: '20px', marginTop: '20px'}}>
+                        <Button href="https://devkit-ce752.firebaseapp.com" variant="contained" target='_blank' style={{backgroundColor: '#0972b8', color: 'white', fontSize: '14px'}}> 
+                            Project
+                        </Button>
+                        <Button href="https://github.com/eshaanc20/DevKit" variant="contained" target='_blank' style={{color: 'white', backgroundColor: '#0889a3', marginLeft: '12px', fontSize: '14px'}}>
+                            Github
+                        </Button>
+                    </div>
+                </div>
+                <div style={{display: 'flex', alignItems: 'center', margin: 'auto'}}>
+                    <Project project='Devkit' height='240px' width='400px'/>
+                </div>
+            </div>
+            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}} data-aos="fade-up">
                 <div className='project-info'>
                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
                         <p style={{fontSize: '26px', fontWeight: 'bold'}}>eyeSight</p>
@@ -52,41 +90,6 @@ const Projects = () => {
                 </div>
                 <div style={{display: 'flex', alignItems: 'center', margin: 'auto'}}>
                     <Project project='eyeSight' height='320px' width='180px'/>
-                </div>
-            </div>
-            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}} data-aos="fade-up">
-                <div className='project-info'>
-                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
-                        <p style={{fontSize: '26px', fontWeight: 'bold'}}>Devkit</p>
-                        <p style={{fontSize: '18px'}}>08/2019 – 09/2019</p>
-                    </div>
-                    <p style={{fontSize: '20px', opacity: '0.6'}}>Web Application</p>
-                    <ul style={{fontSize: '18px'}}>
-                        <li>Web application that helps find an optimal software tool such as APIs for a project based on requirements</li>
-                        <li>Used React with material-UI for front-end with axios for making asynchronous requests to the backend</li>
-                        <li>Created back-end using express.js and set up multiple get and post requests</li>
-                        <li>Deployed the app to firebase and the back-end to Heroku</li>
-                    </ul>
-                    <div style={{fontSize: '40px', display: 'flex', width: '400px', justifyContent: 'space-between'}}>
-                        <FaReact style={{color: '#2fc2f7'}}/>
-                        <FaNodeJs style={{color: 'green'}}/>
-                        <IoLogoJavascript style={{color: '#f0cf13'}}/>
-                        <FaHtml5 style={{color: '#f54c0f'}}/>
-                        <IoLogoCss3 style={{color: '#0f99f5'}}/>
-                        <FaNpm style={{color: '#ff524f'}}/>
-                        <FaGitSquare/>
-                    </div>
-                    <div style={{textAlign: 'right', paddingRight: '5px', paddingBottom: '20px', marginTop: '20px'}}>
-                        <Button href="https://devkit-ce752.firebaseapp.com" variant="contained" target='_blank' style={{backgroundColor: '#0972b8', color: 'white', fontSize: '14px'}}> 
-                            Project
-                        </Button>
-                        <Button href="https://github.com/eshaanc20/DevKit" variant="contained" target='_blank' style={{color: 'white', backgroundColor: '#0889a3', marginLeft: '12px', fontSize: '14px'}}>
-                            Github
-                        </Button>
-                    </div>
-                </div>
-                <div style={{display: 'flex', alignItems: 'center', margin: 'auto'}}>
-                    <Project project='Devkit' height='240px' width='400px'/>
                 </div>
             </div>
             <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}} data-aos="fade-up">
