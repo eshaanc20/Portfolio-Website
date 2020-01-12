@@ -8,8 +8,8 @@ import './Education.css';
 const Education = () => {
     var courses = [
         'Principles of programming', 
+        'Data Structures and Algorithms',
         'Digital Systems and Interfacing', 
-        'Discrete Mathematics', 
         'Computation',
         'Software Engineering Practice & Experience: Software Development'
     ]
