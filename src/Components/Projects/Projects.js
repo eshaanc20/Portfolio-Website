@@ -27,13 +27,53 @@ const Projects = () => {
             <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '10px'}} data-aos="fade-up">
                 <div className='project-info'>
                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
+                        <p style={{fontSize: '26px', fontWeight: 'bold'}}>Quick Alert</p>
+                        <p style={{fontSize: '18px'}}>01/2020</p>
+                    </div>
+                    <p style={{fontSize: '20px', opacity: '0.6'}}>Web Application</p>
+                    <ul style={{fontSize: '18px'}}>
+                        <li>Web application that helps users efficiently send their information to the nearest emergency service through a single SMS message of their address</li>
+                        <li>Emergency service will receive user information on their dashboard on their account</li>
+                        <li>Intended to quickly contact hospitals and help hospitals know more about their patient such as allergies before an ambulance is sent</li>
+                        <li>Used React with material-UI for front-end</li>
+                        <li>Utilized Twilio SMS API to handle SMS messages</li>
+                        <li>Created REST API for back-end using Node.js and Express.js</li>
+                        <li>Back-end manages MongoDB database using Mongoose</li>
+                        <li>Deployed the app to firebase and the back-end to Heroku</li>
+                    </ul>
+                    <div style={{fontSize: '40px', display: 'flex', width: '500px', justifyContent: 'space-between'}}>
+                        <FaReact style={{color: '#2fc2f7'}}/>
+                        <FaNodeJs style={{color: 'green'}}/>
+                        <IoLogoJavascript style={{color: '#f0cf13'}}/>
+                        <FaHtml5 style={{color: '#f54c0f'}}/>
+                        <IoLogoCss3 style={{color: '#0f99f5'}}/>
+                        <FaNpm style={{color: '#ff524f'}}/>
+                        <FaGitSquare/>
+                        <img src={MongoDBIcon} style={{height: '40px', width: '100px'}} alt=''/>
+                    </div>
+                    <div style={{textAlign: 'right', paddingRight: '5px', paddingBottom: '20px', marginTop: '20px'}}>
+                        <Button href="https://quick-alert-87c07.firebaseapp.com/" variant="contained" target='_blank' style={{backgroundColor: '#0972b8', color: 'white', fontSize: '14px'}}> 
+                            Project
+                        </Button>
+                        <Button href="https://github.com/" variant="contained" target='_blank' style={{color: 'white', backgroundColor: '#0889a3', marginLeft: '12px', fontSize: '14px'}}>
+                            Github
+                        </Button>
+                    </div>
+                </div>
+                <div style={{display: 'flex', alignItems: 'center', margin: 'auto'}}>
+                    <Project project='QuickAlert' height='270px' width='400px' height2='350px' width2='200px'/>
+                </div>
+            </div>
+            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}} data-aos="fade-up">
+                <div className='project-info'>
+                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
                         <p style={{fontSize: '26px', fontWeight: 'bold'}}>DevKit</p>
                         <p style={{fontSize: '18px'}}>08/2019 – 01/2020</p>
                     </div>
                     <p style={{fontSize: '20px', opacity: '0.6'}}>Web Application</p>
                     <ul style={{fontSize: '18px'}}>
-                        <li>Web application that helps find an optimal software tool such as APIs for a project based on requirements</li>
-                        <li>Used React with material-UI for front-end with axios for making asynchronous requests to the backend</li>
+                        <li>Web application that helps software developers find an optimal software tool such as API or library for a project based on requirements</li>
+                        <li>Used React with material-UI for front-end with axios for making asynchronous requests to the back-end</li>
                         <li>Created REST API for back-end using Node.js and Express.js</li>
                         <li>Back-end manages MongoDB database using Mongoose and allows users to request to add software tools</li>
                         <li>Deployed the app to firebase and the back-end to Heroku</li>
@@ -46,7 +86,7 @@ const Projects = () => {
                         <IoLogoCss3 style={{color: '#0f99f5'}}/>
                         <FaNpm style={{color: '#ff524f'}}/>
                         <FaGitSquare/>
-                        <img src={MongoDBIcon} style={{height: '40px', width: '100px'}}/>
+                        <img src={MongoDBIcon} style={{height: '40px', width: '100px'}} alt=''/>
                     </div>
                     <div style={{textAlign: 'right', paddingRight: '5px', paddingBottom: '20px', marginTop: '20px'}}>
                         <Button href="https://devkit-ce752.firebaseapp.com" variant="contained" target='_blank' style={{backgroundColor: '#0972b8', color: 'white', fontSize: '14px'}}> 
@@ -58,7 +98,7 @@ const Projects = () => {
                     </div>
                 </div>
                 <div style={{display: 'flex', alignItems: 'center', margin: 'auto'}}>
-                    <Project project='Devkit' height='240px' width='400px'/>
+                    <Project project='Devkit' height='270px' width='400px'/>
                 </div>
             </div>
             <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '60px'}} data-aos="fade-up">

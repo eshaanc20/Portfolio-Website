@@ -19,6 +19,10 @@ import Inventor2 from '../../Assets/Inventor2.png';
 import FitTogether1 from '../../Assets/FitTogether1.png';
 import FitTogether2 from '../../Assets/FitTogether2.png';
 import FitTogether3 from '../../Assets/FitTogether3.png';
+import QuickAlert1 from '../../Assets/QuickAlert1.png';
+import QuickAlert2 from '../../Assets/QuickAlert2.jpg';
+import QuickAlert3 from '../../Assets/QuickAlert3.png';
+
 
 class Project extends React.Component{
     constructor(props){
@@ -33,6 +37,8 @@ class Project extends React.Component{
             this.list = [Inventor1, Inventor2];
         } else if (props.project === 'FitTogether') {
             this.list = [FitTogether1, FitTogether2, FitTogether3];
+        } else if (props.project === 'QuickAlert') {
+            this.list = [QuickAlert1, QuickAlert2, QuickAlert3];
         }
     }
 
@@ -67,7 +73,12 @@ class Project extends React.Component{
                 >
                     &lt;
                 </Button>
-                <img src={this.list[this.state.current]} alt='' height={this.props.height} width={this.props.width} style={{marginLeft: '10px', marginRight: '10px'}}/>
+                <img 
+                    src={this.list[this.state.current]} 
+                    alt='' 
+                    height={this.list[this.state.current] === QuickAlert2? this.props.height2: this.props.height} 
+                    width={this.list[this.state.current] === QuickAlert2? this.props.width2: this.props.width} 
+                    style={{marginLeft: '10px', marginRight: '10px'}}/>
                 <Button disabled={this.state.right} onClick={this.right.bind(this)} style={{fontSize:'20px'}}>
                     &gt;
                 </Button>
