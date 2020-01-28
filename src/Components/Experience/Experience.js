@@ -31,11 +31,12 @@ const experience = () => {
                     <h4 className='subtitle'>Helping Hands</h4>
                     <p className='content'>
                         <ul style={{fontSize:'18px'}}>
-                            <li>Front-end web development using ReactJS with Material-UI</li>
-                            <li>Worked with multiple APIs such as Mapbox and Google Maps using axios</li>
-                            <li>Developed skills with using git such as branches, pull requests and code reviews</li>
+                            <li>Front-end web development using React with Material-UI</li>
                             <li>Implemented an updated version of the web application from new design</li>
+                            <li>Worked on multiple new features using different APIs and worked on UI design</li>
+                            <li>Learned git and used concepts such as branches, pull requests and code reviews</li>
                             <li>Created an email filter using App Script</li>
+                            <li>Developed skills writing efficient code, debugging and problem solving</li>
                         </ul>
                     </p>
                     <div style={{fontSize: '42px', display: 'flex', width: '250px', justifyContent: 'space-evenly'}}>

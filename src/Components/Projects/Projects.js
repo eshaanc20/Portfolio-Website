@@ -52,7 +52,7 @@ const Projects = () => {
                         <img src={MongoDBIcon} style={{height: '40px', width: '100px'}} alt=''/>
                     </div>
                     <div style={{textAlign: 'right', paddingRight: '5px', paddingBottom: '20px', marginTop: '20px'}}>
-                        <Button href="https://quick-alert-87c07.firebaseapp.com/" variant="contained" target='_blank' style={{backgroundColor: '#0972b8', color: 'white', fontSize: '14px'}}> 
+                        <Button href="https://myquickalert.firebaseapp.com/" variant="contained" target='_blank' style={{backgroundColor: '#0972b8', color: 'white', fontSize: '14px'}}> 
                             Project
                         </Button>
                         <Button href="https://github.com/eshaanc20/QuickAlert" variant="contained" target='_blank' style={{color: 'white', backgroundColor: '#0889a3', marginLeft: '12px', fontSize: '14px'}}>
