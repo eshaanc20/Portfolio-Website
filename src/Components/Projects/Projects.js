@@ -41,7 +41,7 @@ const Projects = () => {
                         <li>Back-end manages MongoDB database using Mongoose</li>
                         <li>Deployed the app to firebase and the back-end to Heroku</li>
                     </ul>
-                    <div style={{fontSize: '40px', display: 'flex', width: '500px', justifyContent: 'space-between'}}>
+                    <div style={{fontSize: '40px', display: 'flex', maxWidth: '600px', flexWrap: 'wrap', justifyContent: 'space-between'}}>
                         <FaReact style={{color: '#2fc2f7'}}/>
                         <FaNodeJs style={{color: 'green'}}/>
                         <IoLogoJavascript style={{color: '#f0cf13'}}/>
@@ -60,7 +60,7 @@ const Projects = () => {
                         </Button>
                     </div>
                 </div>
-                <div style={{display: 'flex', alignItems: 'center', margin: 'auto'}}>
+                <div style={{display: 'flex', alignItems: 'center'}}>
                     <Project project='QuickAlert' height='270px' width='400px' height2='350px' width2='200px'/>
                 </div>
             </div>
@@ -78,7 +78,7 @@ const Projects = () => {
                         <li>Back-end manages MongoDB database using Mongoose and allows users to request to add software tools</li>
                         <li>Deployed the app to firebase and the back-end to Heroku</li>
                     </ul>
-                    <div style={{fontSize: '40px', display: 'flex', width: '500px', justifyContent: 'space-between'}}>
+                    <div style={{fontSize: '40px', display: 'flex', maxWidth: '600px', flexWrap: 'wrap', justifyContent: 'space-between'}}>
                         <FaReact style={{color: '#2fc2f7'}}/>
                         <FaNodeJs style={{color: 'green'}}/>
                         <IoLogoJavascript style={{color: '#f0cf13'}}/>
@@ -97,7 +97,7 @@ const Projects = () => {
                         </Button>
                     </div>
                 </div>
-                <div style={{display: 'flex', alignItems: 'center', margin: 'auto'}}>
+                <div style={{display: 'flex', alignItems: 'center'}}>
                     <Project project='Devkit' height='270px' width='400px'/>
                 </div>
             </div>
@@ -115,7 +115,7 @@ const Projects = () => {
                         <li>Created a python back-end algorithm using Flask and deployed it to Heroku</li>
                         <li>Used OpenCV and NumPy</li>
                     </ul>
-                    <div style={{fontSize: '40px', display: 'flex', width: '250px', justifyContent: 'space-between'}}>
+                    <div style={{fontSize: '40px', display: 'flex', maxWidth: '280px', flexWrap: 'wrap', justifyContent: 'space-between'}}>
                         <FaReact style={{color: '#2fc2f7'}}/>
                         <FaPython style={{color: '#1868c4'}}/>
                         <DiHeroku style={{color: '#b655f2'}}/>
@@ -128,7 +128,7 @@ const Projects = () => {
                         </Button>
                     </div>
                 </div>
-                <div style={{display: 'flex', alignItems: 'center', margin: 'auto'}}>
+                <div style={{display: 'flex', alignItems: 'center'}}>
                     <Project project='eyeSight' height='320px' width='180px'/>
                 </div>
             </div>
@@ -151,7 +151,7 @@ const Projects = () => {
                         </Button>
                     </div>
                 </div>
-                <div style={{display: 'flex', alignItems: 'center', margin: 'auto'}}>
+                <div style={{display: 'flex', alignItems: 'center'}}>
                     <Project project='Inventor' height='240px' width='400px'/>
                 </div>
             </div>
@@ -169,7 +169,7 @@ const Projects = () => {
                         <li>First software project which helped me learn web development</li>
                         <li>Developed skills such as problem solving and analytical skills</li>
                     </ul>
-                    <div style={{fontSize: '40px', display: 'flex', width: '140px', justifyContent: 'space-between'}}>
+                    <div style={{fontSize: '40px', display: 'flex', maxWidth: '200px', flexWrap: 'wrap', justifyContent: 'space-between'}}>
                         <FaHtml5 style={{color: '#f54c0f'}}/>
                         <IoLogoCss3 style={{color: '#0f99f5'}}/>
                         <IoLogoJavascript style={{color: '#f0cf13'}}/>
@@ -180,7 +180,7 @@ const Projects = () => {
                         </Button>
                     </div>
                 </div>
-                <div style={{display: 'flex', alignItems: 'center', margin: 'auto'}}>
+                <div style={{display: 'flex', alignItems: 'center'}}>
                     <Project project='Announce' height='240px' width='400px'/>
                 </div>
             </div>
@@ -205,7 +205,7 @@ const Projects = () => {
                         </Button>
                     </div>
                 </div>
-                <div style={{display: 'flex', alignItems: 'center', margin: 'auto'}}>
+                <div style={{display: 'flex', alignItems: 'center'}}>
                     <Project project='FitTogether' height='280px' width='160px'/>
                 </div>
             </div>

@@ -17,6 +17,8 @@ const Homepage = () => {
         <div className = 'homepage'>
              <div className='particles'>
                 <Particles
+                    width='100vw'
+                    height='100vh'
                     params={{
                         particles: {
                             number: {

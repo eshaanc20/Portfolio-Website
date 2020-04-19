@@ -54,7 +54,7 @@
     border-radius: 5px;
     background-color: rgb(245, 245, 245);
 }
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .Skills{
         margin-left: 10px;
         width: 95%;
