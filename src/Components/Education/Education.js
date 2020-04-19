@@ -34,7 +34,7 @@ const Education = () => {
                         styles={buildStyles({
                         textSize: '10px',
                         textColor: 'black',
-                        pathColor: '#16549c',
+                        pathColor: '#0977c0',
                     })}/>
                     <p style={{fontSize:'20px',marginTop:'0px'}}>Cumulative GPA: 3.7/4.0</p>
                 </div>

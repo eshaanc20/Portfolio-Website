@@ -1,28 +1,28 @@
 .homepage{
     margin: auto;
-    margin-top: 150px;
-    width: 800px;
+    width: 100vw;
     text-align: center;
     height: 100vh;
-    max-height: 550px;
-    padding: 20px;
 }
 .profile{
     width: 140px;
     height: 160px;
     border-radius: 100px;
+    margin-top: 12%;
 }
 .name{
     font-family: 'Courier New', Courier, monospace;
     font-size: 45px;
     margin-top: 14px;
     margin-bottom: 4px;
+    color: white;
 }
 .p1{
     margin-top: 14px;
     margin-bottom: 4px;
     font-size: 30px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
 }
 .connect{
     font-size: 60px;
@@ -31,4 +31,11 @@
     cursor: pointer;
     text-decoration: none;
     color: black;
+}
+.particles{
+    background-color: #1490a8; 
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    z-index: -1;
 }

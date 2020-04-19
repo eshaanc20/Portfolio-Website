@@ -1,0 +1,8 @@
+.app{
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom right, rgb(231, 231, 231), rgb(240, 240, 240));
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
