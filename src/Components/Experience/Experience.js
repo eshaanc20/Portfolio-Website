@@ -32,8 +32,8 @@ const experience = () => {
                     <p className='content'>
                         <ul style={{fontSize:'18px'}}>
                             <li>Front-end web development using React with Material-UI</li>
-                            <li>Implemented an updated version of the web application from new design</li>
-                            <li>Created multiple React components for new features and worked on UI design</li>
+                            <li>Implemented an updated version of the web application from new design by updating over 90% of the UI</li>
+                            <li>Created responsive UI components using React for new features and optimze UX design</li>
                             <li>Improved skills using git such as branches, pull requests and code reviews</li>
                             <li>Created an email filter using App Script</li>
                             <li>Developed skills writing efficient code, debugging skills and problem solving skills</li>

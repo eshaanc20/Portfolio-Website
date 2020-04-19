@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from 'react-scroll';
-import Resume from '../../Eshaan Chaudhari Resume.pdf';
+import Resume from '../../Eshaan_Chaudhari_Resume.pdf';
 import Particles from 'react-particles-js';
 
 AOS.init();
