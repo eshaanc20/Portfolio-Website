@@ -7,7 +7,7 @@ const Skills = () => {
         'JavaScript', 'Python', 'C', 'Java', 'HTML', 'CSS', 'TypeScript', 'C#', 'MATLAB', 'Verilog',
         'React', 'Node.js', 'Express.js', 'Angular', 'Keras', 'React Native', 'Flask', 'Material-UI', 'OpenCV', 'NumPy', 'TensorFlow', 'Axios',
         'MongoDB', 'JUnit', 'Pytest', 'Mongoose.js', 'Git', 'Github', 'Web REST APIs', 'npm', 'Visual Studio Code', 'I2C', 'HC-12',
-        'Web development', 'Front-end developement', 'Back-end development', 'Neural Networks', 'Algorithms', 'Problem Solving',
+        'Web development', 'Data Structures', 'Front-end development', 'Back-end development', 'Neural Networks', 'Object-Oriented Programming',
     ]
     return(
         <div className="Skills" name='Skills' style={{paddingTop: '60px'}}>

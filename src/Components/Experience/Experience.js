@@ -56,7 +56,8 @@ const experience = () => {
                     <h4 className='subtitle'>McMaster Hyperloop</h4>
                     <p className='content'>
                         <ul style={{fontSize:'18px'}}>
-                            <li>Working with HC-12 module to set up long distance communication between ardunio nanos and offboard computer</li>
+                            <li>Conducting research for design documents to create a CAN bus system design</li>
+                            <li>Working on the software for the CAN bus system</li>
                             <li>Configuring I2C for onboard communication on hyperloop pod</li>
                             <li>Coordinated with various team members and subteams</li>
                         </ul>
