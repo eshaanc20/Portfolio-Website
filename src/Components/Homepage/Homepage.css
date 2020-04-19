@@ -3,12 +3,13 @@
     width: 100vw;
     text-align: center;
     height: 100vh;
+    margin-top: 50px;
 }
 .profile{
     width: 140px;
     height: 160px;
     border-radius: 100px;
-    margin-top: 12%;
+    margin-top: 10%;
 }
 .name{
     font-family: 'Courier New', Courier, monospace;

@@ -17,10 +17,13 @@ const Homepage = () => {
         <div className = 'homepage'>
              <div className='particles'>
                 <Particles
-                    config={{
+                    params={{
                         particles: {
-                            numbers: {
-                                value: 50
+                            number: {
+                                value: 60
+                            },
+                            size: {
+                                value: 2
                             }
                         }
                     }}
