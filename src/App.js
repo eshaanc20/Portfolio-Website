@@ -8,19 +8,22 @@ import Skills from './Components/Skills/Skills';
 import Projects from './Components/Projects/Projects';
 import Certifications from './Components/Certifications/Certifications';
 import Contact from './Components/Contact/Contact';
+import './App.css';
 
 class App extends Component{
   render() {
     return (
-        <div style={{display: 'flex', flexDirection: 'column', backgroundColor: '#f0f0f0', height: '100%', width: '100%', overflow: 'hidden'}}>
+        <div>
           <Navigation/>
           <Homepage/>
-          <Education/>
-          <Experience/>
-          <Skills/>
-          <Projects/>
-          <Certifications/>
-          <Contact/>
+          <div className='app'>
+            <Education/>
+            <Experience/>
+            <Skills/>
+            <Projects/>
+            <Certifications/>
+            <Contact/>
+          </div>
         </div>
     );
   }

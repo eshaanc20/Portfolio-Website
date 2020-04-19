@@ -6,7 +6,7 @@ const Skills = () => {
     var skills = [
         'JavaScript', 'Python', 'C', 'Java', 'HTML', 'CSS', 'TypeScript', 'C#', 'MATLAB', 'Verilog',
         'React', 'Node.js', 'Express.js', 'Angular', 'Keras', 'React Native', 'Flask', 'Material-UI', 'OpenCV', 'NumPy', 'TensorFlow', 'Axios',
-        'MongoDB', 'Mongoose', 'Git', 'Github', 'APIs', 'Heroku', 'Firebase', 'npm', 'Visual Studio Code', 'I2C', 'HC-12',
+        'MongoDB', 'JUnit', 'Pytest', 'Mongoose.js', 'Git', 'Github', 'Web REST APIs', 'npm', 'Visual Studio Code', 'I2C', 'HC-12',
         'Web development', 'Front-end developement', 'Back-end development', 'Neural Networks', 'Algorithms', 'Problem Solving',
     ]
     return(
@@ -26,7 +26,7 @@ const Skills = () => {
                     <p style={{
                         fontSize: '25px', 
                         marginTop:'0px', 
-                        backgroundColor: '#16549c', 
+                        backgroundColor: '#0977c0', 
                         color:'white',
                         borderTopRightRadius: '15px',
                         borderTopLeftRadius: '15px',
@@ -52,7 +52,7 @@ const Skills = () => {
                     <p style={{
                         fontSize: '25px', 
                         marginTop:'0px', 
-                        backgroundColor: '#16549c', 
+                        backgroundColor: '#0977c0', 
                         color:'white',
                         borderTopRightRadius: '15px',
                         borderTopLeftRadius: '15px',
@@ -78,7 +78,7 @@ const Skills = () => {
                     <p style={{
                         fontSize: '25px', 
                         marginTop:'0px', 
-                        backgroundColor: '#16549c', 
+                        backgroundColor: '#0977c0', 
                         color:'white',
                         borderTopRightRadius: '15px',
                         borderTopLeftRadius: '15px',
@@ -104,7 +104,7 @@ const Skills = () => {
                     <p style={{
                         fontSize: '25px', 
                         marginTop:'0px', 
-                        backgroundColor: '#16549c', 
+                        backgroundColor: '#0977c0', 
                         color:'white',
                         borderTopRightRadius: '15px',
                         borderTopLeftRadius: '15px',
