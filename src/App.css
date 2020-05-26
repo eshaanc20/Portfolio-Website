@@ -1,4 +1,10 @@
-.app{
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.app {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.app-content{
     display: flex;
     flex-direction: column;
     background-image: linear-gradient(to bottom right, rgb(231, 231, 231), rgb(240, 240, 240));

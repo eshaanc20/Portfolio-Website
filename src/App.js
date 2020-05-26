@@ -13,10 +13,10 @@ import './App.css';
 class App extends Component{
   render() {
     return (
-        <div>
+        <div className='app'>
           <Navigation/>
           <Homepage/>
-          <div className='app'>
+          <div className='app-content'>
             <Education/>
             <Experience/>
             <Skills/>

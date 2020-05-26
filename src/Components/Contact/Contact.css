@@ -7,7 +7,7 @@
     padding-right: 20px;
     padding-left: 18px;
     box-shadow: 0px 5px 5px #cccccc;
-    width: 480px;
+    width: 500px;
     margin: auto;
     justify-content: center;
     background-color: #0977c0;
@@ -39,7 +39,6 @@
 }
 
 #contactTitle{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin-bottom: 0px;
     margin-top: 0px;
 }
@@ -49,7 +48,6 @@
     width: 92%;
     margin-left: 70px;
     max-width: 1600px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin-bottom: 40px;
 }
 

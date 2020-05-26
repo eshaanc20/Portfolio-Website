@@ -1,7 +1,6 @@
 .Navigation{
     display: flex;
     justify-content: space-between;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .Navigation-options{
     display: flex;

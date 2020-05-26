@@ -31,7 +31,7 @@ const Homepage = () => {
                     }}
                 />
             </div>
-            <div style={{color: 'white'}}>
+            <div>
                 <img className='profile' alt='' src={ProfilePicture}/>
                 <Typing speed={150}>
                     <p className='name'>Eshaan Chaudhari</p>
