@@ -1,11 +1,13 @@
 .Navigation{
     display: flex;
     justify-content: space-between;
+    color: black;
 }
 .Navigation-options{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    color: black;
 }
 .navigation-option{
     padding-left: 10px;
@@ -17,6 +19,6 @@
     transition-duration: 0.2s;
 }
 .navigation-option:hover{
-    border-bottom: 4px solid white;
+    border-bottom: 4px solid #12849b;
     cursor: pointer;
 }
