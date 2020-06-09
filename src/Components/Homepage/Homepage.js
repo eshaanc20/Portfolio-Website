@@ -8,69 +8,56 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from 'react-scroll';
 import Resume from '../../Eshaan_Chaudhari_Resume.pdf';
-import Particles from 'react-particles-js';
 
 AOS.init();
 
 const Homepage = () => {
     return(
-        <div className = 'homepage'>
-             <div className='particles'>
-                <Particles
-                    width='100vw'
-                    height='100vh'
-                    params={{
-                        particles: {
-                            number: {
-                                value: 60
-                            },
-                            size: {
-                                value: 2
-                            }
-                        }
-                    }}
-                />
-            </div>
-            <div>
-                <img className='profile' alt='' src={ProfilePicture}/>
-                <Typing speed={150}>
+        <div className='homepage'>
+            <div className='homepage-title'>
+                <div className='homepage-content' data-aos='fade-up'>
                     <p className='name'>Eshaan Chaudhari</p>
-                </Typing>
-                <p className='p1'>Software Engineering and Management Student</p>
-                <p className='p1'>McMaster University</p>
-                <a className='connect' href = 'https://linkedin.com/in/eshaan-chaudhari'>
-                    <IoLogoLinkedin/>
-                </a>
-                <a className='connect' href = 'https://github.com/eshaanc20'>
-                    <IoLogoGithub className='connect'/>
-                </a>
-                <div>
-                <Button 
-                        variant='contained'
-                        style={{
-                            backgroundColor:'#0972b8',
-                            marginRight:'20px',
-                            color: 'white',
-                            fontSize: '16px'
-                        }}
-                        href = {Resume}
-                        target = '_blank'
-                    >View Resume</Button>
+                    <p className='p1'>Software Engineering and Management Student</p>
+                    <p className='p1'>McMaster University</p>
+                    <div style={{backgroundColor: 'white', borderRadius: '25px', textAlign: 'center', width: '180px', marginTop: '20px', marginBottom: '20px'}}>
+                        <a className='connect' href = 'https://linkedin.com/in/eshaan-chaudhari'>
+                            <IoLogoLinkedin/>
+                        </a>
+                        <a className='connect' href = 'https://github.com/eshaanc20'>
+                            <IoLogoGithub className='connect'/>
+                        </a>
+                    </div>
+                    <div>
                     <Button 
-                        variant='contained' 
-                        style={{
-                            backgroundColor:'#0972b8',
-                            color: 'white',
-                            fontSize: '16px'
-                        }}
-                    >
-                        <Link
-                        to='Contact'
-                        smooth={true}
+                            variant='contained'
+                            style={{
+                                backgroundColor:'#1088a0',
+                                marginRight:'20px',
+                                color: 'white',
+                                fontSize: '20px'
+                            }}
+                            href = {Resume}
+                            target = '_blank'
+                        >View Resume</Button>
+                        <Button 
+                            variant='contained' 
+                            style={{
+                                backgroundColor:'#1088a0',
+                                color: 'white',
+                                fontSize: '20px'
+                            }}
                         >
-                            Contact
-                        </Link>
-                    </Button>
+                            <Link
+                            to='Contact'
+                            smooth={true}
+                            >
+                                Contact
+                            </Link>
+                        </Button>
+                    </div>
+                </div>
+                <div style={{marginTop: '5%', width: '25%'}}>
+                    <img className='profile' alt='' src={ProfilePicture}/>
                 </div>
             </div>
         </div>
