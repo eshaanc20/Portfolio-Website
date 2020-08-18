@@ -54,6 +54,31 @@
 @media (max-width: 1000px) {
     .Skills{
         margin-left: 10px;
-        width: 95%;
+        width: 90%;
+    }
+}
+
+@media (max-width: 500px) {
+    .skills1{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-left: 0px;
+        margin: auto;
+    }
+    .languages{
+        margin: auto;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .libraries-frameworks{
+        margin: auto;
+        width: 100%;
+    }
+    .tools{
+        margin: auto;
+        width: 100%;
+        margin-top: 40px;
     }
 }

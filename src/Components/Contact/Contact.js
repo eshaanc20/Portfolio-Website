@@ -24,16 +24,20 @@ class Contact extends React.Component {
                 </div>
                 <div className='contactContainer'>
                     <div className='contactInfo'>
-                        <EmailIcon style={{marginTop:'15px', fontSize:'28px', marginRight:'5px'}}></EmailIcon>
-                        <p id='email'>eshaanchaudhari@hotmail.com</p>
-                        <PhoneIcon style={{marginTop:'14px', fontSize:'28px', marginRight:'5px'}}/>
-                        <p>647-639-7482</p>
+                        <div style={{display: 'flex'}}>
+                            <EmailIcon style={{marginTop:'15px', fontSize:'28px', marginRight:'5px'}}></EmailIcon>
+                            <p id='email'>eshaanchaudhari@hotmail.com</p>
+                        </div>
+                        <div style={{display: 'flex'}}>
+                            <PhoneIcon style={{marginTop:'14px', fontSize:'28px', marginRight:'5px'}}/>
+                            <p>647-639-7482</p>
+                        </div>
                     </div>
                     <div className='contactCard'>
                         <h2 id='contactTitle'>Contact</h2>
                         <form action="https://formspree.io/eshaanchaudhari@hotmail.com" method="POST">
                             <TextField
-                                style={{width: '328px'}}
+                                className='textfield1'
                                 variant='outlined'
                                 label='Name'
                                 id='contactName'
@@ -41,14 +45,16 @@ class Contact extends React.Component {
                                 type="text"
                             />
                             <TextField
-                                style={{width: '328px', marginTop:'20px'}}
+                                className='textfield2'
+                                style={{marginTop:'20px'}}
                                 variant='outlined'
                                 label='Email'
                                 type="email"
                                 name="_replyto"
                             />
                             <TextField
-                                style={{width: '328px', marginTop:'20px'}}
+                                className='textfield3'
+                                style={{marginTop:'20px'}}
                                 variant='outlined'
                                 label='Message'
                                 name="Message"
@@ -57,7 +63,7 @@ class Contact extends React.Component {
                             />
                             <Button
                                 variant='contained'
-                                style={{width: '328px', marginTop:'20px', backgroundColor: '#0889a3', color: 'white'}}
+                                style={{width: '50%', marginTop:'20px', backgroundColor: '#0889a3', color: 'white'}}
                                 onClick={this.eventHandler}
                                 type='submit'
                             >Send</Button>

@@ -19,7 +19,7 @@ const Homepage = () => {
                     <p className='name'>Eshaan Chaudhari</p>
                     <p className='p1'>Software Engineering and Management Student</p>
                     <p className='p1'>McMaster University</p>
-                    <div style={{backgroundColor: 'white', borderRadius: '25px', textAlign: 'center', width: '180px', marginTop: '20px', marginBottom: '20px'}}>
+                    <div className='more-info'>
                         <a className='connect' href = 'https://linkedin.com/in/eshaan-chaudhari'>
                             <IoLogoLinkedin/>
                         </a>
@@ -27,14 +27,14 @@ const Homepage = () => {
                             <IoLogoGithub className='connect'/>
                         </a>
                     </div>
-                    <div>
-                    <Button 
+                    <div className='buttons'>
+                        <Button 
                             variant='contained'
+                            className='resume-button'
                             style={{
                                 backgroundColor:'#1088a0',
-                                marginRight:'20px',
-                                color: 'white',
-                                fontSize: '20px'
+                                color:'white',
+                                fontSize:'20px',
                             }}
                             href = {Resume}
                             target = '_blank'
@@ -46,6 +46,7 @@ const Homepage = () => {
                                 color: 'white',
                                 fontSize: '20px'
                             }}
+                            className='info-button'
                         >
                             <Link
                             to='Contact'
@@ -56,7 +57,7 @@ const Homepage = () => {
                         </Button>
                     </div>
                 </div>
-                <div style={{marginTop: '5%', width: '25%'}}>
+                <div className='homepage-photo'>
                     <img className='profile' alt='' src={ProfilePicture}/>
                 </div>
             </div>

@@ -50,9 +50,46 @@
     max-width: 1600px;
     margin-bottom: 40px;
 }
+.textfield1{
+    width: 328px;
+}
+.textfield2{
+    width: 328px;
+}
+.textfield3{
+    width: 328px;
+}
 
 @media (max-width: 800px) {
     .Contact{
         margin-left: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .Contact{
+        width: 90%;
+        margin: auto;
+        border: 5px solid green;
+    }
+    .contactInfo{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 90%;
+        padding-left: 10px;
+    }
+    .contactCard{
+        padding: 10px;
+        width: 90%;
+    }
+    .textfield1{
+        width: 85%;
+    }
+    .textfield2{
+        width: 85%;
+    }
+    .textfield3{
+        width: 85%;
     }
 }

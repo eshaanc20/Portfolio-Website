@@ -100,7 +100,7 @@ const Skills = () => {
                         })}
                     </div>
                 </div>
-                <div className='tools' data-aos="fade-up">
+                <div className='tools'>
                     <p style={{
                         fontSize: '25px', 
                         marginTop:'0px', 

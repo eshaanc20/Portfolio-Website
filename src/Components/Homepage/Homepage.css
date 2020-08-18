@@ -1,5 +1,4 @@
 .homepage{
-    margin: auto;
     width: 100vw;
     height: 850px;
     margin-top: 50px;
@@ -40,4 +39,81 @@
     cursor: pointer;
     text-decoration: none;
     color: black;
+}
+.homepage-photo{
+    margin-top: 5%;
+    width: 25%;
+}
+.more-info{
+    background-color: white;
+    border-radius: 25px;
+    text-align: center;
+    width: 180px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.resume-button{
+    background-color: #1088a0;
+    margin-right: 20px;
+    color: white;
+    font-size: 20px;
+}
+.buttons{
+    width: 340px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media (max-width: 500px) {
+    .homepage{
+        width: 100vw;
+        height: 650px;
+        background-color: #0188e2;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        margin-top: 220px;
+        border-top-right-radius: 50px;
+        border-top-left-radius: 50px;
+        box-shadow: 0px 0px 20px 20px lightgray;
+    }
+    .name{
+        font-size: 35px;
+    }
+    .p1{
+        margin-top: 14px;
+        margin-bottom: 4px;
+        font-size: 25px;
+    }
+    .homepage-title{
+        margin: auto;
+        display: flex;
+        margin-top: 0px;
+        flex-direction: column-reverse;
+        text-align: center;
+        justify-content: center;
+    }
+    .homepage-photo{
+        text-align: center;
+        width: 100%;
+        margin-top: -100px;
+    }
+    .profile{
+        width: 160px;
+        height: 160px;
+        border-radius: 100px;
+    }
+    .more-info{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .buttons{
+        width: 80%;
+        height: 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin: auto;
+    }
 }

@@ -22,3 +22,20 @@
     border-bottom: 4px solid #12849b;
     cursor: pointer;
 }
+
+@media (max-width: 500px) {
+    .nav-name{
+        display: none;
+    }
+    .navigation-option{
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 0px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 14px;
+        transition-duration: 0.2s;
+        width: 26%;
+        text-align: center;
+    }
+}
