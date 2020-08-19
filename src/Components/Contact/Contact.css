@@ -70,7 +70,6 @@
     .Contact{
         width: 90%;
         margin: auto;
-        border: 5px solid green;
     }
     .contactInfo{
         display: flex;
