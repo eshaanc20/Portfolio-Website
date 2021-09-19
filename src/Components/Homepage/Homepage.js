@@ -2,7 +2,6 @@ import React from 'react';
 import './Homepage.css';
 import ProfilePicture from '../../Assets/profilePicture.jpg';
 import {IoLogoLinkedin, IoLogoGithub} from 'react-icons/io';
-import Typing from 'react-typing-animation';
 import Button from '@material-ui/core/Button';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
