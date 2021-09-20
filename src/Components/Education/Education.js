@@ -28,8 +28,8 @@ const Education = () => {
             <div style={{display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap'}} data-aos="fade-up">
                 <div style={{textAlign: 'center'}}>
                     <CircularProgressbar 
-                        value={40} 
-                        text={'Second year'} 
+                        value={60} 
+                        text={'Third year'} 
                         className='progress' 
                         styles={buildStyles({
                         textSize: '10px',
@@ -44,7 +44,7 @@ const Education = () => {
                     <IoIosSchool className='icon'/>
                     <p className='p4'>McMaster University</p>
                     <IoIosCalendar className='icon'/>
-                    <p className='p4'>2018-2023</p>
+                    <p className='p4'>2018-2024</p>
                 </div>
                 <div className='classes'>
                     <p className='classes-title'>Relevant courses</p>

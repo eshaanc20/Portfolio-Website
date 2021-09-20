@@ -11,22 +11,43 @@ const experience = () => {
         <div className='timeline' name='Experiences' style={{paddingTop: '60px'}}>
             <div style={{display: 'flex', height: '100px'}}>
                 <WorkIcon 
-                        style={{
-                            color: '#0889a3', 
-                            fontSize: '60px', 
-                            marginTop: '24px',
-                            marginRight: '12px'
+                    style={{
+                        color: '#0889a3', 
+                        fontSize: '60px', 
+                        marginTop: '24px',
+                        marginRight: '12px'
                     }}/>
                 <div className='experience-title'>
                     <p>Experience</p>
                 </div>
             </div>
             <VerticalTimeline>
-                <VerticalTimelineElement
-                    date='07/2019 - 08/2019'
-                    iconStyle={{ background: 'white' }}
-                    icon={<IoIosBriefcase/>}
-                >
+                <VerticalTimelineElement date='04/2021 - 08/2021' iconStyle={{ background: 'white' }} icon={<IoIosBriefcase/>}>
+                    <h3 className='title'>Software Engineer Intern</h3>
+                    <h4 className='subtitle'>Ciena</h4>
+                    <p className='content'>
+                        <ul style={{fontSize:'18px'}}>
+                            <li>Backend development for REST API using Java and built unit tests using Mockito for development code</li>
+                            <li>Developed code using object-oriented programming in a microservice architecture</li>
+                            <li>Implemented a backend feature from software requirements using agile software development and sprints</li>
+                            <li>Fixed software bugs, wrote software documentation and developed code for multiple software workflows</li>
+                            <li>Learned about networks, software design and the process to develop software from requirements to release</li>
+                        </ul>
+                    </p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement date='09/2020 - 03/2021' iconStyle={{ background: 'white' }} icon={<IoIosBriefcase/>}>
+                    <h3 className='title'>Software Automation Developer Intern</h3>
+                    <h4 className='subtitle'>Ciena</h4>
+                    <p className='content'>
+                        <ul style={{fontSize:'18px'}}>
+                            <li>Designed and created test automation for microservices using JavaScript, Postman and TeamCity</li>
+                            <li>Created an application using JavaScript and Node.js for determining and visualizing microservice dependencies</li>
+                            <li>Developed a Python script for validating pull requests and created a JavaScript library for representing graphs</li>
+                            <li>Created TeamCity builds for continuous integration testing and performed manual testing for QA</li>
+                        </ul>
+                    </p>
+                </VerticalTimelineElement>
+                <VerticalTimelineElement date='07/2019 - 08/2019' iconStyle={{ background: 'white' }} icon={<IoIosBriefcase/>}>
                     <h3 className='title'>Software Developer</h3>
                     <h4 className='subtitle'>Helping Hands</h4>
                     <p className='content'>
@@ -46,37 +67,6 @@ const experience = () => {
                         <IoLogoCss3 style={{color: '#0f99f5'}}/>
                         <FaGitSquare/>
                     </div>
-                </VerticalTimelineElement>
-                <VerticalTimelineElement
-                    date='04/2019 - present'
-                    iconStyle={{ background: 'white' }}
-                    icon={<IoIosSchool/>}
-                >
-                    <h3 className='title'>Software Team - Communications</h3>
-                    <h4 className='subtitle'>McMaster Hyperloop</h4>
-                    <p className='content'>
-                        <ul style={{fontSize:'18px'}}>
-                            <li>Conducting research for design documents to create a CAN bus system design</li>
-                            <li>Working on the software for the CAN bus system</li>
-                            <li>Configuring I2C for onboard communication on hyperloop pod</li>
-                            <li>Coordinated with various team members and subteams</li>
-                        </ul>
-                    </p>
-                </VerticalTimelineElement>
-                <VerticalTimelineElement
-                    date='11/2016 - 08/2018'
-                    iconStyle={{ background: 'white' }}
-                    icon={<IoIosBriefcase/>}
-                >
-                    <h3 className='title'>Math Instructor</h3>
-                    <h4 className='subtitle'>Kumon</h4>
-                    <p className='content'>
-                        <ul style={{fontSize:'18px'}}>
-                            <li>Provided feedback to students through evaluation of high level math</li>
-                            <li>Communicated to students of different skill levels to help understand math concepts</li>
-                            <li>Developed skills such as multitasking and communication skills</li>
-                        </ul>
-                    </p>
                 </VerticalTimelineElement>
             </VerticalTimeline>
         </div>
