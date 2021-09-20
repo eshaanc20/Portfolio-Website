@@ -27,7 +27,7 @@ const experience = () => {
                     <h4 className='subtitle'>Ciena</h4>
                     <p className='content'>
                         <ul style={{fontSize:'18px'}}>
-                            <li>Backend development for REST API using Java and built unit tests using Mockito for development code</li>
+                            <li>Back-end development for REST API using Java and built unit tests using Mockito for development code</li>
                             <li>Developed code using object-oriented programming in a microservice architecture</li>
                             <li>Implemented a backend feature from software requirements using agile software development and sprints</li>
                             <li>Fixed software bugs, wrote software documentation and developed code for multiple software workflows</li>
