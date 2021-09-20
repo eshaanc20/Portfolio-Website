@@ -27,6 +27,35 @@ const Projects = () => {
             <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '10px'}} data-aos="fade-up">
                 <div className='project-info'>
                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
+                        <p style={{fontSize: '26px', fontWeight: 'bold'}}>StockPlan</p>
+                    </div>
+                    <p style={{fontSize: '20px', opacity: '0.6'}}>Web Application</p>
+                    <ul style={{fontSize: '18px'}}>
+                        <li>Web application to plan portfolio by setting goals for stocks and organizing stocks</li>
+                        <li>Goals include the stock price to buy or sell a stock</li>
+                        <li>Automate the process of waiting for stocks to reach a price</li>
+                        <li>Receive notification when goals for stocks are completed</li>
+                        <li>Organize stocks into lists and view important data about each stock</li>
+                        <li>Plan portfolio and view important statistics about portfolio</li>
+                        <li>Used Angular for front-end and worked on UI design to improve user experience</li>
+                        <li>Created back-end REST API using Node.js and Express.js and used MongoDB for database</li>
+                    </ul>
+                    <div style={{textAlign: 'right', paddingRight: '5px', paddingBottom: '20px', marginTop: '20px'}}>
+                        <Button href="https://stockplanapp.firebaseapp.com" variant="contained" target='_blank' style={{backgroundColor: '#0972b8', color: 'white', fontSize: '14px'}}> 
+                            Project
+                        </Button>
+                        <Button href="https://github.com/eshaanc20/StockPlan" variant="contained" target='_blank' style={{color: 'white', backgroundColor: '#0889a3', marginLeft: '12px', fontSize: '14px'}}>
+                            Github
+                        </Button>
+                    </div>
+                </div>
+                <div style={{display: 'flex', alignItems: 'center'}}>
+                    <Project project='StockPlan' height='270px' width='400px' height2='350px' width2='200px'/>
+                </div>
+            </div>
+            <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '10px'}} data-aos="fade-up">
+                <div className='project-info'>
+                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-40px'}}>
                         <p style={{fontSize: '26px', fontWeight: 'bold'}}>Quick Alert</p>
                         <p style={{fontSize: '18px'}}>01/2020</p>
                     </div>

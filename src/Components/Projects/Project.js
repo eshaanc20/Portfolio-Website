@@ -22,6 +22,11 @@ import FitTogether3 from '../../Assets/FitTogether3.png';
 import QuickAlert1 from '../../Assets/QuickAlert1.png';
 import QuickAlert2 from '../../Assets/QuickAlert2.jpg';
 import QuickAlert3 from '../../Assets/QuickAlert3.png';
+import StockPlan1 from '../../Assets/StockPlan1.png';
+import StockPlan2 from '../../Assets/StockPlan2.png';
+import StockPlan3 from '../../Assets/StockPlan3.png';
+import StockPlan4 from '../../Assets/StockPlan4.png';
+import StockPlan5 from '../../Assets/StockPlan5.png';
 
 
 class Project extends React.Component{
@@ -39,6 +44,8 @@ class Project extends React.Component{
             this.list = [FitTogether1, FitTogether2, FitTogether3];
         } else if (props.project === 'QuickAlert') {
             this.list = [QuickAlert1, QuickAlert2, QuickAlert3];
+        } else if (props.project === 'StockPlan') {
+            this.list = [StockPlan1, StockPlan2, StockPlan3, StockPlan4, StockPlan5];
         }
     }
 
