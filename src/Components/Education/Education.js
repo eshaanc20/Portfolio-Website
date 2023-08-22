@@ -28,15 +28,15 @@ const Education = () => {
             <div style={{display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap'}} data-aos="fade-up">
                 <div style={{textAlign: 'center'}}>
                     <CircularProgressbar 
-                        value={60} 
-                        text={'Third year'} 
+                        value={80} 
+                        text={'Fifth year'} 
                         className='progress' 
                         styles={buildStyles({
                         textSize: '10px',
                         textColor: 'black',
                         pathColor: '#0977c0',
                     })}/>
-                    <p style={{fontSize:'20px',marginTop:'0px'}}>Cumulative GPA: 3.7/4.0</p>
+                    <p style={{fontSize:'20px',marginTop:'0px'}}>Cumulative GPA: 3.5/4.0</p>
                 </div>
                 <div className='education-info'>
                     <IoMdCode className='icon'/>
