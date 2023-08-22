@@ -5,7 +5,7 @@ import BuildIcon from '@material-ui/icons/Build';
 const Skills = () => {
     var skills = [
         'JavaScript', 'Python', 'C', 'Java', 'HTML', 'CSS', 'TypeScript', 'C#', 'MATLAB', 'Verilog',
-        'React', 'Node.js', 'Express.js', 'Angular', 'Keras', 'React Native', 'Flask', 'Material-UI', 'OpenCV', 'NumPy', 'TensorFlow', 'Axios',
+        'React', 'Node', 'Express.js', 'Angular', 'Keras', 'React Native', 'Flask', 'Material-UI', 'OpenCV', 'NumPy', 'TensorFlow', 'Axios',
         'MongoDB', 'JUnit', 'Pytest', 'Mongoose.js', 'Git', 'Github', 'Web REST APIs', 'npm', 'Visual Studio Code', 'I2C', 'HC-12',
         'Web development', 'Data Structures', 'Front-end development', 'Back-end development', 'Algorithms', 'Object-Oriented Programming',
     ]
