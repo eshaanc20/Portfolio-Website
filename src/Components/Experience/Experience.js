@@ -22,6 +22,15 @@ const experience = () => {
                 </div>
             </div>
             <VerticalTimeline>
+                <VerticalTimelineElement date='05/2022 - 08/2022' iconStyle={{ background: 'white' }} icon={<IoIosBriefcase/>}>
+                    <h3 className='title'>Software Engineer Intern</h3>
+                    <h4 className='subtitle'>Ciena</h4>
+                    <p className='content'>
+                        <ul style={{fontSize:'18px'}}>
+                            <li>Back-end development for REST API using Java and built unit tests for development code</li>
+                        </ul>
+                    </p>
+                </VerticalTimelineElement>
                 <VerticalTimelineElement date='05/2021 - 08/2021' iconStyle={{ background: 'white' }} icon={<IoIosBriefcase/>}>
                     <h3 className='title'>Software Engineer Intern</h3>
                     <h4 className='subtitle'>Ciena</h4>

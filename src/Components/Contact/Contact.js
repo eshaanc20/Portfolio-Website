@@ -25,11 +25,11 @@ class Contact extends React.Component {
                 <div className='contactContainer'>
                     <div className='contactInfo'>
                         <div style={{display: 'flex'}}>
-                            <EmailIcon style={{marginTop:'15px', fontSize:'28px', marginRight:'5px'}}></EmailIcon>
-                            <p id='email'>eshaanchaudhari@hotmail.com</p>
+                            <EmailIcon style={{marginTop:'15px', fontSize:'28px', marginRight:'8px'}}></EmailIcon>
+                            <p id='email'>eshaanchaudhari10@outlook.com</p>
                         </div>
                         <div style={{display: 'flex'}}>
-                            <PhoneIcon style={{marginTop:'14px', fontSize:'28px', marginRight:'5px'}}/>
+                            <PhoneIcon style={{marginTop:'14px', fontSize:'28px', marginRight:'8px'}}/>
                             <p>647-639-7482</p>
                         </div>
                     </div>
