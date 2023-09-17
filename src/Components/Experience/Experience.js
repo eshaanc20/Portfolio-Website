@@ -27,7 +27,7 @@ const experience = () => {
                     <h4 className='subtitle'>Ciena</h4>
                     <p className='content'>
                         <ul style={{fontSize:'18px'}}>
-                            <li>Back-end development for REST API using Java and built unit tests for development code</li>
+                            <li>Implemented a back-end feature for REST API using Java</li>
                         </ul>
                     </p>
                 </VerticalTimelineElement>
