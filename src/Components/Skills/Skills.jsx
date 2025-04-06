@@ -13,45 +13,46 @@ const Skills = () => {
     "TypeScript",
     "C#",
     "MATLAB",
-    "Verilog",
+    "SQL",
     "React",
     "Node",
     "Express.js",
     "Angular",
-    "Keras",
+    "Spring",
     "React Native",
     "Flask",
-    "Material-UI",
+    ".NET",
     "OpenCV",
     "NumPy",
-    "TensorFlow",
+    "PyTorch",
     "Axios",
+    "Azure",
+    "AWS",
     "MongoDB",
-    "JUnit",
-    "Pytest",
-    "Mongoose.js",
     "Git",
-    "Github",
-    "Web REST APIs",
-    "npm",
-    "Visual Studio Code",
-    "I2C",
-    "HC-12",
+    "Docker",
+    "Snyk",
+    "Redis",
+    "Kafka",
+    "Jenkins",
+    "New Relic",
+    "Devo",
     "Web development",
-    "Data Structures",
+    "Data structures",
     "Front-end development",
     "Back-end development",
-    "Algorithms",
-    "Object-Oriented Programming",
+    "Software design",
+    "OOP",
+    "Cloud",
   ];
   return (
     <div className="Skills" name="Skills" style={{ paddingTop: "60px" }}>
       <div style={{ display: "flex", height: "120px" }}>
         <BuildIcon
           style={{
-            color: "#0889a3",
-            fontSize: "50px",
-            marginTop: "30px",
+            color: "#4a00e0",
+            fontSize: "40px",
+            marginTop: "35px",
             marginRight: "14px",
           }}
         />
@@ -135,7 +136,7 @@ const Skills = () => {
               textAlign: "center",
             }}
           >
-            Software Tools
+            Tools and Platforms
           </p>
           <div
             style={{

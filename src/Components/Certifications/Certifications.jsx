@@ -9,9 +9,9 @@ const Certifications = () => {
       <div style={{ display: "flex", height: "100px" }}>
         <FaAward
           style={{
-            color: "#0889a3",
-            fontSize: "60px",
-            marginTop: "22px",
+            color: "#4a00e0",
+            fontSize: "50px",
+            marginTop: "35px",
             marginRight: "12px",
           }}
         />

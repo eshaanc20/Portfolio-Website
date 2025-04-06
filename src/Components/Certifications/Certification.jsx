@@ -36,7 +36,7 @@ const Certifications = (props) => {
           href={props.certificate}
           variant="contained"
           target="_blank"
-          style={{ backgroundColor: "#0889a3", color: "white" }}
+          style={{ backgroundColor: "#0977c0", color: "white" }}
         >
           View Certification
         </Button>

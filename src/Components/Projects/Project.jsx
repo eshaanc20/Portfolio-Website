@@ -27,6 +27,12 @@ import StockPlan2 from "../../Assets/StockPlan2.png";
 import StockPlan3 from "../../Assets/StockPlan3.png";
 import StockPlan4 from "../../Assets/StockPlan4.png";
 import StockPlan5 from "../../Assets/StockPlan5.png";
+import Capstone1 from "../../Assets/capstone1.png";
+import Capstone2 from "../../Assets/capstone2.png";
+import Capstone3 from "../../Assets/capstone3.png";
+import Capstone4 from "../../Assets/capstone4.png";
+import Capstone5 from "../../Assets/capstone5.png";
+import Capstone6 from "../../Assets/capstone6.png";
 
 class Project extends React.Component {
   constructor(props) {
@@ -45,6 +51,15 @@ class Project extends React.Component {
       this.list = [QuickAlert1, QuickAlert2, QuickAlert3];
     } else if (props.project === "StockPlan") {
       this.list = [StockPlan1, StockPlan2, StockPlan3, StockPlan4, StockPlan5];
+    } else if (props.project === "Capstone") {
+      this.list = [
+        Capstone1,
+        Capstone2,
+        Capstone3,
+        Capstone4,
+        Capstone5,
+        Capstone6,
+      ];
     }
   }
 
@@ -74,7 +89,14 @@ class Project extends React.Component {
 
   render() {
     return (
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          width: "550px",
+          justifyContent: "center",
+        }}
+      >
         <Button
           disabled={this.state.left}
           onClick={this.left.bind(this)}

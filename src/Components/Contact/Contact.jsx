@@ -13,9 +13,9 @@ class Contact extends React.Component {
         <div style={{ display: "flex", height: "100px" }}>
           <ContactMailIcon
             style={{
-              color: "#0889a3",
-              fontSize: "60px",
-              marginTop: "22px",
+              color: "#4a00e0",
+              fontSize: "50px",
+              marginTop: "32px",
               marginRight: "12px",
             }}
           />
@@ -82,7 +82,7 @@ class Contact extends React.Component {
                 style={{
                   width: "50%",
                   marginTop: "20px",
-                  backgroundColor: "#0889a3",
+                  backgroundColor: "#0977c0",
                   color: "white",
                 }}
                 onClick={this.eventHandler}

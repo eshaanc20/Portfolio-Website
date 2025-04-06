@@ -15,10 +15,15 @@ const Education = () => {
   ];
   return (
     <div className="Education" name="Education" style={{ paddingTop: "60px" }}>
-      <div style={{ display: "flex", height: "125px" }}>
+      <div
+        style={{
+          display: "flex",
+          height: "125px",
+        }}
+      >
         <SchoolIcon
           style={{
-            color: "#0889a3",
+            color: "#4a00e0",
             fontSize: "60px",
             marginTop: "25px",
             marginRight: "14px",
@@ -36,13 +41,13 @@ const Education = () => {
       >
         <div style={{ textAlign: "center" }}>
           <CircularProgressbar
-            value={80}
-            text={"Fifth year"}
+            value={100}
+            text={"Graduated"}
             className="progress"
             styles={buildStyles({
               textSize: "10px",
               textColor: "black",
-              pathColor: "#0977c0",
+              pathColor: "#2ecc71",
             })}
           />
           <p style={{ fontSize: "20px", marginTop: "0px" }}>

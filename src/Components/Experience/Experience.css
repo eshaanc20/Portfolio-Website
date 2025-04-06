@@ -1,25 +1,25 @@
-.title{
-    margin-bottom: 10px;
-    font-size: 28px;
+.title {
+  margin-bottom: 10px;
+  font-size: 28px;
 }
-.subtitle{
-    margin-top: 0px;
-    font-size: 22px;
-    font-weight: 100;
+.subtitle {
+  margin-top: 0px;
+  font-size: 22px;
+  font-weight: 100;
 }
-.timeline{
-    height: 100%;
-    background-color: inherit;
-    padding: 4px;
-    margin-left: 70px;
+.timeline {
+  height: 100%;
+  background-color: inherit;
+  padding: 4px;
+  margin-left: 70px;
 }
-.experience-title{
-    font-size: 34px;
-    font-weight: 600;
+.experience-title {
+  font-size: 34px;
+  font-weight: 600;
 }
 
 @media (max-width: 800px) {
-    .timeline{
-        margin-left: 10px;
-    }
+  .timeline {
+    margin-left: 10px;
+  }
 }

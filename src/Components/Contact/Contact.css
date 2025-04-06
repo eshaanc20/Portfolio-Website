@@ -1,94 +1,94 @@
-.contactContainer{
-    margin: auto;
+.contactContainer {
+  margin: auto;
 }
-.contactInfo{
-    border: 1px solid lightgray;
-    display: flex;
-    padding-right: 20px;
-    padding-left: 18px;
-    box-shadow: 0px 5px 5px #cccccc;
-    width: 550px;
-    margin: auto;
-    justify-content: center;
-    background-color: #0977c0;
-    color: white;
-    font-size: 18px;
+.contactInfo {
+  border: 1px solid lightgray;
+  display: flex;
+  padding-right: 20px;
+  padding-left: 18px;
+  box-shadow: 0px 5px 5px #cccccc;
+  width: 550px;
+  margin: auto;
+  justify-content: center;
+  background-color: #0977c0;
+  color: white;
+  font-size: 18px;
 }
-#email{
-    margin-right: 40px;
+#email {
+  margin-right: 40px;
 }
-.contactCard{
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    margin-top: 40px;
-    border: 1px solid lightgray;
-    background-color: white;
-    justify-content: space-evenly;
-    padding-top: 8px;
-    padding-bottom: 10px;
-    box-shadow: 0 4px 4px #cccccc;
-    height: 500px;
-    transition-duration: 0.4s;
-    width: 420px;
+.contactCard {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-top: 40px;
+  border: 1px solid lightgray;
+  background-color: white;
+  justify-content: space-evenly;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  box-shadow: 0 4px 4px #cccccc;
+  height: 500px;
+  transition-duration: 0.4s;
+  width: 420px;
 }
-.contactCard:hover{
-    box-shadow: 0 20px 20px #cccccc;
-}
-
-#contactTitle{
-    margin-bottom: 0px;
-    margin-top: 0px;
+.contactCard:hover {
+  box-shadow: 0 20px 20px #cccccc;
 }
 
-.Contact{
-    padding: 10px;
-    width: 92%;
-    margin-left: 70px;
-    max-width: 1600px;
-    margin-bottom: 40px;
+#contactTitle {
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
-.textfield1{
-    width: 328px;
+
+.Contact {
+  padding: 10px;
+  width: 92%;
+  margin-left: 70px;
+  max-width: 1600px;
+  margin-bottom: 40px;
 }
-.textfield2{
-    width: 328px;
+.textfield1 {
+  width: 328px;
 }
-.textfield3{
-    width: 328px;
+.textfield2 {
+  width: 328px;
+}
+.textfield3 {
+  width: 328px;
 }
 
 @media (max-width: 800px) {
-    .Contact{
-        margin-left: 10px;
-    }
+  .Contact {
+    margin-left: 10px;
+  }
 }
 
 @media (max-width: 500px) {
-    .Contact{
-        width: 90%;
-        margin: auto;
-    }
-    .contactInfo{
-        display: flex;
-        flex-direction: column;
-        margin: auto;
-        width: 90%;
-        padding-left: 10px;
-    }
-    .contactCard{
-        padding: 10px;
-        width: 90%;
-    }
-    .textfield1{
-        width: 85%;
-    }
-    .textfield2{
-        width: 85%;
-    }
-    .textfield3{
-        width: 85%;
-    }
+  .Contact {
+    width: 90%;
+    margin: auto;
+  }
+  .contactInfo {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 90%;
+    padding-left: 10px;
+  }
+  .contactCard {
+    padding: 10px;
+    width: 90%;
+  }
+  .textfield1 {
+    width: 85%;
+  }
+  .textfield2 {
+    width: 85%;
+  }
+  .textfield3 {
+    width: 85%;
+  }
 }

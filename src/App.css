@@ -1,16 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 .app {
-    font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-.app-content{
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    background-image: linear-gradient(to bottom right, rgb(238, 236, 236), rgb(248, 248, 248));
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    justify-content: center;
+.app-content {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(238, 236, 236),
+    rgb(248, 248, 248)
+  );
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }

@@ -9,7 +9,12 @@ import { Link } from "react-scroll";
 import Resume from "../../Assets/Eshaan_Chaudhari_Resume.pdf";
 import { Typewriter } from "react-simple-typewriter";
 
-AOS.init();
+AOS.init({
+  duration: 1000,
+  delay: 100,
+  mirror: false,
+  once: true,
+});
 
 const Homepage = () => {
   return (
@@ -85,7 +90,7 @@ const Homepage = () => {
             </Button>
           </div>
         </div>
-        <div className="homepage-photo">
+        <div className="homepage-photo" data-aos="fade-up">
           <div className="profile-circle">
             <img className="profile" alt="" src={ProfilePicture} />
           </div>

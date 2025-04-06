@@ -5,12 +5,21 @@ import Project from "./Project.jsx";
 import "./Projects.css";
 import { IoLogoJavascript, IoLogoCss3 } from "react-icons/io";
 import {
+  SiJupyter,
+  SiNumpy,
+  SiPytorch,
+  SiTeamcity,
+  SiTypescript,
+} from "react-icons/si";
+import {
   FaReact,
   FaHtml5,
   FaPython,
   FaGitSquare,
   FaNpm,
   FaNodeJs,
+  FaAngular,
+  FaJsSquare,
 } from "react-icons/fa";
 import { DiHeroku } from "react-icons/di";
 import MongoDBIcon from "../../Assets/MongoDB-icon.png";
@@ -21,9 +30,9 @@ const Projects = () => {
       <div style={{ display: "flex", height: "100px" }}>
         <CreateIcon
           style={{
-            color: "#0889a3",
-            fontSize: "60px",
-            marginTop: "22px",
+            color: "#4a00e0",
+            fontSize: "50px",
+            marginTop: "30px",
             marginRight: "12px",
           }}
         />
@@ -32,7 +41,131 @@ const Projects = () => {
         </div>
       </div>
       <div
-        style={{ display: "flex", flexWrap: "wrap", marginTop: "10px" }}
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          marginTop: "10px",
+          paddingRight: "50px",
+          justifyContent: "space-evenly",
+        }}
+        data-aos="fade-up"
+      >
+        <div className="project-info">
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: "-40px",
+            }}
+          >
+            <p style={{ fontSize: "26px", fontWeight: "bold" }}>GazeTracker</p>
+          </div>
+          <p style={{ fontSize: "20px", opacity: "0.6" }}>Capstone Project</p>
+          <ul style={{ fontSize: "18px" }}>
+            <li>
+              Collaborated with psychology researchers to develop a
+              browser-based gaze estimation plugin using JavaScript and jsPsych
+              for remote psychology experiments.
+            </li>
+            <li>
+              Designed a real-time pipeline that combines face detection, neural
+              gaze estimation (pitch/yaw), and user-specific calibration to
+              predict on-screen gaze coordinates at 30 FPS.
+            </li>
+            <li>
+              Trained lightweight CNN models (EfficientNet, MobileNet) in
+              PyTorch on custom eye-tracking datasets; optimized architectures
+              and hyperparameters using Weights & Biases.
+            </li>
+            <li>
+              Converted trained PyTorch models to ONNX for fast, browser-based
+              inference using ONNX Runtime Web.
+            </li>
+            <li>
+              Developed a runtime calibration UI to collect user gaze data and
+              train a local regression model for personalized screen mapping.
+            </li>
+            <li>
+              Built a data preprocessing pipeline with Python, NumPy, and
+              Jupyter to normalize and merge multiple datasets into a unified
+              training format.
+            </li>
+            <li>
+              Integrated Google’s face landmark detection to isolate facial
+              regions and minimize background noise before inference.
+            </li>
+            <li>
+              Achieved ~3° angular accuracy with fully on-device processing,
+              ensuring real-time performance and preserving user privacy by
+              avoiding video uploads.
+            </li>
+            <li>
+              Enabled researchers to run eye-tracking experiments remotely
+              without expensive hardware, making data collection more accessible
+              and scalable.
+            </li>
+          </ul>
+          <p>Note: GitHub repository owned by research lab</p>
+          <div
+            style={{
+              fontSize: "40px",
+              display: "flex",
+              maxWidth: "450px",
+              flexWrap: "wrap",
+              justifyContent: "space-between",
+              gap: "10px",
+            }}
+          >
+            <IoLogoJavascript style={{ color: "#f0cf13" }} />
+            <SiPytorch style={{ color: "#ee4c2c" }} />
+            <FaPython style={{ color: "#3776AB" }} />
+            <SiJupyter style={{ color: "#f37726" }} />
+            <SiNumpy style={{ color: "#013243" }} />
+            <IoLogoCss3 style={{ color: "#0f99f5" }} />
+            <FaHtml5 style={{ color: "#f54c0f" }} />
+          </div>
+          <div
+            style={{
+              textAlign: "right",
+              paddingRight: "5px",
+              paddingBottom: "20px",
+              marginTop: "20px",
+            }}
+          >
+            <Button
+              href="https://d8b60923.gazetracker-demo.pages.dev/"
+              variant="contained"
+              target="_blank"
+              style={{
+                backgroundColor: "#0972b8",
+                color: "white",
+                fontSize: "14px",
+              }}
+            >
+              Try Demo
+            </Button>
+          </div>
+        </div>
+
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <Project
+            project="Capstone"
+            height="270px"
+            width="400px"
+            height2="350px"
+            width2="200px"
+          />
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          marginTop: "10px",
+          paddingRight: "50px",
+          justifyContent: "space-evenly",
+        }}
         data-aos="fade-up"
       >
         <div className="project-info">
@@ -71,6 +204,28 @@ const Projects = () => {
               MongoDB for database
             </li>
           </ul>
+          <div
+            style={{
+              fontSize: "40px",
+              display: "flex",
+              maxWidth: "600px",
+              flexWrap: "wrap",
+              justifyContent: "space-between",
+            }}
+          >
+            <FaAngular style={{ color: "#dd0031" }} />
+            <FaNodeJs style={{ color: "green" }} />
+            <SiTypescript style={{ color: "#3178c6" }} />
+            <FaHtml5 style={{ color: "#f54c0f" }} />
+            <IoLogoCss3 style={{ color: "#0f99f5" }} />
+            <FaNpm style={{ color: "#ff524f" }} />
+            <FaGitSquare />
+            <img
+              src={MongoDBIcon}
+              style={{ height: "40px", width: "100px" }}
+              alt=""
+            />
+          </div>
           <div
             style={{
               textAlign: "right",
@@ -117,7 +272,13 @@ const Projects = () => {
         </div>
       </div>
       <div
-        style={{ display: "flex", flexWrap: "wrap", marginTop: "10px" }}
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          marginTop: "10px",
+          justifyContent: "space-evenly",
+          paddingRight: "50px",
+        }}
         data-aos="fade-up"
       >
         <div className="project-info">
@@ -221,7 +382,13 @@ const Projects = () => {
         </div>
       </div>
       <div
-        style={{ display: "flex", flexWrap: "wrap", marginTop: "60px" }}
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          marginTop: "60px",
+          justifyContent: "space-evenly",
+          paddingRight: "50px",
+        }}
         data-aos="fade-up"
       >
         <div className="project-info">
@@ -316,7 +483,13 @@ const Projects = () => {
         </div>
       </div>
       <div
-        style={{ display: "flex", flexWrap: "wrap", marginTop: "60px" }}
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          marginTop: "60px",
+          justifyContent: "space-evenly",
+          paddingRight: "50px",
+        }}
         data-aos="fade-up"
       >
         <div className="project-info">
@@ -391,7 +564,13 @@ const Projects = () => {
         </div>
       </div>
       <div
-        style={{ display: "flex", flexWrap: "wrap", marginTop: "60px" }}
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          marginTop: "60px",
+          justifyContent: "space-evenly",
+          paddingRight: "50px",
+        }}
         data-aos="fade-up"
       >
         <div className="project-info">
@@ -450,7 +629,13 @@ const Projects = () => {
         </div>
       </div>
       <div
-        style={{ display: "flex", flexWrap: "wrap", marginTop: "60px" }}
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          marginTop: "60px",
+          justifyContent: "space-evenly",
+          paddingRight: "50px",
+        }}
         data-aos="fade-up"
       >
         <div className="project-info">
@@ -524,7 +709,13 @@ const Projects = () => {
         </div>
       </div>
       <div
-        style={{ display: "flex", flexWrap: "wrap", marginTop: "60px" }}
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          marginTop: "60px",
+          justifyContent: "space-evenly",
+          paddingRight: "50px",
+        }}
         data-aos="fade-up"
       >
         <div className="project-info">
