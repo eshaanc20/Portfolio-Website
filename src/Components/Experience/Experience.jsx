@@ -36,7 +36,7 @@ const experience = () => {
       </div>
       <VerticalTimeline>
         <VerticalTimelineElement
-          date="09/2020 - 04/2021"
+          date="06/2024 - Present"
           iconStyle={{ background: "white" }}
           icon={<IoIosBriefcase />}
         >
