@@ -1,12 +1,13 @@
 import React from "react";
 import "./Homepage.css";
-import ProfilePicture from "../../Assets/profilePicture.jpg";
+import ProfilePicture from "../../Assets/profilePicture.jpeg";
 import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io";
 import Button from "@mui/material/Button";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-scroll";
 import Resume from "../../Assets/Eshaan_Chaudhari_Resume.pdf";
+import { Typewriter } from "react-simple-typewriter";
 
 AOS.init();
 
@@ -16,8 +17,24 @@ const Homepage = () => {
       <div className="homepage-title">
         <div className="homepage-content" data-aos="fade-up">
           <p className="name">Eshaan Chaudhari</p>
-          <p className="p1">Software Engineering and Management Student</p>
-          <p className="p1">McMaster University</p>
+          <div className="p1">
+            <Typewriter
+              words={[
+                "Software Engineer",
+                "Full-Stack Engineer at Manulife",
+                "McMaster Engineering Graduate",
+                "Software Engineering & Management",
+                "Always Building, Always Learning",
+                "Creative Problem Solver",
+              ]}
+              loop={true}
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1500}
+            />
+          </div>
           <div className="more-info">
             <a
               className="connect"
@@ -26,7 +43,7 @@ const Homepage = () => {
               <IoLogoLinkedin />
             </a>
             <a className="connect" href="https://github.com/eshaanc20">
-              <IoLogoGithub className="connect" />
+              <IoLogoGithub />
             </a>
           </div>
           <div className="buttons">
@@ -34,9 +51,14 @@ const Homepage = () => {
               variant="contained"
               className="resume-button"
               style={{
-                backgroundColor: "#1088a0",
+                backgroundColor: "rgba(255, 255, 255, 0.15)",
                 color: "white",
                 fontSize: "20px",
+                borderRadius: "30px",
+                paddingTop: "10px",
+                paddingLeft: "20px",
+                paddingBottom: "10px",
+                paddingRight: "20px",
               }}
               href={Resume}
               target="_blank"
@@ -46,9 +68,14 @@ const Homepage = () => {
             <Button
               variant="contained"
               style={{
-                backgroundColor: "#1088a0",
+                backgroundColor: "rgba(255, 255, 255, 0.15)",
                 color: "white",
                 fontSize: "20px",
+                borderRadius: "30px",
+                paddingTop: "10px",
+                paddingLeft: "20px",
+                paddingBottom: "10px",
+                paddingRight: "20px",
               }}
               className="info-button"
             >
@@ -59,7 +86,9 @@ const Homepage = () => {
           </div>
         </div>
         <div className="homepage-photo">
-          <img className="profile" alt="" src={ProfilePicture} />
+          <div className="profile-circle">
+            <img className="profile" alt="" src={ProfilePicture} />
+          </div>
         </div>
       </div>
     </div>
