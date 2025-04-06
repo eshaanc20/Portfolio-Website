@@ -1,4 +1,5 @@
 # My Portfolio Website
 
-View my website at [https://eshaanchaudhari.com](https://eshaanchaudhari.com) <br> <br>
-This is my portfolio website to show my projects and experiences. I created the website using React with Material-UI.
+View my website at [https://eshaanchaudhari.com](https://eshaanchaudhari.com)
+
+This is my personal portfolio website showcasing my projects, experiences, and skills.
