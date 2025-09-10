@@ -17,7 +17,7 @@
     "react-scroll": "^1.9.3",
     "react-simple-typewriter": "^5.0.1",
     "react-vertical-timeline-component": "^3.5.3",
-    "vite": "^6.2.5"
+    "vite": "^6.3.6"
   },
   "scripts": {
     "start": "vite",
