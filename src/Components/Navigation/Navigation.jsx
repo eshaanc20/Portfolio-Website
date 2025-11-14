@@ -25,30 +25,49 @@ const navItems = [
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
+    let scrollTimeout;
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      // Detect active scrolling for performance optimization
+      setIsScrolling(true);
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        setIsScrolling(false);
+      }, 150);
     };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(scrollTimeout);
+    };
   }, []);
 
   const handleMobileSelect = (value) => {
     if (!value) return;
-    scroller.scrollTo(value, {
-      smooth: true,
-      offset: -80,
-      duration: 600,
-    });
+
+    // Close menu immediately for better UX
     setMobileMenuOpen(false);
+
+    // Use shorter duration on mobile for snappier feel
+    setTimeout(() => {
+      scroller.scrollTo(value, {
+        smooth: true,
+        offset: -80,
+        duration: 400,
+      });
+    }, 50);
   };
 
   return (
     <>
-      <nav className={`stellar-nav ${isScrolled ? "stellar-nav--scrolled" : ""}`}>
+      <nav className={`stellar-nav ${isScrolled ? "stellar-nav--scrolled" : ""} ${isScrolling ? "stellar-nav--scrolling" : ""}`}>
         <div className="stellar-nav__aura"></div>
         <div className="stellar-nav__orbs">
           <span className="orb orb--one"></span>

@@ -10,6 +10,8 @@
   width: 100%;
   max-width: 100vw;
   box-sizing: border-box;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .stellar-nav__aura {
@@ -317,6 +319,8 @@
   gap: 12px;
   backdrop-filter: blur(16px);
   z-index: 1500;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .mobile-dropdown--open {
@@ -377,4 +381,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Performance optimization for mobile devices */
+@media (width <= 640px) {
+  .stellar-nav__aura {
+    backdrop-filter: blur(8px);
+  }
+
+  .mobile-dropdown {
+    backdrop-filter: blur(8px);
+  }
+
+  /* Disable heavy effects during active scrolling for smooth performance */
+  .stellar-nav--scrolling .stellar-nav__aura {
+    backdrop-filter: none;
+    transition: none;
+  }
+
+  .stellar-nav--scrolling .stellar-nav__inner {
+    transition: none;
+  }
 }
