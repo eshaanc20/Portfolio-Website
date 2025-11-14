@@ -51,7 +51,7 @@ const certificationsData = [
     organization: "Udemy",
     date: "January 2020",
     image: Course4,
-    certificateUrl: "http://ude.my/UC-J691493I",
+    certificateUrl: "https://ude.my/UC-J691493I",
     icon: <SiUdemy />,
     skills: ["React", "Redux", "React Router", "Hooks"],
     focus: "Frontend Architecture",

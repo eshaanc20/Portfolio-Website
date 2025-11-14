@@ -162,6 +162,32 @@
   }
 }
 
+@keyframes projectsAuroraMobile {
+  0% {
+    transform: translate3d(-8%, -10%, 0) scale(0.95);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translate3d(10%, 8%, 0) scale(1.05);
+    opacity: 0.45;
+  }
+  100% {
+    transform: translate3d(-6%, 12%, 0) scale(0.9);
+    opacity: 0.25;
+  }
+}
+
+@keyframes projectsSparkleMobile {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-6px) scale(1.15);
+    opacity: 0.75;
+  }
+}
+
 /* Section Header */
 .projects-header {
   text-align: center;
@@ -322,6 +348,34 @@
   font-size: 16px;
   color: rgba(255, 255, 255, 0.5);
   margin: 0;
+}
+
+.project-meta-row {
+  display: none;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.project-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.chip-type {
+  color: #f5f3ff;
+}
+
+.chip-category {
+  color: #c4b5fd;
 }
 
 .project-date {
@@ -638,6 +692,119 @@
   }
 }
 
+@media (max-width: 768px) {
+  .Projects {
+    padding: 55px 18px 60px;
+    background:
+      radial-gradient(circle at 15% -5%, rgba(236, 72, 153, 0.35), transparent 60%),
+      radial-gradient(circle at 90% 0%, rgba(59, 130, 246, 0.35), transparent 65%),
+      linear-gradient(200deg, #04000f 0%, #06001c 55%, #020008 100%);
+  }
+
+  .Projects::before {
+    inset: -18% -18%;
+    filter: blur(60px);
+    opacity: 0.45;
+    animation: projectsAuroraMobile 22s ease-in-out infinite;
+  }
+
+  .Projects::after {
+    opacity: 0.15;
+    filter: blur(45px);
+    animation: projectsSparkleMobile 18s ease-in-out infinite;
+  }
+
+  .projects-bg-shapes .bg-shape {
+    opacity: 0.25;
+    filter: blur(60px);
+    animation-duration: 18s;
+  }
+
+  .projects-shape {
+    opacity: 0.2;
+    width: 220px;
+    height: 220px;
+  }
+
+  .projects-header {
+    margin-bottom: 40px;
+  }
+
+  .projects-title {
+    font-size: 34px;
+    margin-bottom: 6px;
+  }
+
+  .projects-subtitle {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .project-card.glass-card {
+    padding: 20px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 10px 25px rgba(0, 0, 0, 0.45),
+      0 0 20px rgba(99, 102, 241, 0.15);
+    gap: 16px;
+  }
+
+  .project-header-top {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .project-description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .project-highlights ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+  }
+
+  .project-highlights li {
+    margin-bottom: 0;
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .project-tech .tech-stack-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(46px, 1fr));
+    gap: 10px;
+    justify-items: center;
+  }
+
+  .project-tech .tech-icon-wrapper {
+    width: 46px;
+    height: 46px;
+  }
+
+  .project-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .project-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .project-note {
+    font-size: 12px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+}
+
 @media (max-width: 600px) {
   .Projects {
     padding: 50px 16px 60px;
@@ -693,6 +860,20 @@
     gap: 12px;
   }
 
+  .project-tech .tech-stack-icons {
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+
+  .project-tech .tech-stack-icons::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .project-tech .tech-stack-icons::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+  }
+
   .tech-icon-wrapper {
     width: 40px;
     height: 40px;
@@ -711,6 +892,15 @@
   .projects-bg-shapes .bg-shape {
     width: 300px !important;
     height: 300px !important;
+  }
+
+  .project-meta-row {
+    display: flex;
+  }
+
+  .project-type-badge,
+  .project-category {
+    display: none;
   }
 }
 

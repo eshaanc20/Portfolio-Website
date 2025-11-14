@@ -175,6 +175,32 @@
   }
 }
 
+@keyframes mobileAurora {
+  0% {
+    transform: translate3d(-10%, -5%, 0) scale(0.95);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translate3d(8%, 6%, 0) scale(1.05);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate3d(-6%, 10%, 0) scale(0.9);
+    opacity: 0.25;
+  }
+}
+
+@keyframes mobileSpark {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-6px) scale(1.1);
+    opacity: 0.6;
+  }
+}
+
 /* ========== SECTION HEADER ========== */
 .education-header {
   text-align: center;
@@ -667,11 +693,28 @@
 
 @media (max-width: 768px) {
   .education-section {
-    padding: 100px 24px 60px 24px;
+    padding: 90px 20px 50px 20px;
+    background:
+      radial-gradient(circle at 20% -10%, rgba(139, 92, 246, 0.4), transparent 55%),
+      radial-gradient(circle at 80% 0%, rgba(236, 72, 153, 0.35), transparent 60%),
+      linear-gradient(180deg, #050014 0%, #0c0422 60%, #04000b 100%);
+  }
+
+  .education-section::before {
+    inset: -20% -20%;
+    filter: blur(60px);
+    opacity: 0.4;
+    animation: mobileAurora 22s ease-in-out infinite;
+  }
+
+  .education-section::after {
+    opacity: 0.25;
+    filter: blur(40px);
   }
 
   .education-timeline {
     padding-left: 0;
+    margin-top: 20px;
   }
 
   .timeline-line {
@@ -683,15 +726,23 @@
   }
 
   .glass-card-edu {
-    padding: 28px 24px;
+    padding: 24px 18px;
+    border-radius: 20px;
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.55),
+      0 0 25px rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 20px;
   }
 
   .education-main-title {
     font-size: 36px;
+    margin-bottom: 4px;
   }
 
   .education-subtitle {
     font-size: 16px;
+    color: rgba(255, 255, 255, 0.75);
   }
 
   .edu-card-header {
@@ -733,17 +784,67 @@
   .degree-section {
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px;
+    padding: 18px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    gap: 14px;
+  }
+
+  .degree-details {
+    width: 100%;
+  }
+
+  .gpa-section {
+    margin-top: 6px;
+  }
+
+  .gpa-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .courses-section {
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .course-tag {
+    padding: 14px 12px;
+    border-radius: 14px;
+  }
+
+  .education-orb,
+  .education-shape {
+    opacity: 0.3;
+  }
+
+  .education-section .education-orb {
+    animation-duration: 18s;
+  }
+
+  .education-section::after {
+    animation-duration: 16s;
   }
 }
 
 @media (max-width: 480px) {
   .education-section {
-    padding: 90px 20px 50px 20px;
+    padding: 80px 16px 44px 16px;
+    background:
+      radial-gradient(circle at 15% -5%, rgba(236, 72, 153, 0.45), transparent 65%),
+      linear-gradient(200deg, #08001a 0%, #050012 60%, #030008 100%);
   }
 
   .glass-card-edu {
-    padding: 24px 20px;
+    padding: 20px 16px;
   }
 
   .education-main-title {
@@ -768,11 +869,25 @@
   }
 
   .course-tag {
-    padding: 14px 16px;
+    padding: 12px 12px;
   }
 
   .course-name {
     font-size: 13px;
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .gpa-card {
+    padding: 14px;
+  }
+
+  .education-orb,
+  .education-shape {
+    opacity: 0.2;
   }
 }
 .education-section .edu-orb-6 {

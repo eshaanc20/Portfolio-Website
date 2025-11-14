@@ -3,6 +3,9 @@
   padding: clamp(60px, 7vw, 130px) clamp(20px, 6vw, 120px);
   color: #f8f7ff;
   overflow: hidden;
+  background: radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.25), transparent 50%),
+    radial-gradient(circle at 80% 10%, rgba(59, 130, 246, 0.2), transparent 50%),
+    linear-gradient(185deg, #02000d 0%, #090224 45%, #03000c 100%);
 }
 
 .contact-section::before {
@@ -445,20 +448,97 @@
 }
 
 @media (max-width: 640px) {
+  .contact-section {
+    padding: 55px 16px 50px;
+    background:
+      radial-gradient(circle at 10% -5%, rgba(139, 92, 246, 0.4), transparent 55%),
+      radial-gradient(circle at 85% 0%, rgba(236, 72, 153, 0.35), transparent 60%),
+      linear-gradient(200deg, #010009 0%, #050013 65%, #020009 100%);
+  }
+
+  .contact-bg-shapes .contact-shape {
+    opacity: 0.3;
+  }
+
+  .contact-inner {
+    gap: 28px;
+  }
+
+  .contact-header {
+    margin-bottom: 10px;
+  }
+
+  .contact-title {
+    font-size: 30px;
+  }
+
+  .contact-subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
   .contact-panel {
-    padding: 20px;
+    padding: 18px;
+    border-radius: 20px;
   }
 
   .contact-card {
-    padding: 18px;
+    padding: 16px;
+    border-radius: 18px;
   }
 
   .contact-method {
     flex-direction: column;
     align-items: flex-start;
+    gap: 6px;
+  }
+
+  .method-label {
+    font-size: 12px;
+  }
+
+  .method-value {
+    font-size: 16px;
+  }
+
+  .method-caption {
+    font-size: 12px;
+  }
+
+  .contact-card--meta ul {
+    padding-left: 16px;
+  }
+
+  .response-stats {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .response-chip {
+    width: calc(50% - 8px);
+  }
+
+  .contact-form {
+    gap: 12px;
   }
 
   .form-row {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .contact-submit {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .contact-icon-wrapper {
+    width: 64px;
+    height: 64px;
   }
 }

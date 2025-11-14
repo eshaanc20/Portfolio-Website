@@ -636,11 +636,29 @@
 
 @media (max-width: 768px) {
   .experience-section {
-    padding: 80px 24px 60px 24px;
+    padding: 70px 18px 50px 18px;
+    background:
+      radial-gradient(circle at 15% -5%, rgba(236, 72, 153, 0.35), transparent 60%),
+      radial-gradient(circle at 90% 0%, rgba(59, 130, 246, 0.35), transparent 65%),
+      linear-gradient(200deg, #040010 0%, #080022 55%, #050014 100%);
+  }
+
+  .experience-section::before {
+    inset: -20% -20%;
+    filter: blur(60px);
+    opacity: 0.45;
+    animation: expAuroraMobile 24s ease-in-out infinite;
+  }
+
+  .experience-section::after {
+    opacity: 0.2;
+    filter: blur(50px);
+    animation: expSparkleMobile 18s ease-in-out infinite;
   }
 
   .experience-timeline {
     padding-left: 0;
+    gap: 18px;
   }
 
   .timeline-line-exp {
@@ -649,6 +667,8 @@
 
   .experience-item {
     margin-left: 0;
+    margin-bottom: 20px;
+    padding-left: 0;
   }
 
   .timeline-dot {
@@ -656,20 +676,29 @@
   }
 
   .glass-card-exp {
-    padding: 24px;
+    padding: 20px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.45),
+      0 0 25px rgba(139, 92, 246, 0.15);
+    gap: 16px;
   }
 
   .experience-main-title {
-    font-size: 36px;
+    font-size: 34px;
+    margin-bottom: 6px;
   }
 
   .experience-subtitle {
-    font-size: 16px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.75);
   }
 
   .exp-card-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
   }
 
   .exp-header-left {
@@ -691,29 +720,46 @@
   .exp-meta-info {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 10px;
+  }
+
+  .exp-description li {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
   }
 
   .tech-list {
     gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
 
   .tech-item {
-    padding: 7px 12px;
+    padding: 7px 10px;
+    justify-content: center;
+  }
+
+  .experience-section .experience-orb,
+  .experience-shape {
+    opacity: 0.3;
   }
 }
 
 @media (max-width: 480px) {
   .experience-section {
-    padding: 70px 20px 50px 20px;
+    padding: 58px 14px 38px 14px;
+    background:
+      radial-gradient(circle at 10% -5%, rgba(236, 72, 153, 0.4), transparent 65%),
+      linear-gradient(210deg, #03000c 0%, #06001a 65%, #020009 100%);
   }
 
   .glass-card-exp {
-    padding: 20px;
+    padding: 16px 14px;
   }
 
   .experience-main-title {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .exp-header-icon-wrapper {
@@ -735,7 +781,7 @@
   }
 
   .exp-job-title {
-    font-size: 20px;
+    font-size: 19px;
   }
 
   .exp-company {
@@ -743,7 +789,7 @@
   }
 
   .exp-description li {
-    font-size: 14px;
+    font-size: 12.5px;
   }
 
   .tech-icon-wrapper {
@@ -752,6 +798,16 @@
 
   .tech-name {
     font-size: 12px;
+  }
+
+  .tech-list {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    gap: 6px;
+  }
+
+  .experience-section .experience-orb,
+  .experience-shape {
+    opacity: 0.22;
   }
 }
 .experience-shape {

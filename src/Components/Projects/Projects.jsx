@@ -315,9 +315,13 @@ const Projects = () => {
             <div className="project-header">
               <div className="project-header-top">
                 <div>
-                  <div className="project-type-badge">{project.type}</div>
                   <h3 className="project-title">{project.title}</h3>
+                  <div className="project-type-badge">{project.type}</div>
                   <p className="project-category">{project.category}</p>
+                  <div className="project-meta-row">
+                    <span className="project-chip chip-type">{project.type}</span>
+                    <span className="project-chip chip-category">{project.category}</span>
+                  </div>
                 </div>
                 {project.date && (
                   <span className="project-date">{project.date}</span>
