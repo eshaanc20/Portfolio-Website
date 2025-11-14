@@ -171,7 +171,7 @@ const Homepage = () => {
               <Typewriter
                 words={[
                   "Software Engineer",
-                  "3+ years building and shipping software",
+                  "3+ years of work experience building and shipping software",
                   "Full-Stack Engineer at Manulife",
                   "McMaster Engineering Graduate",
                   "Software Engineering & Management",

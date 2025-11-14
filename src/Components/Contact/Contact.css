@@ -3,8 +3,8 @@
   padding: clamp(60px, 7vw, 130px) clamp(20px, 6vw, 120px);
   color: #f8f7ff;
   overflow: hidden;
-  background: radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.25), transparent 50%),
-    radial-gradient(circle at 80% 10%, rgba(59, 130, 246, 0.2), transparent 50%),
+  background: radial-gradient(circle at 20% 20%, rgb(139 92 246 / 25%), transparent 50%),
+    radial-gradient(circle at 80% 10%, rgb(59 130 246 / 20%), transparent 50%),
     linear-gradient(185deg, #02000d 0%, #090224 45%, #03000c 100%);
 }
 
@@ -12,8 +12,8 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.25), transparent 50%),
-    radial-gradient(circle at 80% 10%, rgba(59, 130, 246, 0.2), transparent 50%);
+  background: radial-gradient(circle at 20% 20%, rgb(139 92 246 / 25%), transparent 50%),
+    radial-gradient(circle at 80% 10%, rgb(59 130 246 / 20%), transparent 50%);
   opacity: 0.8;
   pointer-events: none;
 }
@@ -35,7 +35,7 @@
 .contact-shape.shape-1 {
   width: 420px;
   height: 420px;
-  background: rgba(139, 92, 246, 0.4);
+  background: rgb(139 92 246 / 40%);
   top: 5%;
   left: 0;
 }
@@ -43,7 +43,7 @@
 .contact-shape.shape-2 {
   width: 320px;
   height: 320px;
-  background: rgba(59, 130, 246, 0.35);
+  background: rgb(59 130 246 / 35%);
   bottom: 10%;
   right: 5%;
   animation-delay: 4s;
@@ -52,7 +52,7 @@
 .contact-shape.shape-3 {
   width: 260px;
   height: 260px;
-  background: rgba(236, 72, 153, 0.25);
+  background: rgb(236 72 153 / 25%);
   top: 40%;
   left: 60%;
   animation-delay: 8s;
@@ -63,6 +63,7 @@
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -95,8 +96,8 @@
   width: 80px;
   height: 80px;
   border-radius: 20px;
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(168, 85, 247, 0.1));
-  border: 1px solid rgba(139, 92, 246, 0.3);
+  background: linear-gradient(135deg, rgb(139 92 246 / 20%), rgb(168 85 247 / 10%));
+  border: 1px solid rgb(139 92 246 / 30%);
   position: relative;
   margin: 0 auto 20px;
   animation: pulse-icon 3s ease-in-out infinite;
@@ -115,7 +116,7 @@
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.4), transparent 70%);
+  background: radial-gradient(circle, rgb(168 85 247 / 40%), transparent 70%);
   border-radius: 20px;
   filter: blur(20px);
   animation: pulse-glow 3s ease-in-out infinite;
@@ -126,6 +127,7 @@
   100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.04);
   }
@@ -136,6 +138,7 @@
   100% {
     opacity: 0.3;
   }
+
   50% {
     opacity: 0.7;
   }
@@ -145,7 +148,6 @@
   font-size: clamp(32px, 4.5vw, 48px);
   font-weight: 700;
   background: linear-gradient(135deg, #a855f7, #e879f9, #c084fc);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin: 0 0 12px;
@@ -153,7 +155,7 @@
 
 .contact-subtitle {
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255 255 255 / 70%);
   line-height: 1.6;
   margin: 0 auto;
 }
@@ -161,7 +163,7 @@
 .header-line {
   width: 200px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.8), transparent);
+  background: linear-gradient(90deg, transparent, rgb(168 85 247 / 80%), transparent);
   margin: 30px auto 0;
   position: relative;
   overflow: hidden;
@@ -173,7 +175,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 80%), transparent);
   animation: line-sweep 3s ease-in-out infinite;
 }
 
@@ -181,6 +183,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(200%);
   }
@@ -194,12 +197,12 @@
 }
 
 .contact-panel {
-  background: rgba(15, 7, 27, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgb(15 7 27 / 70%);
+  border: 1px solid rgb(255 255 255 / 8%);
   border-radius: 28px;
   padding: clamp(24px, 3vw, 36px);
   backdrop-filter: blur(20px);
-  box-shadow: 0 20px 40px rgba(5, 0, 31, 0.35);
+  box-shadow: 0 20px 40px rgb(5 0 31 / 35%);
   position: relative;
   overflow: hidden;
 }
@@ -208,7 +211,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.05), transparent 60%);
+  background: linear-gradient(120deg, rgb(255 255 255 / 5%), transparent 60%);
   pointer-events: none;
 }
 
@@ -222,8 +225,8 @@
   position: relative;
   padding: 24px;
   border-radius: 24px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgb(255 255 255 / 4%);
+  border: 1px solid rgb(255 255 255 / 8%);
 }
 
 .contact-card--primary h3,
@@ -236,7 +239,7 @@
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgb(255 255 255 / 60%);
 }
 
 .contact-methods {
@@ -250,8 +253,8 @@
   gap: 14px;
   padding: 18px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgb(255 255 255 / 3%);
+  border: 1px solid rgb(255 255 255 / 8%);
   text-decoration: none;
   color: inherit;
   transition: transform 0.25s ease, border 0.25s ease;
@@ -259,14 +262,14 @@
 
 .contact-method:hover {
   transform: translateY(-4px);
-  border-color: rgba(168, 85, 247, 0.6);
+  border-color: rgb(168 85 247 / 60%);
 }
 
 .method-icon {
   width: 46px;
   height: 46px;
   border-radius: 16px;
-  background: rgba(139, 92, 246, 0.15);
+  background: rgb(139 92 246 / 15%);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -278,7 +281,7 @@
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgb(255 255 255 / 60%);
   margin: 0;
 }
 
@@ -290,7 +293,7 @@
 
 .method-caption {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255 255 255 / 70%);
   margin: 0;
 }
 
@@ -304,7 +307,7 @@
   width: 50px;
   height: 50px;
   border-radius: 16px;
-  background: rgba(59, 130, 246, 0.15);
+  background: rgb(59 130 246 / 15%);
   color: #7fd3ff;
   display: inline-flex;
   align-items: center;
@@ -315,7 +318,7 @@
 .availability ul {
   padding-left: 20px;
   margin: 8px 0 0;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255 255 255 / 70%);
   line-height: 1.5;
   font-size: 14px;
 }
@@ -332,15 +335,15 @@
   min-width: 120px;
   padding: 12px 14px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgb(255 255 255 / 3%);
+  border: 1px solid rgb(255 255 255 / 6%);
 }
 
 .response-chip span {
   display: block;
   font-size: 12px;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgb(255 255 255 / 60%);
 }
 
 .response-chip strong {
@@ -355,16 +358,16 @@
   gap: 10px;
   padding: 12px 18px;
   border-radius: 999px;
-  background: rgba(24, 119, 242, 0.12);
+  background: rgb(24 119 242 / 12%);
   color: #7fb6ff;
   text-decoration: none;
   font-weight: 600;
-  border: 1px solid rgba(24, 119, 242, 0.35);
+  border: 1px solid rgb(24 119 242 / 35%);
   transition: background 0.3s ease;
 }
 
 .contact-social:hover {
-  background: rgba(24, 119, 242, 0.2);
+  background: rgb(24 119 242 / 20%);
 }
 
 .contact-panel--form h3 {
@@ -389,7 +392,7 @@
   flex-direction: column;
   gap: 8px;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255 255 255 / 70%);
 }
 
 .form-field span {
@@ -400,10 +403,10 @@
 
 .form-field input,
 .form-field textarea {
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgb(255 255 255 / 15%);
   border-radius: 16px;
   padding: 14px 16px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgb(255 255 255 / 3%);
   color: #fff;
   font-size: 15px;
   font-family: inherit;
@@ -413,8 +416,8 @@
 .form-field input:focus,
 .form-field textarea:focus {
   outline: none;
-  border-color: rgba(168, 85, 247, 0.6);
-  background: rgba(168, 85, 247, 0.08);
+  border-color: rgb(168 85 247 / 60%);
+  background: rgb(168 85 247 / 8%);
 }
 
 .contact-submit {
@@ -437,22 +440,22 @@
 
 .contact-submit:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(236, 72, 153, 0.3);
+  box-shadow: 0 15px 30px rgb(236 72 153 / 30%);
 }
 
 .form-footnote {
   margin-top: 16px;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgb(255 255 255 / 60%);
   line-height: 1.5;
 }
 
-@media (max-width: 640px) {
+@media (width <= 640px) {
   .contact-section {
     padding: 55px 16px 50px;
     background:
-      radial-gradient(circle at 10% -5%, rgba(139, 92, 246, 0.4), transparent 55%),
-      radial-gradient(circle at 85% 0%, rgba(236, 72, 153, 0.35), transparent 60%),
+      radial-gradient(circle at 10% -5%, rgb(139 92 246 / 40%), transparent 55%),
+      radial-gradient(circle at 85% 0%, rgb(236 72 153 / 35%), transparent 60%),
       linear-gradient(200deg, #010009 0%, #050013 65%, #020009 100%);
   }
 
@@ -474,7 +477,7 @@
 
   .contact-subtitle {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgb(255 255 255 / 75%);
   }
 
   .contact-grid {

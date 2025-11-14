@@ -5,10 +5,10 @@
   font-family: "Open Sans", sans-serif;
   position: relative;
   background:
-    radial-gradient(ellipse at 20% 10%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 30%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 60%, rgba(109, 40, 217, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 30% 90%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 10%, rgb(139 92 246 / 15%) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 30%, rgb(168 85 247 / 15%) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 60%, rgb(109 40 217 / 10%) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 90%, rgb(139 92 246 / 12%) 0%, transparent 50%),
     linear-gradient(135deg, #0a0612 0%, #1a0f2e 25%, #2d1b4e 50%, #1a0f2e 75%, #0f0617 100%);
   background-size: 100% 100%;
   background-attachment: fixed;
@@ -19,13 +19,10 @@
 .app::before {
   content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background-image:
-    repeating-linear-gradient(0deg, rgba(139, 92, 246, 0.03) 0px, transparent 1px, transparent 40px),
-    repeating-linear-gradient(90deg, rgba(139, 92, 246, 0.03) 0px, transparent 1px, transparent 40px);
+    repeating-linear-gradient(0deg, rgb(139 92 246 / 3%) 0, transparent 1px, transparent 40px),
+    repeating-linear-gradient(90deg, rgb(139 92 246 / 3%) 0, transparent 1px, transparent 40px);
   pointer-events: none;
   z-index: 0;
 }
@@ -34,10 +31,7 @@
 .app::after {
   content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 0;
