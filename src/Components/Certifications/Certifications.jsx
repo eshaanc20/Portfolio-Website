@@ -7,11 +7,12 @@ import {
   FaCloud,
 } from "react-icons/fa";
 import { SiCoursera, SiUdemy } from "react-icons/si";
-import Course1 from "../../Assets/Course1.png";
-import Course2 from "../../Assets/Course2.png";
-import Course3 from "../../Assets/Course3.png";
-import Course4 from "../../Assets/Course4.jpg";
-import Course5 from "../../Assets/Course5.png";
+import Certification1 from "../../Assets/Certification1.png";
+import Certification2 from "../../Assets/Certification2.png";
+import Certification3 from "../../Assets/Certification3.png";
+import Certification4 from "../../Assets/Certification4.jpg";
+import Certification5 from "../../Assets/Certification5.png";
+import Certification6 from "../../Assets/Certification6.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -24,11 +25,33 @@ AOS.init({
 
 const certificationsData = [
   {
+    id: 6,
+    name: "Microsoft Certified: Azure Administrator Associate (AZ-104)",
+    organization: "Microsoft",
+    date: "November 2025",
+    image: Certification6,
+    certificateUrl:
+      "https://learn.microsoft.com/api/credentials/share/en-us/EshaanChaudhari-9588/E3961BE967707A64?sharingId=7995207ABDBA54FE",
+    icon: <FaCloud />,
+    skills: [
+      "Azure AD & IAM Controls",
+      "Virtual Networking",
+      "Compute & Containers",
+      "Storage & Backups",
+      "Monitoring & Automation",
+      "Governance & Cost",
+    ],
+    focus: "Azure Administration",
+    verified: true,
+    summary:
+      "Operations-focused certification covering deployments, compute, storage, governance, security, networking, and monitoring of Azure infrastructure with automation-first practices.",
+  },
+  {
     id: 5,
     name: "Microsoft Certified: Azure Fundamentals (AZ-900)",
     organization: "Microsoft",
     date: "November 2025",
-    image: Course5,
+    image: Certification5,
     certificateUrl:
       "https://learn.microsoft.com/api/credentials/share/en-us/EshaanChaudhari-9588/2BE1EA6C71EEB199?sharingId=7995207ABDBA54FE",
     icon: <FaCloud />,
@@ -50,7 +73,7 @@ const certificationsData = [
     name: "React - The Complete Guide (incl Hooks, React Router, Redux)",
     organization: "Udemy",
     date: "January 2020",
-    image: Course4,
+    image: Certification4,
     certificateUrl: "https://ude.my/UC-J691493I",
     icon: <SiUdemy />,
     skills: ["React", "Redux", "React Router", "Hooks"],
@@ -64,7 +87,7 @@ const certificationsData = [
     name: "Neural Networks and Deep Learning",
     organization: "Coursera",
     date: "June 2019",
-    image: Course1,
+    image: Certification1,
     certificateUrl:
       "https://www.coursera.org/account/accomplishments/certificate/EG664QR863PV?utm_medium=certificate&utm_source=link&utm_campaign=copybutton_certificate",
     icon: <SiCoursera />,
@@ -79,7 +102,7 @@ const certificationsData = [
     name: "Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization",
     organization: "Coursera",
     date: "August 2019",
-    image: Course2,
+    image: Certification2,
     certificateUrl:
       "https://www.coursera.org/account/accomplishments/certificate/ANDAHXW42PM3?utm_medium=certificate&utm_source=link&utm_campaign=copybutton_certificate",
     icon: <SiCoursera />,
@@ -94,7 +117,7 @@ const certificationsData = [
     name: "Structuring Machine Learning Projects",
     organization: "Coursera",
     date: "September 2019",
-    image: Course3,
+    image: Certification3,
     certificateUrl:
       "https://www.coursera.org/account/accomplishments/certificate/WVE6MYCWFFHZ?utm_medium=certificate&utm_source=link&utm_campaign=copybutton_certificate",
     icon: <SiCoursera />,

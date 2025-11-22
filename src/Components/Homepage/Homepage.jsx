@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "./Homepage.css";
 import ProfilePicture from "../../Assets/profilePicture.jpeg";
 import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io";
@@ -29,23 +29,55 @@ import { Typewriter } from "react-simple-typewriter";
 
 const Homepage = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isScrolling, setIsScrolling] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(() => {
+    const prefersReduced =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isSmallScreen =
+      typeof window !== "undefined" && window.innerWidth <= 900;
+    return prefersReduced || isSmallScreen;
+  });
+  const particles = useMemo(() => {
+    const count = reduceMotion ? 6 : 15;
+    return Array.from({ length: count }, () => ({
+      top: Math.random() * 100,
+      left: Math.random() * 100,
+      delay: Math.random() * 5,
+      duration: 3 + Math.random() * 4,
+    }));
+  }, [reduceMotion]);
 
   // Track mouse position for parallax and interactive effects
   useEffect(() => {
+    if (reduceMotion || window.innerWidth <= 1024) {
+      setMousePosition({ x: 0, y: 0 });
+      return;
+    }
+
+    let rafId = null;
     const handleMouseMove = (e) => {
-      setMousePosition({
+      const nextPosition = {
         x: (e.clientX / window.innerWidth) * 2 - 1,
         y: (e.clientY / window.innerHeight) * 2 - 1,
-      });
+      };
+
+      // Throttle mouse updates to animation frame to prevent excessive re-renders
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => setMousePosition(nextPosition));
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [reduceMotion]);
 
   useEffect(() => {
     const initAOS = () => {
-      const disableAnimations = window.matchMedia("(max-width: 768px)").matches;
+      const disableAnimations =
+        window.matchMedia("(max-width: 768px)").matches || reduceMotion;
       AOS.init({
         duration: 1000,
         delay: 100,
@@ -58,12 +90,63 @@ const Homepage = () => {
     initAOS();
     window.addEventListener("resize", initAOS);
     return () => window.removeEventListener("resize", initAOS);
+  }, [reduceMotion]);
+
+  useEffect(() => {
+    const updateMotionPreference = () => {
+      const prefersReduced = window
+        .matchMedia("(prefers-reduced-motion: reduce)")
+        .matches;
+      const isSmallScreen = window.innerWidth <= 900;
+      const lowPowerDevice =
+        typeof navigator !== "undefined" &&
+        ((navigator.hardwareConcurrency &&
+          navigator.hardwareConcurrency <= 4) ||
+          (navigator.deviceMemory && navigator.deviceMemory <= 4));
+
+      setReduceMotion(
+        (prev) =>
+          prev || prefersReduced || isSmallScreen || Boolean(lowPowerDevice)
+      );
+    };
+
+    let scrollTimeout;
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setReduceMotion(true);
+      }
+
+      setIsScrolling(true);
+      clearTimeout(scrollTimeout);
+      scrollTimeout = window.setTimeout(() => {
+        setIsScrolling(false);
+      }, 120);
+    };
+
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    mediaQuery.addEventListener("change", updateMotionPreference);
+    window.addEventListener("resize", updateMotionPreference);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    updateMotionPreference();
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateMotionPreference);
+      window.removeEventListener("resize", updateMotionPreference);
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(scrollTimeout);
+    };
   }, []);
 
   // Background animations removed for cleaner look
 
   return (
-    <div className="homepage" name="Homepage">
+    <div
+      className={`homepage ${reduceMotion ? "reduced-motion" : ""} ${
+        isScrolling ? "is-scrolling" : ""
+      }`}
+      name="Homepage"
+    >
       {/* Floating geometric shapes with neon glow */}
       <div className="floating-shapes">
         <div className="shape shape-1">
@@ -128,15 +211,15 @@ const Homepage = () => {
 
       {/* Ambient particles */}
       <div className="particles-container">
-        {[...Array(15)].map((_, i) => (
+        {particles.map((particle, i) => (
           <div
             key={i}
             className="particle"
             style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${3 + Math.random() * 4}s`,
+              top: `${particle.top}%`,
+              left: `${particle.left}%`,
+              animationDelay: `${particle.delay}s`,
+              animationDuration: `${particle.duration}s`,
             }}
           ></div>
         ))}
