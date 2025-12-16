@@ -53,10 +53,11 @@
       rgb(255 255 255 / 3%) 0 1px,
       transparent 1px 10px
     );
-  opacity: 0.25;
-  filter: blur(80px);
+  opacity: 0.2;
+  filter: blur(50px);
   pointer-events: none;
   z-index: 0;
+  will-change: transform;
 }
 
 @keyframes experienceGlow {
@@ -77,13 +78,13 @@
 .experience-section .experience-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(50px);
   opacity: 0.35;
-  animation: morphBlob 20s ease-in-out infinite,
-    glowPulse 8s ease-in-out infinite;
+  animation: morphBlob 25s ease-in-out infinite;
   z-index: 1;
   pointer-events: none;
-  mix-blend-mode: screen;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .experience-section .exp-orb-1 {
@@ -324,20 +325,26 @@
 }
 
 .glass-card-exp {
-  background: rgb(139 92 246 / 6%);
-  backdrop-filter: blur(30px);
-  border: 1px solid rgb(139 92 246 / 25%);
+  background: linear-gradient(145deg, rgb(139 92 246 / 14%), rgb(109 40 217 / 7%));
+  backdrop-filter: blur(14px);
+  border: 1px solid rgb(139 92 246 / 28%);
   border-radius: 20px;
   padding: 32px;
-  box-shadow: 0 8px 32px rgb(0 0 0 / 40%),
-    inset 0 1px 0 rgb(255 255 255 / 10%);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 8px 32px rgb(0 0 0 / 40%),
+    0 0 0 1px rgb(255 255 255 / 3%),
+    inset 0 1px 0 rgb(255 255 255 / 12%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  contain: layout style;
 }
 
 .glass-card-exp:hover {
   transform: translateY(-5px) translateX(5px);
-  border-color: rgb(139 92 246 / 40%);
-  box-shadow: 0 20px 60px rgb(0 0 0 / 50%), 0 0 40px rgb(139 92 246 / 30%),
+  border-color: rgb(139 92 246 / 45%);
+  box-shadow:
+    0 20px 60px rgb(0 0 0 / 50%),
+    0 0 40px rgb(139 92 246 / 25%),
+    0 0 20px rgb(168 85 247 / 15%),
     inset 0 1px 0 rgb(255 255 255 / 15%);
 }
 
@@ -387,14 +394,15 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(
-    135deg,
-    rgb(139 92 246 / 20%),
-    rgb(168 85 247 / 10%)
+    145deg,
+    rgb(139 92 246 / 25%),
+    rgb(168 85 247 / 12%)
   );
-  border: 2px solid rgb(139 92 246 / 40%);
+  border: 2px solid rgb(139 92 246 / 45%);
   border-radius: 14px;
   flex-shrink: 0;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgb(139 92 246 / 20%), inset 0 1px 0 rgb(255 255 255 / 12%);
 }
 
 .glass-card-exp:hover .exp-icon-wrapper {
@@ -556,15 +564,16 @@
   gap: 8px;
   padding: 8px 14px;
   background: linear-gradient(
-    135deg,
-    rgb(139 92 246 / 8%),
-    rgb(168 85 247 / 4%)
+    145deg,
+    rgb(139 92 246 / 12%),
+    rgb(168 85 247 / 6%)
   );
   backdrop-filter: blur(10px);
-  border: 1px solid rgb(139 92 246 / 20%);
+  border: 1px solid rgb(139 92 246 / 25%);
   border-radius: 10px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%), inset 0 1px 0 rgb(255 255 255 / 6%);
 }
 
 .tech-item:hover {
@@ -849,5 +858,137 @@
 
   50% {
     transform: translate3d(3%, -4%, 0) rotate(5deg) scale(1.05);
+  }
+}
+
+/* ========== MOBILE PERFORMANCE OPTIMIZATIONS ========== */
+@media (width <= 768px) {
+  /* Static pseudo-element backgrounds (no animation) */
+  .experience-section::before,
+  .experience-section::after {
+    animation: none !important;
+    filter: blur(50px);
+    opacity: 0.2;
+  }
+
+  /* Show orbs as static elements with reduced blur */
+  .experience-section .experience-orb {
+    animation: none !important;
+    filter: blur(40px);
+    opacity: 0.25;
+  }
+
+  .experience-shape {
+    animation: none !important;
+    opacity: 0.2;
+  }
+
+  /* PREMIUM: Enhanced experience cards with refined styling */
+  .glass-card-exp {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: linear-gradient(145deg, rgb(139 92 246 / 12%), rgb(15 8 30 / 55%), rgb(109 40 217 / 6%));
+    border: 1px solid rgb(139 92 246 / 30%);
+    box-shadow:
+      0 0 30px rgb(139 92 246 / 12%),
+      0 12px 40px rgb(0 0 0 / 40%),
+      0 4px 12px rgb(0 0 0 / 25%),
+      inset 0 1px 0 rgb(255 255 255 / 12%),
+      inset 0 0 30px rgb(139 92 246 / 4%);
+    padding: 24px;
+    border-radius: 18px;
+  }
+
+  /* PREMIUM: Enhanced experience title */
+  .exp-title {
+    text-shadow: 0 0 20px rgb(168 85 247 / 25%);
+  }
+
+  /* PREMIUM: Enhanced tech items */
+  .tech-item {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: linear-gradient(145deg, rgb(139 92 246 / 16%), rgb(168 85 247 / 10%), rgb(109 40 217 / 6%));
+    border: 1px solid rgb(139 92 246 / 30%);
+    box-shadow:
+      0 0 10px rgb(139 92 246 / 12%),
+      0 4px 12px rgb(0 0 0 / 25%),
+      inset 0 1px 0 rgb(255 255 255 / 10%);
+    padding: 8px 12px;
+    border-radius: 10px;
+  }
+
+  /* PREMIUM: Enhanced tech icon */
+  .tech-icon-wrapper {
+    filter: drop-shadow(0 0 5px currentColor);
+  }
+
+  /* PREMIUM: Enhanced icon wrapper */
+  .exp-icon-wrapper {
+    background: linear-gradient(145deg, rgb(139 92 246 / 30%), rgb(168 85 247 / 18%));
+    border: 2px solid rgb(168 85 247 / 50%);
+    box-shadow:
+      0 0 20px rgb(139 92 246 / 40%),
+      0 6px 20px rgb(139 92 246 / 30%),
+      inset 0 1px 0 rgb(255 255 255 / 20%);
+  }
+
+  /* PREMIUM: Enhanced type badge */
+  .exp-type-badge {
+    background: linear-gradient(135deg, rgb(139 92 246 / 25%), rgb(168 85 247 / 15%));
+    border: 1px solid rgb(139 92 246 / 40%);
+    box-shadow:
+      0 0 12px rgb(139 92 246 / 25%),
+      0 3px 10px rgb(0 0 0 / 25%),
+      inset 0 1px 0 rgb(255 255 255 / 12%);
+    padding: 6px 12px;
+  }
+
+  /* PREMIUM: Enhanced company info */
+  .exp-company {
+    color: rgb(192 132 252);
+    text-shadow: 0 0 15px rgb(168 85 247 / 30%);
+  }
+
+  /* PREMIUM: Enhanced date badge */
+  .exp-date {
+    background: linear-gradient(135deg, rgb(139 92 246 / 15%), rgb(109 40 217 / 10%));
+    border: 1px solid rgb(139 92 246 / 25%);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+    padding: 6px 12px;
+    border-radius: 8px;
+  }
+
+  /* Disable all animations */
+  .experience-section *,
+  .experience-section::before,
+  .experience-section::after {
+    animation: none !important;
+  }
+
+  /* Hide animated pulse effects */
+  .exp-card-glow,
+  .dot-pulse {
+    display: none;
+  }
+
+  /* Disable hover transforms */
+  .glass-card-exp:hover {
+    transform: none;
+  }
+
+  .tech-item:hover {
+    transform: none;
+  }
+
+  /* Simplify icon filters (keep subtle glow) */
+  .exp-header-icon,
+  .exp-briefcase-icon {
+    filter: drop-shadow(0 0 8px rgb(139 92 246 / 50%));
+  }
+
+  .tech-header-icon,
+  .tech-icon-wrapper {
+    filter: none;
   }
 }

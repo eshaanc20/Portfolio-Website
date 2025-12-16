@@ -14,17 +14,25 @@ import {
 } from "react-icons/fa";
 import { DiHeroku } from "react-icons/di";
 import MongoDBIcon from "../../Assets/MongoDB-icon.png";
+import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-AOS.init({
-  duration: 1000,
-  delay: 100,
-  mirror: false,
-  once: true,
-});
-
 const Projects = () => {
+  // Check if mobile for performance optimizations
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+
+  // Initialize AOS only on larger screens for better mobile performance
+  useEffect(() => {
+    const checkMobile = window.innerWidth <= 768;
+    AOS.init({
+      duration: checkMobile ? 0 : 1000,
+      delay: checkMobile ? 0 : 100,
+      mirror: false,
+      once: true,
+      disable: checkMobile,
+    });
+  }, []);
   const projectsData = [
     {
       title: "GazeTracker",
@@ -400,21 +408,23 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Floating particles */}
-      <div className="projects-particles">
-        {[...Array(10)].map((_, i) => (
-          <div
-            key={i}
-            className="project-particle"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${5 + Math.random() * 5}s`,
-            }}
-          ></div>
-        ))}
-      </div>
+      {/* Floating particles - hidden on mobile for performance */}
+      {!isMobile && (
+        <div className="projects-particles">
+          {[...Array(10)].map((_, i) => (
+            <div
+              key={i}
+              className="project-particle"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${5 + Math.random() * 5}s`,
+              }}
+            ></div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

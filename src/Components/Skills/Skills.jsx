@@ -33,17 +33,26 @@ import {
 } from "react-icons/si";
 import { DiJava } from "react-icons/di";
 import { TbBrandCpp } from "react-icons/tb";
+import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-AOS.init({
-  duration: 1000,
-  delay: 100,
-  mirror: false,
-  once: true,
-});
-
 const Skills = () => {
+  // Check if mobile for performance optimizations
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+
+  // Initialize AOS only on larger screens for better mobile performance
+  useEffect(() => {
+    const checkMobile = window.innerWidth <= 768;
+    AOS.init({
+      duration: checkMobile ? 0 : 1000,
+      delay: checkMobile ? 0 : 100,
+      mirror: false,
+      once: true,
+      disable: checkMobile,
+    });
+  }, []);
+
   const skillCategories = [
     {
       title: "Languages",
@@ -193,21 +202,23 @@ const Skills = () => {
         </div>
       </div>
 
-      {/* Floating particles */}
-      <div className="skills-particles">
-        {[...Array(8)].map((_, i) => (
-          <div
-            key={i}
-            className="skill-particle"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${4 + Math.random() * 4}s`,
-            }}
-          ></div>
-        ))}
-      </div>
+      {/* Floating particles - hidden on mobile for performance */}
+      {!isMobile && (
+        <div className="skills-particles">
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={i}
+              className="skill-particle"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${4 + Math.random() * 4}s`,
+              }}
+            ></div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

@@ -11,7 +11,7 @@
     radial-gradient(ellipse at 30% 90%, rgb(139 92 246 / 12%) 0%, transparent 50%),
     linear-gradient(135deg, #0a0612 0%, #1a0f2e 25%, #2d1b4e 50%, #1a0f2e 75%, #0f0617 100%);
   background-size: 100% 100%;
-  background-attachment: fixed;
+  background-attachment: scroll;
   min-height: 100vh;
 }
 
@@ -48,4 +48,66 @@
   overflow: hidden;
   position: relative;
   z-index: 1;
+}
+
+/* ========== MOBILE PERFORMANCE OPTIMIZATIONS ========== */
+@media (width <= 768px) {
+  .app {
+    /* CRITICAL: Remove fixed background attachment - very expensive on mobile */
+    background-attachment: scroll;
+    /* Keep nice gradient background */
+    background:
+      radial-gradient(ellipse at 20% 10%, rgb(139 92 246 / 12%) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 30%, rgb(168 85 247 / 10%) 0%, transparent 50%),
+      linear-gradient(135deg, #0a0612 0%, #1a0f2e 25%, #2d1b4e 50%, #1a0f2e 75%, #0f0617 100%);
+  }
+
+  /* Simplified grid overlay - static, reduced opacity */
+  .app::before {
+    position: absolute;
+    background-image:
+      repeating-linear-gradient(0deg, rgb(139 92 246 / 2%) 0, transparent 1px, transparent 50px),
+      repeating-linear-gradient(90deg, rgb(139 92 246 / 2%) 0, transparent 1px, transparent 50px);
+    opacity: 0.5;
+  }
+
+  /* Simplified noise texture - reduced opacity */
+  .app::after {
+    position: absolute;
+    opacity: 0.25;
+  }
+}
+
+/* ========== DESKTOP PERFORMANCE OPTIMIZATIONS ========== */
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Global performance hints */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimize scrolling performance */
+.app-content {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ensure GPU acceleration for animated elements */
+.gradient-orb,
+.shape,
+.bg-shape,
+.particle,
+.experience-orb,
+.contact-shape,
+.certifications-orbit {
+  backface-visibility: hidden;
+  perspective: 1000px;
 }

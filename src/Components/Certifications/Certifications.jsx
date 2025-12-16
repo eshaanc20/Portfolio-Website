@@ -16,13 +16,6 @@ import Certification6 from "../../Assets/Certification6.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-AOS.init({
-  duration: 1000,
-  delay: 100,
-  mirror: false,
-  once: true,
-});
-
 const certificationsData = [
   {
     id: 6,
@@ -148,8 +141,16 @@ const statHighlights = [
 ];
 
 const Certifications = () => {
+  // Initialize AOS only on larger screens for better mobile performance
   useEffect(() => {
-    AOS.refresh();
+    const isMobile = window.innerWidth <= 768;
+    AOS.init({
+      duration: isMobile ? 0 : 1000,
+      delay: isMobile ? 0 : 100,
+      mirror: false,
+      once: true,
+      disable: isMobile,
+    });
   }, []);
 
   return (

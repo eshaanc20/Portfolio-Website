@@ -27,9 +27,10 @@
     background:
         conic-gradient(from 120deg, rgb(236 72 153 / 12%), transparent 35%, rgb(129 140 248 / 12%), transparent 75%);
     pointer-events: none;
-    filter: blur(100px);
-    animation: skillsAurora 18s ease-in-out infinite;
+    filter: blur(60px);
+    animation: skillsAurora 22s ease-in-out infinite;
     z-index: 0;
+    will-change: transform;
 }
 
 .Skills::after {
@@ -39,11 +40,12 @@
     background:
         repeating-linear-gradient(120deg, rgb(255 255 255 / 3%) 0 2px, transparent 2px 18px),
         repeating-linear-gradient(60deg, rgb(255 255 255 / 2%) 0 1px, transparent 1px 12px);
-    opacity: 0.25;
-    filter: blur(60px);
+    opacity: 0.2;
+    filter: blur(40px);
     pointer-events: none;
-    animation: latticeSlide 20s linear infinite;
+    animation: latticeSlide 25s linear infinite;
     z-index: 0;
+    will-change: transform;
 }
 
 @keyframes skillsAurora {
@@ -88,9 +90,11 @@
 .bg-shape {
     position: absolute;
     border-radius: 50%;
-    filter: blur(60px);
-    animation: float 20s ease-in-out infinite;
-    mix-blend-mode: screen;
+    filter: blur(45px);
+    animation: float 25s ease-in-out infinite;
+    opacity: 0.8;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .bg-shape.shape-1 {
@@ -272,15 +276,17 @@
 }
 
 .skill-category.glass-card {
-    background: rgb(26 15 46 / 40%);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgb(139 92 246 / 20%);
+    background: linear-gradient(145deg, rgb(26 15 46 / 60%), rgb(15 8 30 / 45%));
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(139 92 246 / 25%);
     border-radius: 24px;
     padding: 32px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow:
-        0 8px 32px rgb(0 0 0 / 30%),
-        inset 0 1px 0 rgb(255 255 255 / 5%);
+        0 8px 32px rgb(0 0 0 / 35%),
+        0 0 0 1px rgb(255 255 255 / 3%),
+        inset 0 1px 0 rgb(255 255 255 / 8%);
+    contain: layout style;
 }
 
 .skill-category.glass-card:hover {
@@ -288,7 +294,8 @@
     border-color: rgb(168 85 247 / 50%);
     box-shadow:
         0 20px 60px rgb(139 92 246 / 30%),
-        inset 0 1px 0 rgb(255 255 255 / 10%);
+        0 0 30px rgb(139 92 246 / 15%),
+        inset 0 1px 0 rgb(255 255 255 / 12%);
 }
 
 /* Category Header */
@@ -311,8 +318,11 @@
     color: white;
     position: relative;
     flex-shrink: 0;
-    box-shadow: 0 8px 24px rgb(139 92 246 / 40%);
+    box-shadow:
+        0 8px 24px rgb(139 92 246 / 40%),
+        inset 0 1px 0 rgb(255 255 255 / 15%);
     transition: all 0.3s ease;
+    border: 1px solid rgb(255 255 255 / 10%);
 }
 
 .skill-category:hover .category-icon-wrapper {
@@ -370,7 +380,7 @@
     align-items: center;
     gap: 8px;
     padding: 10px 18px;
-    background: rgb(139 92 246 / 10%);
+    background: linear-gradient(145deg, rgb(139 92 246 / 12%), rgb(109 40 217 / 6%));
     border: 1px solid rgb(139 92 246 / 30%);
     border-radius: 12px;
     font-size: 14px;
@@ -379,13 +389,17 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: default;
     overflow: hidden;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 15%), inset 0 1px 0 rgb(255 255 255 / 6%);
 }
 
 .skill-pill:hover {
-    background: rgb(168 85 247 / 20%);
+    background: linear-gradient(145deg, rgb(168 85 247 / 25%), rgb(139 92 246 / 15%));
     border-color: rgb(168 85 247 / 60%);
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 8px 24px rgb(168 85 247 / 30%);
+    box-shadow:
+        0 8px 24px rgb(168 85 247 / 30%),
+        0 0 20px rgb(139 92 246 / 15%),
+        inset 0 1px 0 rgb(255 255 255 / 12%);
     color: white;
 }
 
@@ -622,5 +636,117 @@
     .bg-shape {
         width: 250px !important;
         height: 250px !important;
+    }
+}
+
+/* ========== MOBILE PERFORMANCE OPTIMIZATIONS ========== */
+@media (width <= 768px) {
+    /* Static pseudo-element backgrounds (no animation) */
+    .Skills::before,
+    .Skills::after {
+        animation: none !important;
+        filter: blur(50px);
+        opacity: 0.25;
+    }
+
+    /* Show background shapes as static elements with reduced blur */
+    .skills-bg-shapes {
+        opacity: 0.5;
+    }
+
+    .bg-shape {
+        animation: none !important;
+        filter: blur(40px);
+        opacity: 0.4;
+    }
+
+    .skills-shape {
+        animation: none !important;
+        opacity: 0.3;
+    }
+
+    /* Hide particles (too many small animated elements) */
+    .skills-particles {
+        display: none;
+    }
+
+    /* PREMIUM: Enhanced glass cards with refined styling */
+    .skill-category.glass-card {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        background: linear-gradient(145deg, rgb(26 15 46 / 55%), rgb(15 8 30 / 45%), rgb(109 40 217 / 8%));
+        border: 1px solid rgb(139 92 246 / 30%);
+        box-shadow:
+            0 0 25px rgb(139 92 246 / 12%),
+            0 12px 40px rgb(0 0 0 / 40%),
+            0 4px 12px rgb(0 0 0 / 25%),
+            inset 0 1px 0 rgb(255 255 255 / 12%),
+            inset 0 0 30px rgb(139 92 246 / 5%);
+        padding: 24px;
+        border-radius: 20px;
+    }
+
+    /* PREMIUM: Enhanced category title */
+    .category-title {
+        font-size: 20px;
+        text-shadow: 0 0 20px rgb(168 85 247 / 30%);
+    }
+
+    /* PREMIUM: Enhanced skill pills */
+    .skill-pill {
+        background: linear-gradient(145deg, rgb(139 92 246 / 16%), rgb(168 85 247 / 10%), rgb(109 40 217 / 6%));
+        border: 1px solid rgb(139 92 246 / 30%);
+        box-shadow:
+            0 0 10px rgb(139 92 246 / 12%),
+            0 4px 12px rgb(0 0 0 / 25%),
+            inset 0 1px 0 rgb(255 255 255 / 10%);
+        padding: 10px 14px;
+        border-radius: 10px;
+    }
+
+    /* PREMIUM: Enhanced category header icon */
+    .category-icon-wrapper {
+        background: linear-gradient(145deg, rgb(139 92 246 / 30%), rgb(168 85 247 / 18%));
+        border: 1px solid rgb(168 85 247 / 45%);
+        box-shadow:
+            0 0 20px rgb(139 92 246 / 40%),
+            0 6px 20px rgb(139 92 246 / 30%),
+            inset 0 1px 0 rgb(255 255 255 / 20%);
+    }
+
+    /* PREMIUM: Enhanced skill icon */
+    .skill-icon {
+        filter: drop-shadow(0 0 6px currentColor);
+    }
+
+    /* Disable all animations */
+    .Skills *,
+    .Skills::before,
+    .Skills::after {
+        animation: none !important;
+    }
+
+    /* Keep subtle glow effects but static */
+    .icon-glow {
+        animation: none !important;
+        opacity: 0.4;
+    }
+
+    .category-icon-glow {
+        animation: none !important;
+        opacity: 0.3;
+    }
+
+    /* Hide animated shine effects */
+    .pill-glow,
+    .card-shine,
+    .line-glow {
+        display: none;
+    }
+
+    /* Disable hover transforms for better touch performance */
+    .skill-category.glass-card:hover,
+    .skill-pill:hover {
+        transform: none;
     }
 }

@@ -11,13 +11,6 @@ import {
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-AOS.init({
-  duration: 1000,
-  delay: 100,
-  mirror: false,
-  once: true,
-});
-
 const contactMethods = [
   {
     label: "Email",
@@ -50,8 +43,16 @@ const responseHighlights = [
 ];
 
 const Contact = () => {
+  // Initialize AOS only on larger screens for better mobile performance
   useEffect(() => {
-    AOS.refresh();
+    const isMobile = window.innerWidth <= 768;
+    AOS.init({
+      duration: isMobile ? 0 : 1000,
+      delay: isMobile ? 0 : 100,
+      mirror: false,
+      once: true,
+      disable: isMobile,
+    });
   }, []);
 
   return (
