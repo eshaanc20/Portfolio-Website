@@ -31,7 +31,7 @@ const Experience = () => {
   const experiences = [
     {
       id: 0,
-      title: "Data Engineer – Platform Team",
+      title: "DevOps Engineer",
       company: "Manulife",
       location: "Toronto, ON",
       date: "06/2025 - Present",
