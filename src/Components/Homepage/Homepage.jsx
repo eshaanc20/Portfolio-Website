@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "./Homepage.css";
-import ProfilePicture from "../../Assets/profilePicture.jpeg";
+import ProfilePicture from "../../Assets/ProfilePicture.jpg";
 import PenroseLogo from "../../Assets/PenroseFoundryLogo.png";
 import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io";
 import { MdRocketLaunch } from "react-icons/md";
@@ -81,11 +81,28 @@ const Homepage = () => {
               rel="noopener noreferrer"
             >
               <span>View Resume</span>
-              <svg className="cta-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <svg
+                className="cta-arrow"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M7.5 15L12.5 10L7.5 5"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </a>
-            <Link to="Contact" smooth={true} duration={800} className="cta-button cta-button--secondary">
+            <Link
+              to="Contact"
+              smooth={true}
+              duration={800}
+              className="cta-button cta-button--secondary"
+            >
               <span>Let's Talk</span>
             </Link>
           </div>
@@ -117,7 +134,11 @@ const Homepage = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={PenroseLogo} alt="Penrose Foundry" className="founder-card__logo" />
+            <img
+              src={PenroseLogo}
+              alt="Penrose Foundry"
+              className="founder-card__logo"
+            />
             <div className="founder-card__text">
               <span className="founder-card__role">Founder</span>
               <span className="founder-card__company">Penrose Foundry</span>
@@ -126,8 +147,16 @@ const Homepage = () => {
           </a>
         </div>
 
-        <div className="homepage-photo" data-aos="fade-left" data-aos-delay="200">
-          <img className="profile-image" alt="Eshaan Chaudhari" src={ProfilePicture} />
+        <div
+          className="homepage-photo"
+          data-aos="fade-left"
+          data-aos-delay="200"
+        >
+          <img
+            className="profile-image"
+            alt="Eshaan Chaudhari"
+            src={ProfilePicture}
+          />
         </div>
       </div>
 
