@@ -155,6 +155,99 @@
   border-radius: 50%;
 }
 
+/* ========== DEMO CAROUSEL ========== */
+.demo-carousel {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--light-gray);
+  border: 1px solid var(--border);
+}
+
+.demo-carousel-track {
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.demo-carousel-slider {
+  display: flex;
+  will-change: transform;
+}
+
+.demo-carousel-slide {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  min-height: 200px;
+}
+
+.demo-carousel-img {
+  max-width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.demo-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 8px 12px;
+  background: rgb(0 0 0 / 3%);
+  border-top: 1px solid var(--border);
+}
+
+.demo-carousel-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.demo-carousel-btn:hover:not(:disabled) {
+  background: var(--blue-50);
+  color: var(--blue-600);
+  border-color: var(--blue-200);
+}
+
+.demo-carousel-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.demo-carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.demo-carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: var(--border);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.demo-carousel-dot--active {
+  background: var(--blue-500);
+  transform: scale(1.25);
+}
+
 /* ========== TECH STACK ========== */
 .project-tech {
   margin-bottom: 20px;
@@ -347,6 +440,55 @@
     overflow: hidden;
   }
 
+  /* Demo carousel — edge-to-edge on mobile */
+  .demo-carousel {
+    margin-bottom: 14px;
+    margin-left: -18px;
+    margin-right: -18px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .demo-carousel-slide {
+    padding: 10px 16px;
+    min-height: 160px;
+  }
+
+  .demo-carousel-img {
+    max-height: 240px;
+    border-radius: 8px;
+  }
+
+  .demo-carousel-controls {
+    padding: 10px 16px;
+    gap: 14px;
+    background: rgb(0 0 0 / 2%);
+  }
+
+  .demo-carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+    border-radius: 50%;
+    background: rgb(255 255 255 / 80%);
+    border: 1px solid rgb(228 230 239 / 50%);
+  }
+
+  .demo-carousel-dots {
+    gap: 8px;
+  }
+
+  .demo-carousel-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .demo-carousel-dot--active {
+    width: 20px;
+    border-radius: 4px;
+  }
+
   /* Highlights — compact */
   .project-highlights {
     margin-bottom: 14px;
@@ -488,5 +630,38 @@
     margin-right: -14px;
     padding-left: 14px;
     padding-right: 14px;
+  }
+
+  .demo-carousel {
+    margin-left: -14px;
+    margin-right: -14px;
+  }
+
+  .demo-carousel-slide {
+    padding: 8px 12px;
+    min-height: 130px;
+  }
+
+  .demo-carousel-img {
+    max-height: 200px;
+  }
+
+  .demo-carousel-controls {
+    padding: 8px 12px;
+  }
+
+  .demo-carousel-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .demo-carousel-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .demo-carousel-dot--active {
+    width: 16px;
   }
 }
