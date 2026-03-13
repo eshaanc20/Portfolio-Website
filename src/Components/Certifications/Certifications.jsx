@@ -126,141 +126,91 @@ const statHighlights = [
   {
     label: "Issued Credentials",
     value: `${certificationsData.length}`,
-    detail: "Curated across AI, Web & Product",
   },
   {
     label: "Hands-on Hours",
     value: "180+",
-    detail: "Video lessons, labs & projects",
   },
   {
     label: "Focus Tracks",
-    value: "AI • Frontend • Delivery",
-    detail: "Full-stack problem solving",
+    value: "AI / Frontend / Cloud",
   },
 ];
 
 const Certifications = () => {
-  // Initialize AOS only on larger screens for better mobile performance
   useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
     AOS.init({
-      duration: isMobile ? 0 : 1000,
-      delay: isMobile ? 0 : 100,
-      mirror: false,
+      duration: 600,
       once: true,
-      disable: isMobile,
+      easing: "ease-out",
     });
   }, []);
 
   return (
-    <section
-      className="certifications-section"
-      name="Certifications"
-      id="certifications"
-    >
-      <div className="certifications-orbit certifications-orbit--one" />
-      <div className="certifications-orbit certifications-orbit--two" />
-      <div className="certifications-shape certifications-shape--left"></div>
-      <div className="certifications-shape certifications-shape--right"></div>
+    <section className="certifications-section" name="Certifications" id="certifications">
       <div className="certifications-inner">
-        <div className="certifications-header" data-aos="fade-down">
-          <div className="certifications-header-content">
-            <div className="certifications-icon-wrapper">
-              <FaAward className="certifications-main-icon" />
-              <div className="certifications-icon-glow"></div>
-            </div>
-            <h2 className="certifications-title">Certifications</h2>
-            <p className="certifications-subtitle">
-              Deep Learning Specialization (Neural Networks, Hyperparameter
-              Tuning, ML Strategy) paired with Microsoft’s Azure for cloud
-              solutions.
-            </p>
+        <div className="certifications-header" data-aos="fade-up">
+          <div className="certifications-icon-wrapper">
+            <FaAward className="certifications-main-icon" />
           </div>
-          <div className="header-line">
-            <div className="line-glow"></div>
-          </div>
+          <h2 className="section-title">Certifications</h2>
+          <p className="section-subtitle">
+            Deep Learning Specialization paired with Microsoft Azure cloud credentials.
+          </p>
         </div>
 
-        <div
-          className="certifications-stats"
-          data-aos="fade-up"
-          data-aos-delay="50"
-        >
-          {statHighlights.map((stat, index) => (
-            <div key={stat.label} className="stat-card">
-              <div className="stat-index">0{index + 1}</div>
-              <div>
-                <p className="stat-label">{stat.label}</p>
-                <p className="stat-value">{stat.value}</p>
-                <p className="stat-detail">{stat.detail}</p>
-              </div>
+        <div className="certifications-stats" data-aos="fade-up" data-aos-delay="50">
+          {statHighlights.map((stat) => (
+            <div key={stat.label} className="cert-stat">
+              <p className="cert-stat__value">{stat.value}</p>
+              <p className="cert-stat__label">{stat.label}</p>
             </div>
           ))}
         </div>
 
-        <div
-          className="certifications-showcase"
-          data-aos="fade-up"
-          data-aos-delay="80"
-        >
-          <div className="certifications-stack">
-            {certificationsData.map((cert, index) => (
-              <article
-                key={cert.id}
-                className={`featured-cert ${
-                  index === 0 ? "featured-cert--primary" : ""
-                }`}
-              >
-                <div className="featured-media">
-                  <img src={cert.image} alt={cert.name} />
-                  <div className="media-gradient" />
+        <div className="certifications-stack">
+          {certificationsData.map((cert, index) => (
+            <article
+              key={cert.id}
+              className="cert-card"
+              data-aos="fade-up"
+              data-aos-delay={index * 50}
+            >
+              <div className="cert-card__media">
+                <img src={cert.image} alt={cert.name} />
+              </div>
+              <div className="cert-card__details">
+                <h3 className="cert-card__title">{cert.name}</h3>
+                <p className="cert-card__summary">{cert.summary}</p>
+                <div className="cert-card__meta">
+                  <span>{cert.organization}</span>
+                  <span>{cert.date}</span>
+                  <span>{cert.focus}</span>
                 </div>
-                <div className="featured-details">
-                  <p className="eyebrow">Verified Certification</p>
-                  <h3>{cert.name}</h3>
-                  <p className="featured-summary">{cert.summary}</p>
-                  <div className="featured-metadata">
-                    <div>
-                      <span>Provider</span>
-                      <strong>{cert.organization}</strong>
-                    </div>
-                    <div>
-                      <span>Date</span>
-                      <strong>{cert.date}</strong>
-                    </div>
-                    <div>
-                      <span>Focus</span>
-                      <strong>{cert.focus}</strong>
-                    </div>
-                  </div>
-                  <div className="skill-row">
-                    {cert.skills.map((skill) => (
-                      <span key={skill} className="skill-chip">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="featured-actions">
-                    {cert.verified && (
-                      <div className="verified-pill">
-                        <FaCheckCircle />
-                        Verified credential
-                      </div>
-                    )}
-                    <a
-                      href={cert.certificateUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="ghost-link"
-                    >
-                      View certificate <FaExternalLinkAlt />
-                    </a>
-                  </div>
+                <div className="cert-card__skills">
+                  {cert.skills.map((skill) => (
+                    <span key={skill} className="cert-skill-chip">{skill}</span>
+                  ))}
                 </div>
-              </article>
-            ))}
-          </div>
+                <div className="cert-card__actions">
+                  {cert.verified && (
+                    <div className="verified-pill">
+                      <FaCheckCircle />
+                      <span>Verified</span>
+                    </div>
+                  )}
+                  <a
+                    href={cert.certificateUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cert-link"
+                  >
+                    View Certificate <FaExternalLinkAlt />
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

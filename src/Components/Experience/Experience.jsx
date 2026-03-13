@@ -1,13 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Experience.css";
 import {
-  MdWork,
   MdBusinessCenter,
   MdLocationOn,
   MdDateRange,
 } from "react-icons/md";
-import { BsBriefcaseFill } from "react-icons/bs";
-import { IoIosBriefcase } from "react-icons/io";
 import {
   FaReact,
   FaHtml5,
@@ -26,8 +23,13 @@ import {
   SiJavascript,
   SiCss3,
 } from "react-icons/si";
+import AOS from "aos";
 
 const Experience = () => {
+  useEffect(() => {
+    AOS.init({ duration: 600, once: true, easing: "ease-out" });
+  }, []);
+
   const experiences = [
     {
       id: 0,
@@ -36,6 +38,7 @@ const Experience = () => {
       location: "Toronto, ON",
       date: "06/2025 - Present",
       type: "Full-Time",
+      current: true,
       description: [
         "Built 20+ Jenkins pipelines with Terraform to provision Azure resources (Key Vault, ADLS, Web Apps, Cosmos, AI Foundry) following THR networking/security standards with VNets, NSGs, Private Endpoints, and RBAC.",
         "Standardized pipeline setup via a centralized Groovy-based shared library to manage az cli authentication and shared environment configuration for consistent provisioning.",
@@ -131,8 +134,6 @@ const Experience = () => {
         "Implemented an updated version of the web application from new design by updating over 90% of the UI",
         "Created responsive UI components using React for new features and optimize UX design",
         "Improved skills using git such as branches, pull requests and code reviews",
-        "Created an email filter using App Script",
-        "Developed skills writing efficient code, debugging skills and problem solving skills",
       ],
       technologies: [
         { name: "React", icon: <FaReact />, color: "#2fc2f7" },
@@ -146,120 +147,83 @@ const Experience = () => {
 
   return (
     <div className="experience-section" name="Experiences">
-      {/* Floating orbs for visual continuity */}
-      {[1, 2, 3, 4, 5].map((i) => (
-        <div className={`experience-orb exp-orb-${i}`} key={i}></div>
-      ))}
-      <div className="experience-shape exp-shape-1"></div>
-      <div className="experience-shape exp-shape-2"></div>
+      <div className="exp-bg-hex"></div>
+      <div className="exp-bg-wash"></div>
 
-      {/* Section Header */}
-      <div className="experience-header" data-aos="fade-up">
-        <div className="exp-header-icon-wrapper">
-          <BsBriefcaseFill className="exp-header-icon" />
+      <div className="exp-inner">
+        <div className="experience-header" data-aos="fade-up">
+          <div className="exp-header-badge">
+            <MdBusinessCenter />
+          </div>
+          <h2 className="section-title">Experience</h2>
+          <p className="section-subtitle">Professional Journey & Career Growth</p>
         </div>
-        <h2 className="experience-main-title">Experience</h2>
-        <p className="experience-subtitle">
-          Professional Journey & Career Growth
-        </p>
-      </div>
 
-      {/* Timeline */}
-      <div className="experience-timeline">
-        <div className="timeline-line-exp"></div>
+        <div className="exp-timeline">
+          <div className="exp-timeline-line"></div>
 
-        {experiences.map((exp, index) => (
-          <div
-            key={exp.id}
-            className="experience-item"
-            data-aos="fade-up"
-            data-aos-delay={index * 100}
-          >
-            {/* Timeline Dot */}
-            <div className="timeline-dot">
-              <div className="dot-inner"></div>
-              <div className="dot-pulse"></div>
-            </div>
-
-            {/* Experience Card */}
-            <div className="experience-card glass-card-exp">
-              <div className="exp-card-glow"></div>
-
-              {/* Header */}
-              <div className="exp-card-header">
-                <div className="exp-header-left">
-                  <div className="exp-icon-wrapper">
-                    <IoIosBriefcase className="exp-briefcase-icon" />
-                  </div>
-                  <div className="exp-title-section">
-                    <h3 className="exp-job-title">{exp.title}</h3>
-                    <h4
-                      className={`exp-company ${
-                        exp.company === "Manulife"
-                          ? "exp-company--manulife"
-                          : exp.company === "Ciena"
-                          ? "exp-company--ciena"
-                          : ""
-                      }`}
-                    >
-                      {exp.company}
-                    </h4>
-                  </div>
-                </div>
-                <div className="exp-type-badge">
-                  <MdBusinessCenter className="type-icon" />
-                  <span>{exp.type}</span>
-                </div>
+          {experiences.map((exp, index) => (
+            <div
+              key={exp.id}
+              className={`exp-step ${exp.current ? "exp-step--current" : ""}`}
+              data-aos="fade-up"
+              data-aos-delay={index * 60}
+            >
+              <div className="exp-step-marker">
+                <span className="exp-step-num">{String(index + 1).padStart(2, "0")}</span>
               </div>
 
-              {/* Meta Info */}
-              <div className="exp-meta-info">
-                <div className="meta-item">
-                  <MdDateRange className="meta-icon" />
-                  <span>{exp.date}</span>
-                </div>
-                <div className="meta-item">
-                  <MdLocationOn className="meta-icon" />
-                  <span>{exp.location}</span>
-                </div>
-              </div>
+              <div className="exp-card">
+                {exp.current && <div className="exp-card-glow"></div>}
+                <div className="exp-card-top-accent"></div>
 
-              {/* Description */}
-              <div className="exp-description">
-                <ul>
+                <div className="exp-card-head">
+                  <div className="exp-card-titles">
+                    <h3 className="exp-role">{exp.title}</h3>
+                    <span className="exp-company-name">{exp.company}</span>
+                  </div>
+                  <div className="exp-card-badges">
+                    {exp.current && (
+                      <span className="exp-badge exp-badge--current">
+                        <span className="exp-badge-dot"></span>
+                        Current
+                      </span>
+                    )}
+                    <span className="exp-badge exp-badge--type">{exp.type}</span>
+                  </div>
+                </div>
+
+                <div className="exp-card-meta">
+                  <span className="exp-meta">
+                    <MdDateRange />
+                    {exp.date}
+                  </span>
+                  <span className="exp-meta">
+                    <MdLocationOn />
+                    {exp.location}
+                  </span>
+                </div>
+
+                <ul className="exp-bullets">
                   {exp.description.map((item, idx) => (
                     <li key={idx}>{item}</li>
                   ))}
                 </ul>
-              </div>
 
-              {/* Technologies */}
-              <div className="exp-technologies">
-                <div className="tech-header">
-                  <FaCode className="tech-header-icon" />
-                  <span>Technologies</span>
-                </div>
-                <div className="tech-list">
+                <div className="exp-stack">
                   {exp.technologies.map((tech, idx) => (
-                    <div
-                      key={idx}
-                      className="tech-item"
-                      style={{ "--tech-color": tech.color }}
-                    >
-                      <div
-                        className="tech-icon-wrapper"
-                        style={{ color: tech.color }}
-                      >
+                    <span key={idx} className="exp-tech" title={tech.name}>
+                      <span className="exp-tech-icon" style={{ color: tech.color }}>
                         {tech.icon}
-                      </div>
-                      <span className="tech-name">{tech.name}</span>
-                    </div>
+                      </span>
+                      <span className="exp-tech-name">{tech.name}</span>
+                    </span>
                   ))}
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

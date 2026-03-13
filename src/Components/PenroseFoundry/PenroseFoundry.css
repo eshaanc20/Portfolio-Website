@@ -1,0 +1,1324 @@
+/* ========== PENROSE FOUNDRY SECTION ========== */
+.pf-section {
+  padding: 120px clamp(24px, 6vw, 120px) 100px;
+  background: linear-gradient(180deg, #0a0a14 0%, #0e0e20 30%, #12122a 60%, #0d0d1c 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ========== BACKGROUND LAYERS ========== */
+
+/* Stars — tiny dots scattered */
+.pf-bg-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 15% 25%, rgb(255 255 255 / 30%) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 15%, rgb(255 255 255 / 25%) 0%, transparent 100%),
+    radial-gradient(1px 1px at 45% 70%, rgb(255 255 255 / 20%) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 85%, rgb(255 255 255 / 22%) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 90%, rgb(255 255 255 / 18%) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 40%, rgb(139 92 246 / 35%) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 30% 55%, rgb(59 130 246 / 30%) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 50%, rgb(255 255 255 / 20%) 0%, transparent 100%),
+    radial-gradient(1px 1px at 10% 60%, rgb(255 255 255 / 15%) 0%, transparent 100%),
+    radial-gradient(1px 1px at 50% 20%, rgb(168 122 255 / 25%) 0%, transparent 100%);
+}
+
+/* Aurora — slow morphing color bands */
+.pf-bg-aurora {
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 120%;
+  height: 70%;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    conic-gradient(
+      from 200deg at 50% 80%,
+      transparent 0deg,
+      rgb(139 92 246 / 8%) 40deg,
+      rgb(59 130 246 / 6%) 80deg,
+      transparent 120deg,
+      rgb(168 122 255 / 5%) 200deg,
+      rgb(96 165 250 / 4%) 260deg,
+      transparent 300deg
+    );
+  filter: blur(60px);
+  animation: pfAurora 20s ease-in-out infinite alternate;
+}
+
+@keyframes pfAurora {
+  0% {
+    transform: translateX(-5%) rotate(0deg) scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translateX(3%) rotate(2deg) scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-2%) rotate(-1deg) scale(0.98);
+    opacity: 0.8;
+  }
+}
+
+/* Grid — subtle crosshatch */
+.pf-bg-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 2.5%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 2.5%) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 55% 45% at 50% 40%, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 55% 45% at 50% 40%, black 0%, transparent 70%);
+}
+
+/* Vignette — dark edges */
+.pf-bg-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 45%, transparent 30%, rgb(10 10 20 / 60%) 100%);
+}
+
+.pf-inner {
+  max-width: 920px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== HEADER ========== */
+.pf-header {
+  text-align: center;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo with aura glow */
+.pf-logo-wrap {
+  position: relative;
+  display: inline-flex;
+  margin-bottom: 16px;
+}
+
+.pf-logo-aura {
+  position: absolute;
+  inset: -16px;
+  border-radius: 28px;
+  background: radial-gradient(
+    circle,
+    rgb(139 92 246 / 25%) 0%,
+    rgb(59 130 246 / 12%) 50%,
+    transparent 70%
+  );
+  filter: blur(16px);
+  animation: pfLogoGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pfLogoGlow {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+.pf-logo {
+  width: 76px;
+  height: 76px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+  box-shadow:
+    0 8px 32px rgb(139 92 246 / 25%),
+    0 0 0 1px rgb(255 255 255 / 8%);
+}
+
+/* Founder badge with sweep shine */
+.pf-founder-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 22px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgb(139 92 246 / 10%), rgb(59 130 246 / 6%));
+  border: 1px solid rgb(139 92 246 / 25%);
+  color: var(--purple-300, #c4b5fd);
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.02em;
+}
+
+.pf-founder-badge__shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 10%), transparent);
+  animation: pfBadgeShine 4s ease-in-out infinite;
+}
+
+@keyframes pfBadgeShine {
+  0%, 100% {
+    left: -100%;
+  }
+
+  50% {
+    left: 100%;
+  }
+}
+
+/* Title */
+.pf-title {
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 12px;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #e0d4ff 40%,
+    var(--purple-400) 70%,
+    var(--blue-400) 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pfTitleShimmer 6s ease-in-out infinite alternate;
+}
+
+@keyframes pfTitleShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.pf-tagline {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(255 255 255 / 45%);
+  margin: 0 0 18px;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+/* Info row — website, email, founded */
+.pf-info-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pf-info-link,
+.pf-info-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgb(255 255 255 / 60%);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.pf-info-link:hover {
+  color: var(--purple-400);
+}
+
+.pf-info-link svg,
+.pf-info-item svg {
+  font-size: 15px;
+  opacity: 0.7;
+}
+
+.pf-info-link:hover svg {
+  opacity: 1;
+}
+
+.pf-info-link:focus-visible {
+  outline: 2px solid var(--purple-400);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.pf-app-store-btn:focus-visible {
+  outline: 2px solid var(--purple-400);
+  outline-offset: 2px;
+}
+
+.pf-info-sep {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 20%);
+  flex-shrink: 0;
+}
+
+/* ========== PENROSE STAIRCASE ========== */
+.penrose-scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  perspective: 700px;
+  position: relative;
+  margin-bottom: -8px;
+}
+
+.penrose-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgb(120 215 198 / 18%) 0%,
+    rgb(183 148 244 / 12%) 35%,
+    rgb(139 92 246 / 6%) 60%,
+    transparent 75%
+  );
+  filter: blur(35px);
+  pointer-events: none;
+  animation: penroseGlowPulse 6s ease-in-out infinite alternate;
+}
+
+.penrose-glow--secondary {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    rgb(139 92 246 / 15%) 0%,
+    rgb(59 130 246 / 8%) 50%,
+    transparent 70%
+  );
+  filter: blur(25px);
+  animation: penroseGlowPulse 6s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes penroseGlowPulse {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.penrose-staircase {
+  width: 170px;
+  height: 170px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg);
+  animation: penroseRotate 24s linear infinite, penroseBob 8s ease-in-out infinite;
+}
+
+.penrose-staircase--static {
+  animation: none;
+  transform: rotateX(-30deg) rotateY(45deg);
+}
+
+@keyframes penroseRotate {
+  to {
+    transform: rotateX(-30deg) rotateY(360deg);
+  }
+}
+
+@keyframes penroseBob {
+  0%, 100% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -8px;
+  }
+}
+
+.penrose-step {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 18px;
+  margin-left: -12px;
+  margin-top: -9px;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  animation: penroseStepShimmer 4s ease-in-out infinite alternate;
+}
+
+@keyframes penroseStepShimmer {
+  0% {
+    filter: brightness(1);
+  }
+
+  100% {
+    filter: brightness(1.15);
+  }
+}
+
+/* Front face */
+.penrose-step__front {
+  position: absolute;
+  inset: 0;
+  border-radius: 2px;
+  box-shadow:
+    0 2px 12px rgb(0 0 0 / 30%),
+    inset 0 1px 0 rgb(255 255 255 / 12%);
+}
+
+/* Top face — tilted up */
+.penrose-step__top {
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  top: -10px;
+  left: 0;
+  border-radius: 2px 2px 0 0;
+  transform: rotateX(70deg);
+  transform-origin: bottom center;
+  box-shadow: inset 0 0 6px rgb(255 255 255 / 8%);
+}
+
+/* Side face — right edge */
+.penrose-step__side {
+  position: absolute;
+  width: 8px;
+  height: 100%;
+  top: 0;
+  right: -8px;
+  border-radius: 0 2px 2px 0;
+  transform: rotateY(70deg);
+  transform-origin: left center;
+}
+
+/* ========== MISSION GLASS CARD ========== */
+.pf-mission-card {
+  position: relative;
+  padding: 28px 32px;
+  border-radius: 20px;
+  background: rgb(255 255 255 / 3%);
+  margin-bottom: 44px;
+  overflow: hidden;
+}
+
+/* Animated gradient border */
+.pf-mission-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgb(139 92 246 / 30%), rgb(59 130 246 / 20%), rgb(139 92 246 / 15%), transparent);
+  background-size: 300% 300%;
+  animation: pfBorderMove 6s ease-in-out infinite;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+@keyframes pfBorderMove {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.pf-mission-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgb(255 255 255 / 60%);
+  margin: 0;
+  text-align: center;
+}
+
+/* ========== PILLARS ========== */
+.pf-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 44px;
+}
+
+.pf-pillar {
+  padding: 28px 24px 24px;
+  border-radius: 18px;
+  background: rgb(255 255 255 / 3%);
+  border: 1px solid rgb(255 255 255 / 6%);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pf-pillar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--purple-500), var(--blue-400));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pf-pillar:hover {
+  transform: translateY(-4px);
+  border-color: rgb(139 92 246 / 18%);
+  background: rgb(255 255 255 / 5%);
+  box-shadow: 0 16px 48px rgb(139 92 246 / 8%);
+}
+
+.pf-pillar:hover::before {
+  opacity: 1;
+}
+
+.pf-pillar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.pf-pillar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgb(139 92 246 / 15%), rgb(59 130 246 / 10%));
+  border: 1px solid rgb(139 92 246 / 10%);
+  color: var(--purple-400);
+  font-size: 22px;
+}
+
+.pf-pillar-num {
+  font-size: 32px;
+  font-weight: 800;
+  color: rgb(255 255 255 / 4%);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.pf-pillar-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+
+.pf-pillar-text {
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgb(255 255 255 / 45%);
+  margin: 0 0 20px;
+}
+
+.pf-pillar-line {
+  height: 1px;
+  background: linear-gradient(90deg, rgb(139 92 246 / 15%), transparent);
+}
+
+/* ========== DIVIDER ========== */
+.pf-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.pf-divider::before,
+.pf-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(139 92 246 / 18%), transparent);
+}
+
+.pf-divider-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--purple-500);
+  box-shadow: 0 0 8px rgb(139 92 246 / 40%);
+}
+
+.pf-divider-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--purple-400);
+  white-space: nowrap;
+}
+
+/* ========== PRODUCT CARD ========== */
+.pf-product {
+  position: relative;
+  padding: 44px 40px 36px;
+  border-radius: 28px;
+  background: linear-gradient(165deg, rgb(255 255 255 / 5%) 0%, rgb(255 255 255 / 2%) 100%);
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Background glow inside product card */
+.pf-product-glow {
+  position: absolute;
+  top: -30%;
+  right: -15%;
+  width: 500px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse at center,
+    rgb(139 92 246 / 10%) 0%,
+    rgb(59 130 246 / 6%) 40%,
+    transparent 70%
+  );
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+/* Animated gradient border */
+.pf-product-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgb(139 92 246 / 40%) 0%,
+    rgb(59 130 246 / 25%) 25%,
+    transparent 50%,
+    rgb(139 92 246 / 18%) 75%,
+    rgb(59 130 246 / 30%) 100%
+  );
+  background-size: 400% 400%;
+  animation: pfProductBorder 8s ease-in-out infinite;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+@keyframes pfProductBorder {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Hero area — centered layout */
+.pf-product-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.pf-product-logo-wrap {
+  position: relative;
+  flex-shrink: 0;
+  margin-bottom: 20px;
+}
+
+.pf-product-logo-aura {
+  position: absolute;
+  inset: -14px;
+  border-radius: 26px;
+  background: radial-gradient(
+    circle,
+    rgb(139 92 246 / 20%) 0%,
+    rgb(59 130 246 / 10%) 50%,
+    transparent 70%
+  );
+  filter: blur(14px);
+  animation: pfLogoGlow 4s ease-in-out infinite alternate;
+}
+
+.pf-product-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 22px;
+  position: relative;
+  z-index: 1;
+  box-shadow:
+    0 12px 36px rgb(0 0 0 / 50%),
+    0 0 0 1px rgb(255 255 255 / 10%),
+    inset 0 1px 0 rgb(255 255 255 / 5%);
+}
+
+.pf-product-hero-text {
+  margin-bottom: 16px;
+}
+
+.pf-product-name {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 6px;
+  letter-spacing: -0.03em;
+}
+
+.pf-product-subtitle {
+  font-size: 15px;
+  color: rgb(255 255 255 / 45%);
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.pf-coming-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgb(139 92 246 / 10%);
+  border: 1px solid rgb(139 92 246 / 22%);
+  color: var(--purple-400);
+}
+
+.pf-coming-soon__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--purple-400);
+  animation: pfDotPulse 2s ease-in-out infinite;
+}
+
+@keyframes pfDotPulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 4px rgb(139 92 246 / 50%);
+  }
+
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 12px rgb(139 92 246 / 30%);
+  }
+}
+
+/* Description */
+.pf-product-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgb(255 255 255 / 50%);
+  margin: 0 0 28px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Features — 3x2 grid */
+.pf-product-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.pf-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgb(255 255 255 / 3%);
+  border: 1px solid rgb(255 255 255 / 5%);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pf-feature:hover {
+  background: rgb(139 92 246 / 8%);
+  border-color: rgb(139 92 246 / 18%);
+  transform: translateY(-2px);
+}
+
+.pf-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, rgb(139 92 246 / 15%), rgb(59 130 246 / 8%));
+  border: 1px solid rgb(139 92 246 / 10%);
+  color: var(--purple-400);
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.pf-feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.pf-feature-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgb(255 255 255 / 80%);
+}
+
+.pf-feature-desc {
+  font-size: 11px;
+  color: rgb(255 255 255 / 35%);
+  font-weight: 400;
+}
+
+/* Footer */
+.pf-product-footer {
+  position: relative;
+  z-index: 1;
+  padding-top: 24px;
+  border-top: 1px solid rgb(255 255 255 / 6%);
+}
+
+.pf-product-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* App Store button */
+.pf-app-store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px 10px 16px;
+  border-radius: 12px;
+  background: #ffffff;
+  cursor: default;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
+}
+
+.pf-app-store-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgb(0 0 0 / 20%);
+}
+
+.pf-app-store-icon {
+  font-size: 28px;
+  color: #000000;
+  flex-shrink: 0;
+}
+
+.pf-app-store-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.pf-app-store-label {
+  font-size: 9px;
+  font-weight: 500;
+  color: #333333;
+  letter-spacing: 0.02em;
+  margin-bottom: 2px;
+}
+
+.pf-app-store-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: -0.02em;
+}
+
+/* Highlight pills */
+.pf-product-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.pf-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  background: rgb(139 92 246 / 8%);
+  border: 1px solid rgb(139 92 246 / 15%);
+  color: var(--purple-400);
+}
+
+/* ========== MOBILE REDESIGN ========== */
+@media (width <= 768px) {
+  .pf-section {
+    padding: 70px 16px 60px;
+  }
+
+  /* Simplified background */
+  .pf-bg-aurora {
+    filter: blur(50px);
+    opacity: 0.6;
+    animation: none;
+  }
+
+  .pf-bg-grid {
+    background-size: 50px 50px;
+  }
+
+  .pf-bg-vignette {
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, transparent 20%, rgb(10 10 20 / 70%) 100%);
+  }
+
+  /* Header */
+  .pf-logo-wrap {
+    margin-bottom: 12px;
+  }
+
+  .pf-logo-aura {
+    inset: -10px;
+    filter: blur(12px);
+  }
+
+  .pf-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+  }
+
+  .pf-founder-badge {
+    font-size: 12px;
+    padding: 5px 16px;
+    margin-bottom: 12px;
+  }
+
+  .pf-title {
+    font-size: 30px;
+  }
+
+  .pf-header {
+    margin-bottom: 20px;
+  }
+
+  .pf-tagline {
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+
+  .pf-info-row {
+    gap: 8px;
+    flex-direction: column;
+  }
+
+  .pf-info-sep {
+    display: none;
+  }
+
+  .pf-info-link,
+  .pf-info-item {
+    font-size: 12px;
+  }
+
+  .pf-info-link svg,
+  .pf-info-item svg {
+    font-size: 14px;
+  }
+
+  /* Staircase */
+  .penrose-scene {
+    height: 170px;
+    margin-bottom: -4px;
+    perspective: 550px;
+  }
+
+  .penrose-staircase {
+    width: 140px;
+    height: 140px;
+    animation: penroseRotate 24s linear infinite;
+  }
+
+  .penrose-glow {
+    width: 220px;
+    height: 220px;
+  }
+
+  .penrose-glow--secondary {
+    width: 150px;
+    height: 150px;
+  }
+
+  .penrose-step {
+    animation: none;
+  }
+
+  /* Mission */
+  .pf-mission-card {
+    padding: 22px 20px;
+    border-radius: 16px;
+    margin-bottom: 36px;
+  }
+
+  .pf-mission-text {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* Pillars — horizontal cards */
+  .pf-pillars {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+
+  .pf-pillar {
+    padding: 18px 20px 16px;
+    border-radius: 14px;
+  }
+
+  .pf-pillar:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .pf-pillar::before {
+    display: none;
+  }
+
+  .pf-pillar-top {
+    margin-bottom: 10px;
+  }
+
+  .pf-pillar-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+    font-size: 18px;
+  }
+
+  .pf-pillar-num {
+    font-size: 24px;
+  }
+
+  .pf-pillar-title {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .pf-pillar-text {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  /* Divider */
+  .pf-divider {
+    margin-bottom: 28px;
+  }
+
+  .pf-divider-label {
+    font-size: 11px;
+  }
+
+  /* Product card */
+  .pf-product {
+    padding: 28px 20px 24px;
+    border-radius: 22px;
+  }
+
+  .pf-product-glow {
+    width: 300px;
+    height: 250px;
+    filter: blur(40px);
+  }
+
+  .pf-product-hero {
+    margin-bottom: 20px;
+  }
+
+  .pf-product-logo-wrap {
+    margin-bottom: 16px;
+  }
+
+  .pf-product-logo-aura {
+    inset: -10px;
+    filter: blur(10px);
+  }
+
+  .pf-product-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+  }
+
+  .pf-product-hero-text {
+    margin-bottom: 12px;
+  }
+
+  .pf-product-name {
+    font-size: 24px;
+  }
+
+  .pf-coming-soon {
+    padding: 4px 12px;
+    font-size: 11px;
+    gap: 5px;
+  }
+
+  .pf-coming-soon__dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .pf-product-subtitle {
+    font-size: 13px;
+  }
+
+  .pf-product-desc {
+    font-size: 13px;
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  /* Features — 2 column */
+  .pf-product-features {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+
+  .pf-feature {
+    padding: 12px;
+    border-radius: 12px;
+    gap: 10px;
+  }
+
+  .pf-feature:hover {
+    transform: none;
+  }
+
+  .pf-feature-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    font-size: 16px;
+  }
+
+  .pf-feature-label {
+    font-size: 12px;
+  }
+
+  .pf-feature-desc {
+    font-size: 10px;
+  }
+
+  /* Footer — stack on mobile */
+  .pf-product-footer {
+    padding-top: 18px;
+  }
+
+  .pf-product-footer-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .pf-app-store-btn {
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 11px;
+  }
+
+  .pf-app-store-icon {
+    font-size: 24px;
+  }
+
+  .pf-app-store-title {
+    font-size: 16px;
+  }
+
+  .pf-product-highlights {
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .pf-highlight {
+    padding: 5px 12px;
+    font-size: 11px;
+  }
+}
+
+/* ========== SMALL MOBILE ========== */
+@media (width <= 380px) {
+  .pf-section {
+    padding: 60px 14px 50px;
+  }
+
+  .pf-logo {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+  }
+
+  .pf-title {
+    font-size: 26px;
+  }
+
+  .pf-tagline {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .pf-info-link,
+  .pf-info-item {
+    font-size: 11px;
+  }
+
+  .penrose-scene {
+    height: 140px;
+    margin-bottom: -4px;
+    perspective: 450px;
+  }
+
+  .penrose-staircase {
+    width: 115px;
+    height: 115px;
+  }
+
+  .penrose-glow {
+    width: 140px;
+    height: 140px;
+  }
+
+  .penrose-glow--secondary {
+    width: 100px;
+    height: 100px;
+  }
+
+  .pf-mission-card {
+    padding: 18px 16px;
+    border-radius: 14px;
+  }
+
+  .pf-pillar {
+    padding: 14px 16px 12px;
+  }
+
+  .pf-product {
+    padding: 22px 14px 20px;
+    border-radius: 18px;
+  }
+
+  .pf-product-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+  }
+
+  .pf-product-name {
+    font-size: 21px;
+  }
+
+  .pf-product-desc {
+    font-size: 12px;
+  }
+
+  .pf-feature {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .pf-feature-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  .pf-feature-label {
+    font-size: 11px;
+  }
+
+  .pf-feature-desc {
+    display: none;
+  }
+
+  .pf-app-store-btn {
+    padding: 8px 16px;
+    gap: 8px;
+  }
+
+  .pf-app-store-icon {
+    font-size: 22px;
+  }
+
+  .pf-app-store-title {
+    font-size: 15px;
+  }
+
+  .pf-highlight {
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+}

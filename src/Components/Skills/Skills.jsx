@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Skills.css";
 import {
   FaCode,
@@ -33,23 +33,15 @@ import {
 } from "react-icons/si";
 import { DiJava } from "react-icons/di";
 import { TbBrandCpp } from "react-icons/tb";
-import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Skills = () => {
-  // Check if mobile for performance optimizations
-  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
-
-  // Initialize AOS only on larger screens for better mobile performance
   useEffect(() => {
-    const checkMobile = window.innerWidth <= 768;
     AOS.init({
-      duration: checkMobile ? 0 : 1000,
-      delay: checkMobile ? 0 : 100,
-      mirror: false,
+      duration: 600,
       once: true,
-      disable: checkMobile,
+      easing: "ease-out",
     });
   }, []);
 
@@ -57,7 +49,6 @@ const Skills = () => {
     {
       title: "Languages",
       icon: <FaCode />,
-      color: "rgba(139, 92, 246, 0.8)",
       skills: [
         { name: "JavaScript", icon: <SiJavascript /> },
         { name: "Python", icon: <SiPython /> },
@@ -74,7 +65,6 @@ const Skills = () => {
     {
       title: "Libraries & Frameworks",
       icon: <FaBook />,
-      color: "rgba(168, 85, 247, 0.8)",
       skills: [
         { name: "React", icon: <SiReact /> },
         { name: "Node.js", icon: <SiNodedotjs /> },
@@ -93,7 +83,6 @@ const Skills = () => {
     {
       title: "Tools & Platforms",
       icon: <FaTools />,
-      color: "rgba(109, 40, 217, 0.8)",
       skills: [
         { name: "Azure", icon: <FaMicrosoft /> },
         { name: "AWS", icon: <FaAws /> },
@@ -111,7 +100,6 @@ const Skills = () => {
     {
       title: "Core Competencies",
       icon: <FaLightbulb />,
-      color: "rgba(147, 51, 234, 0.8)",
       skills: [
         { name: "Web Development", icon: null },
         { name: "Data Structures", icon: null },
@@ -125,100 +113,46 @@ const Skills = () => {
   ];
 
   return (
-    <div className="Skills" name="Skills">
-      {/* Floating background elements */}
-      <div className="skills-bg-shapes">
-        {[1, 2, 3, 4, 5].map((i) => (
-          <div key={i} className={`bg-shape shape-${i}`}></div>
-        ))}
-        <div className="skills-shape skills-shape-1"></div>
-        <div className="skills-shape skills-shape-2"></div>
-      </div>
+    <div className="skills-section" name="Skills">
       <div className="skills-inner">
-        {/* Section Header */}
-        <div className="skills-header" data-aos="fade-down">
-          <div className="skills-header-content">
-            <div className="skills-icon-wrapper">
-              <FaCode className="skills-main-icon" />
-              <div className="icon-glow"></div>
-            </div>
-            <h2 className="skills-title">Technical Skills</h2>
-            <p className="skills-subtitle">Technologies & tools I work with</p>
+        <div className="skills-header" data-aos="fade-up">
+          <div className="skills-icon-wrapper">
+            <FaCode className="skills-main-icon" />
           </div>
-          <div className="header-line">
-            <div className="line-glow"></div>
-          </div>
+          <h2 className="section-title">Technical Skills</h2>
+          <p className="section-subtitle">Technologies & tools I work with</p>
         </div>
 
-        {/* Skills Grid */}
         <div className="skills-grid">
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}
-              className="skill-category glass-card"
+              className="skill-category"
               data-aos="fade-up"
-              data-aos-delay={categoryIndex * 100}
+              data-aos-delay={categoryIndex * 50}
             >
-              {/* Category Header */}
               <div className="category-header">
-                <div
-                  className="category-icon-wrapper"
-                  style={{
-                    background: `linear-gradient(135deg, ${category.color}, rgba(139, 92, 246, 0.4))`,
-                  }}
-                >
+                <div className="category-icon-wrapper">
                   {category.icon}
-                  <div
-                    className="category-icon-glow"
-                    style={{ background: category.color }}
-                  ></div>
                 </div>
                 <h3 className="category-title">{category.title}</h3>
                 <div className="category-count">{category.skills.length}</div>
               </div>
 
-              {/* Skills Pills */}
               <div className="skills-pills">
                 {category.skills.map((skill, skillIndex) => (
-                  <div
-                    key={skillIndex}
-                    className="skill-pill"
-                    data-aos="zoom-in"
-                    data-aos-delay={categoryIndex * 100 + skillIndex * 30}
-                  >
+                  <div key={skillIndex} className="skill-pill">
                     {skill.icon && (
                       <span className="skill-icon">{skill.icon}</span>
                     )}
                     <span className="skill-name">{skill.name}</span>
-                    <div className="pill-glow"></div>
                   </div>
                 ))}
               </div>
-
-              {/* Card shine effect */}
-              <div className="card-shine"></div>
             </div>
           ))}
         </div>
       </div>
-
-      {/* Floating particles - hidden on mobile for performance */}
-      {!isMobile && (
-        <div className="skills-particles">
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={i}
-              className="skill-particle"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${4 + Math.random() * 4}s`,
-              }}
-            ></div>
-          ))}
-        </div>
-      )}
     </div>
   );
 };

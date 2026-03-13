@@ -4,6 +4,7 @@ import Homepage from "./Components/Homepage/Homepage.jsx";
 import Navigation from "./Components/Navigation/Navigation.jsx";
 import Education from "./Components/Education/Education.jsx";
 import Experience from "./Components/Experience/Experience.jsx";
+import PenroseFoundry from "./Components/PenroseFoundry/PenroseFoundry.jsx";
 import Skills from "./Components/Skills/Skills.jsx";
 import Projects from "./Components/Projects/Projects.jsx";
 import Certifications from "./Components/Certifications/Certifications.jsx";
@@ -17,8 +18,9 @@ class App extends Component {
         <Navigation />
         <Homepage />
         <div className="app-content">
-          <Education />
           <Experience />
+          <PenroseFoundry />
+          <Education />
           <Skills />
           <Projects />
           <Certifications />

@@ -1,26 +1,9 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect } from "react";
 import "./Homepage.css";
 import ProfilePicture from "../../Assets/profilePicture.jpeg";
+import PenroseLogo from "../../Assets/PenroseFoundryLogo.png";
 import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io";
-import {
-  FaCode,
-  FaRocket,
-  FaBrain,
-  FaLaptopCode,
-  FaAward,
-  FaServer,
-  FaCloud,
-  FaAws,
-  FaMicrosoft,
-} from "react-icons/fa";
-import {
-  SiReact,
-  SiJavascript,
-  SiPython,
-  SiNodedotjs,
-  SiAngular,
-} from "react-icons/si";
-import { MdDevices } from "react-icons/md";
+import { MdRocketLaunch } from "react-icons/md";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-scroll";
@@ -28,489 +11,132 @@ import Resume from "../../Assets/Eshaan_Chaudhari_Resume.pdf";
 import { Typewriter } from "react-simple-typewriter";
 
 const Homepage = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isScrolling, setIsScrolling] = useState(false);
-  const [reduceMotion, setReduceMotion] = useState(() => {
-    const prefersReduced =
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const isSmallScreen =
-      typeof window !== "undefined" && window.innerWidth <= 900;
-    return prefersReduced || isSmallScreen;
-  });
-  const particles = useMemo(() => {
-    const count = reduceMotion ? 6 : 15;
-    return Array.from({ length: count }, () => ({
-      top: Math.random() * 100,
-      left: Math.random() * 100,
-      delay: Math.random() * 5,
-      duration: 3 + Math.random() * 4,
-    }));
-  }, [reduceMotion]);
-
-  // Track mouse position for parallax and interactive effects
   useEffect(() => {
-    if (reduceMotion || window.innerWidth <= 1024) {
-      setMousePosition({ x: 0, y: 0 });
-      return;
-    }
-
-    let rafId = null;
-    const handleMouseMove = (e) => {
-      const nextPosition = {
-        x: (e.clientX / window.innerWidth) * 2 - 1,
-        y: (e.clientY / window.innerHeight) * 2 - 1,
-      };
-
-      // Throttle mouse updates to animation frame to prevent excessive re-renders
-      cancelAnimationFrame(rafId);
-      rafId = requestAnimationFrame(() => setMousePosition(nextPosition));
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      cancelAnimationFrame(rafId);
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, [reduceMotion]);
-
-  useEffect(() => {
-    const initAOS = () => {
-      const disableAnimations =
-        window.matchMedia("(max-width: 768px)").matches || reduceMotion;
-      AOS.init({
-        duration: 1000,
-        delay: 100,
-        mirror: false,
-        once: true,
-        disable: disableAnimations,
-      });
-    };
-
-    initAOS();
-    window.addEventListener("resize", initAOS);
-    return () => window.removeEventListener("resize", initAOS);
-  }, [reduceMotion]);
-
-  useEffect(() => {
-    const updateMotionPreference = () => {
-      const prefersReduced = window
-        .matchMedia("(prefers-reduced-motion: reduce)")
-        .matches;
-      const isSmallScreen = window.innerWidth <= 900;
-      const lowPowerDevice =
-        typeof navigator !== "undefined" &&
-        ((navigator.hardwareConcurrency &&
-          navigator.hardwareConcurrency <= 4) ||
-          (navigator.deviceMemory && navigator.deviceMemory <= 4));
-
-      setReduceMotion(
-        (prev) =>
-          prev || prefersReduced || isSmallScreen || Boolean(lowPowerDevice)
-      );
-    };
-
-    let scrollTimeout;
-    const handleScroll = () => {
-      if (window.scrollY > 200) {
-        setReduceMotion(true);
-      }
-
-      setIsScrolling(true);
-      clearTimeout(scrollTimeout);
-      scrollTimeout = window.setTimeout(() => {
-        setIsScrolling(false);
-      }, 120);
-    };
-
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    mediaQuery.addEventListener("change", updateMotionPreference);
-    window.addEventListener("resize", updateMotionPreference);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    updateMotionPreference();
-
-    return () => {
-      mediaQuery.removeEventListener("change", updateMotionPreference);
-      window.removeEventListener("resize", updateMotionPreference);
-      window.removeEventListener("scroll", handleScroll);
-      clearTimeout(scrollTimeout);
-    };
+    AOS.init({
+      duration: 600,
+      once: true,
+      easing: "ease-out",
+    });
   }, []);
 
-  // Background animations removed for cleaner look
-
   return (
-    <div
-      className={`homepage ${reduceMotion ? "reduced-motion" : ""} ${
-        isScrolling ? "is-scrolling" : ""
-      }`}
-      name="Homepage"
-    >
-      {/* Floating geometric shapes with neon glow */}
-      <div className="floating-shapes">
-        <div className="shape shape-1">
-          <div className="shape-glow"></div>
-        </div>
-        <div className="shape shape-2">
-          <div className="shape-glow"></div>
-        </div>
-        <div className="shape shape-3">
-          <div className="shape-glow"></div>
-        </div>
-        <div className="shape shape-4">
-          <div className="shape-glow"></div>
-        </div>
-        <div className="shape shape-5">
-          <div className="shape-glow"></div>
-        </div>
-        <div className="shape shape-6">
-          <div className="shape-glow"></div>
-        </div>
-        <div className="shape shape-7">
-          <div className="shape-glow"></div>
-        </div>
-        <div className="shape shape-8">
-          <div className="shape-glow"></div>
-        </div>
-      </div>
+    <div className="homepage" name="Homepage">
+      {/* Background — few bold elements */}
+      <div className="hero-mesh"></div>
+      <div className="hero-gradient-arc"></div>
+      <div className="hero-grid"></div>
 
-      {/* Enhanced gradient orbs with darker purple */}
-      <div className="gradient-orb orb-1"></div>
-      <div className="gradient-orb orb-2"></div>
-      <div className="gradient-orb orb-3"></div>
-      <div className="gradient-orb orb-4"></div>
-
-      {/* Floating tech icons */}
-      <div className="floating-tech-icons">
-        <div
-          className="tech-icon"
-          style={{ top: "15%", left: "8%", animationDelay: "0s" }}
-        >
-          <SiReact />
-        </div>
-        <div
-          className="tech-icon"
-          style={{ top: "70%", left: "12%", animationDelay: "1.5s" }}
-        >
-          <SiJavascript />
-        </div>
-        <div
-          className="tech-icon"
-          style={{ top: "25%", right: "10%", animationDelay: "3s" }}
-        >
-          <SiPython />
-        </div>
-        <div
-          className="tech-icon"
-          style={{ bottom: "25%", right: "15%", animationDelay: "4.5s" }}
-        >
-          <SiNodedotjs />
-        </div>
-      </div>
-
-      {/* Ambient particles */}
-      <div className="particles-container">
-        {particles.map((particle, i) => (
-          <div
-            key={i}
-            className="particle"
-            style={{
-              top: `${particle.top}%`,
-              left: `${particle.left}%`,
-              animationDelay: `${particle.delay}s`,
-              animationDuration: `${particle.duration}s`,
-            }}
-          ></div>
-        ))}
-      </div>
-
-      <div
-        className="homepage-title"
-        style={{
-          transform: `translate(${mousePosition.x * 5}px, ${
-            mousePosition.y * 5
-          }px)`,
-        }}
-      >
+      <div className="homepage-layout">
         <div className="homepage-content" data-aos="fade-up">
-          <div className="greeting-badge neon-border">
-            <span className="wave">👋</span>
+          <div className="greeting-badge">
+            <span className="greeting-dot"></span>
             <span>Hello World, I'm</span>
           </div>
 
-          <h1 className="name">
-            <span className="name-text glitch" data-text="Eshaan Chaudhari">
-              Eshaan Chaudhari
-            </span>
-            <div className="name-underline neon-glow"></div>
-          </h1>
+          <h1 className="name">Eshaan Chaudhari</h1>
 
-          <div className="role-container glass-card">
-            <div className="role-icon pulse-glow">
-              <FaCode />
-            </div>
-            <div className="role-text">
-              <Typewriter
-                words={[
-                  "Software Engineer",
-                  "3+ years of work experience building and shipping software",
-                  "Full-Stack Engineer at Manulife",
-                  "McMaster Engineering Graduate",
-                  "Software Engineering & Management",
-                  "Always Building, Always Learning",
-                  "Creative Problem Solver. Architect.",
-                ]}
-                loop={true}
-                cursor
-                cursorStyle="|"
-                typeSpeed={70}
-                deleteSpeed={50}
-                delaySpeed={1500}
-              />
-            </div>
+          <div className="role-container">
+            <Typewriter
+              words={[
+                "Software Engineer",
+                "3+ years of work experience building and shipping software",
+                "Full-Stack Engineer at Manulife",
+                "Founder of Penrose Foundry",
+                "McMaster Engineering Graduate",
+                "Software Engineering & Management",
+                "Always Building, Always Learning",
+                "Creative Problem Solver. Architect.",
+              ]}
+              loop={true}
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1500}
+            />
           </div>
 
           <div className="stats-row">
-            <div
-              className="stat-card glass-card"
-              data-aos="fade-up"
-              data-aos-delay="200"
+            <div className="stat-item">
+              <span className="stat-number">3+</span>
+              <span className="stat-label">Years Experience</span>
+            </div>
+            <div className="stat-divider"></div>
+            <div className="stat-item">
+              <span className="stat-number">20+</span>
+              <span className="stat-label">Projects Built</span>
+            </div>
+            <div className="stat-divider"></div>
+            <div className="stat-item">
+              <span className="stat-number">10+</span>
+              <span className="stat-label">Tech Skills</span>
+            </div>
+          </div>
+
+          <div className="cta-buttons">
+            <a
+              className="cta-button cta-button--primary"
+              href={Resume}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <div className="stat-icon-wrapper">
-                <FaRocket className="stat-icon" />
-              </div>
-              <div className="stat-content">
-                <div className="stat-value counter">3+</div>
-                <div className="stat-label">Years Experience</div>
-              </div>
-              <div className="card-shine"></div>
-            </div>
-            <div
-              className="stat-card glass-card"
-              data-aos="fade-up"
-              data-aos-delay="300"
+              <span>View Resume</span>
+              <svg className="cta-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+            <Link to="Contact" smooth={true} duration={800} className="cta-button cta-button--secondary">
+              <span>Let's Talk</span>
+            </Link>
+          </div>
+
+          <div className="social-links">
+            <a
+              className="social-button"
+              href="https://linkedin.com/in/eshaan-chaudhari"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <div className="stat-icon-wrapper">
-                <FaBrain className="stat-icon" />
-              </div>
-              <div className="stat-content">
-                <div className="stat-value counter">20+</div>
-                <div className="stat-label">Projects Built</div>
-              </div>
-              <div className="card-shine"></div>
-            </div>
-            <div
-              className="stat-card glass-card"
-              data-aos="fade-up"
-              data-aos-delay="400"
+              <IoLogoLinkedin />
+              <span>LinkedIn</span>
+            </a>
+            <a
+              className="social-button"
+              href="https://github.com/eshaanc20"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <div className="stat-icon-wrapper">
-                <FaAward className="stat-icon" />
-              </div>
-              <div className="stat-content">
-                <div className="stat-value counter">10+</div>
-                <div className="stat-label">
-                  <span className="stat-label-full">
-                    Technologies & Frameworks
-                  </span>
-                  <span className="stat-label-short">Tech Skills</span>
-                </div>
-              </div>
-              <div className="card-shine"></div>
-            </div>
+              <IoLogoGithub />
+              <span>GitHub</span>
+            </a>
           </div>
 
-          <div className="mobile-expertise-highlight">
-            <div className="highlight-pill">
-              <FaBrain />
-              <span>Full-Stack Expert</span>
+          <a
+            className="founder-card"
+            href="https://penrosefoundry.ca"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={PenroseLogo} alt="Penrose Foundry" className="founder-card__logo" />
+            <div className="founder-card__text">
+              <span className="founder-card__role">Founder</span>
+              <span className="founder-card__company">Penrose Foundry</span>
             </div>
-            <p>
-              Bridging front-end craft with scalable backend systems and cloud
-              solutions to deliver value for customers
-            </p>
-          </div>
-
-          <div className="expertise-section">
-            <div className="expertise-cards">
-              <div
-                className="expertise-card glass-card"
-                data-aos="fade-up"
-                data-aos-delay="600"
-              >
-                <div className="expertise-icon-wrapper">
-                  <MdDevices className="expertise-main-icon" />
-                </div>
-                <div className="expertise-content">
-                  <h3 className="expertise-card-title">Frontend</h3>
-                  <p className="expertise-card-desc">
-                    Modern UI/UX Development
-                  </p>
-                </div>
-                <div className="expertise-tech-icons">
-                  <div className="tech-badge">
-                    <SiReact />
-                  </div>
-                  <div className="tech-badge">
-                    <SiAngular />
-                  </div>
-                </div>
-                <div className="card-shine"></div>
-              </div>
-
-              <div
-                className="expertise-card glass-card"
-                data-aos="fade-up"
-                data-aos-delay="700"
-              >
-                <div className="expertise-icon-wrapper">
-                  <FaServer className="expertise-main-icon" />
-                </div>
-                <div className="expertise-content">
-                  <h3 className="expertise-card-title">Backend</h3>
-                  <p className="expertise-card-desc">
-                    Microservice Architecture
-                  </p>
-                </div>
-                <div className="expertise-tech-icons">
-                  <div className="tech-badge">
-                    <SiNodedotjs />
-                  </div>
-                  <div className="tech-badge">
-                    <SiPython />
-                  </div>
-                </div>
-                <div className="card-shine"></div>
-              </div>
-
-              <div
-                className="expertise-card glass-card"
-                data-aos="fade-up"
-                data-aos-delay="800"
-              >
-                <div className="expertise-icon-wrapper">
-                  <FaCloud className="expertise-main-icon" />
-                </div>
-                <div className="expertise-content">
-                  <h3 className="expertise-card-title">Cloud</h3>
-                  <p className="expertise-card-desc">
-                    AWS & Azure Infrastructure
-                  </p>
-                </div>
-                <div className="expertise-tech-icons">
-                  <div className="tech-badge" title="Amazon Web Services">
-                    <FaAws />
-                  </div>
-                  <div className="tech-badge" title="Microsoft Azure">
-                    <FaMicrosoft />
-                  </div>
-                </div>
-                <div className="card-shine"></div>
-              </div>
-            </div>
-          </div>
-
-          <div className="actions-section">
-            <div className="cta-buttons">
-              <a
-                className="cta-button primary"
-                href={Resume}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>View Resume</span>
-                <svg
-                  className="arrow"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                >
-                  <path
-                    d="M7.5 15L12.5 10L7.5 5"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </a>
-              <Link
-                to="Contact"
-                smooth={true}
-                duration={800}
-                className="cta-button secondary"
-              >
-                <span>Let's Talk</span>
-              </Link>
-            </div>
-
-            <div className="social-links">
-              <a
-                className="social-button linkedin"
-                href="https://linkedin.com/in/eshaan-chaudhari"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <IoLogoLinkedin />
-                <span>LinkedIn</span>
-              </a>
-              <a
-                className="social-button github"
-                href="https://github.com/eshaanc20"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <IoLogoGithub />
-                <span>GitHub</span>
-              </a>
-            </div>
-          </div>
+            <MdRocketLaunch className="founder-card__arrow" />
+          </a>
         </div>
 
-        <div className="homepage-photo" data-aos="fade-up" data-aos-delay="200">
-          <div className="profile-container">
-            <div className="profile-glow-outer"></div>
-            <div className="profile-glow"></div>
-            <div className="profile-border neon-ring">
-              <img
-                className="profile"
-                alt="Eshaan Chaudhari"
-                src={ProfilePicture}
-              />
-            </div>
-            <div className="floating-badge badge-1 glass-badge">
-              <FaLaptopCode />
-            </div>
-            <div className="floating-badge badge-2 glass-badge">
-              <FaRocket />
-            </div>
-            <div className="floating-badge badge-3 glass-badge">
-              <FaBrain />
-            </div>
-            <div className="profile-float profile-float--one">
-              <FaCode />
-            </div>
-            <div className="profile-float profile-float--two">
-              <FaCloud />
-            </div>
-            <div className="profile-square profile-square--one"></div>
-            <div className="profile-square profile-square--two"></div>
-          </div>
+        <div className="homepage-photo" data-aos="fade-left" data-aos-delay="200">
+          <img className="profile-image" alt="Eshaan Chaudhari" src={ProfilePicture} />
         </div>
       </div>
 
-      {/* Enhanced scroll indicator */}
-      <Link to="About" smooth={true} duration={800} offset={-80}>
-        <div className="scroll-indicator">
-          <div className="mouse neon-border-thin">
-            <div className="wheel"></div>
-          </div>
-          <div className="scroll-text">Scroll to explore</div>
-          <div className="scroll-arrow">↓</div>
+      <div className="scroll-indicator">
+        <div className="scroll-mouse">
+          <div className="scroll-wheel"></div>
         </div>
-      </Link>
+        <span className="scroll-text">Scroll</span>
+      </div>
     </div>
   );
 };

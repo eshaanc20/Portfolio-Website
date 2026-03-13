@@ -1,61 +1,54 @@
 import React, { useEffect, useState } from "react";
 import "./Navigation.css";
 import { Link, scroller } from "react-scroll";
+import { HiMenuAlt3, HiX } from "react-icons/hi";
 import {
-  FaHome,
-  FaGraduationCap,
-  FaBriefcase,
-  FaCode,
-  FaRocket,
-  FaCertificate,
-  FaEnvelope,
-} from "react-icons/fa";
-import { HiOutlineArrowNarrowRight, HiMenuAlt3 } from "react-icons/hi";
+  MdHome,
+  MdSchool,
+  MdBusinessCenter,
+  MdCode,
+  MdFolder,
+  MdVerified,
+  MdMail,
+  MdRocketLaunch,
+} from "react-icons/md";
 
 const navItems = [
-  { to: "Homepage", label: "Home", icon: <FaHome />, number: "01" },
-  { to: "Education", label: "Education", icon: <FaGraduationCap />, number: "02" },
-  { to: "Experiences", label: "Experience", icon: <FaBriefcase />, number: "03" },
-  { to: "Skills", label: "Skills", icon: <FaCode />, number: "04" },
-  { to: "Projects", label: "Projects", icon: <FaRocket />, number: "05" },
-  { to: "Certifications", label: "Certifications", icon: <FaCertificate />, number: "06" },
-  { to: "Contact", label: "Contact", icon: <FaEnvelope />, number: "07" },
+  { to: "Homepage", label: "Home", icon: <MdHome /> },
+  { to: "Experiences", label: "Experience", icon: <MdBusinessCenter /> },
+  { to: "PenroseFoundry", label: "Penrose Foundry", icon: <MdRocketLaunch /> },
+  { to: "Education", label: "Education", icon: <MdSchool /> },
+  { to: "Skills", label: "Skills", icon: <MdCode /> },
+  { to: "Projects", label: "Projects", icon: <MdFolder /> },
+  { to: "Certifications", label: "Certifications", icon: <MdVerified /> },
 ];
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
-    let scrollTimeout;
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-
-      // Detect active scrolling for performance optimization
-      setIsScrolling(true);
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        setIsScrolling(false);
-      }, 150);
     };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      clearTimeout(scrollTimeout);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [isMobileMenuOpen]);
 
   const handleMobileSelect = (value) => {
     if (!value) return;
-
-    // Close menu immediately for better UX
     setMobileMenuOpen(false);
-
-    // Use shorter duration on mobile for snappier feel
     setTimeout(() => {
       scroller.scrollTo(value, {
         smooth: true,
@@ -67,77 +60,107 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className={`stellar-nav ${isScrolled ? "stellar-nav--scrolled" : ""} ${isScrolling ? "stellar-nav--scrolling" : ""}`}>
-        <div className="stellar-nav__aura"></div>
-        <div className="stellar-nav__orbs">
-          <span className="orb orb--one"></span>
-          <span className="orb orb--two"></span>
-        </div>
+      <nav className={`nav ${isScrolled ? "nav--scrolled" : ""}`}>
+        <div className="nav__glow"></div>
+        <div className="nav__bar">
+          <Link to="Homepage" smooth={true} className="nav__brand" style={{ cursor: "pointer" }}>
+            <span className="brand-logo">
+              <span className="brand-logo__text">EC</span>
+            </span>
+          </Link>
 
-        <div className="stellar-nav__inner">
-          <div className="stellar-nav__brand">
-            <div className="brand-copy">
-              <span className="brand-name">Eshaan Chaudhari</span>
-              <span className="brand-role">Software Engineer</span>
-            </div>
+          <div className="nav__pill">
+            {navItems.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                smooth={true}
+                spy={true}
+                duration={500}
+                offset={-80}
+                activeClass="is-active"
+                className="nav-link"
+              >
+                <span className="nav-link__text">{item.label}</span>
+                <span className="nav-link__dot"></span>
+              </Link>
+            ))}
           </div>
 
+          <Link
+            to="Contact"
+            smooth={true}
+            spy={true}
+            duration={500}
+            offset={-80}
+            className="nav-cta"
+          >
+            <span className="nav-cta__text">Contact</span>
+            <span className="nav-cta__shine"></span>
+          </Link>
+
           <button
-            className={`stellar-nav__menu-btn ${isMobileMenuOpen ? "is-open" : ""}`}
+            className="nav__menu-btn"
             onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle navigation"
           >
-            <HiMenuAlt3 />
+            <span className={`hamburger ${isMobileMenuOpen ? "hamburger--open" : ""}`}>
+              <span className="hamburger__line"></span>
+              <span className="hamburger__line"></span>
+              <span className="hamburger__line"></span>
+            </span>
           </button>
-
-          <div className="stellar-nav__right">
-            <div className="stellar-nav__links">
-              {navItems.map((item) => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  smooth={true}
-                  spy={true}
-                  offset={-80}
-                  activeClass="is-active"
-                  className={`nav-pill ${item.label === "Contact" ? "nav-pill--cta" : ""}`}
-                >
-                  <span className="pill-index">{item.number}</span>
-                  <span className="pill-icon">{item.icon}</span>
-                  <span className="pill-label">{item.label}</span>
-                  {item.label === "Contact" && (
-                    <span className="pill-arrow">
-                      <HiOutlineArrowNarrowRight />
-                    </span>
-                  )}
-                  <span className="pill-underline"></span>
-                </Link>
-              ))}
-            </div>
-          </div>
         </div>
       </nav>
 
-      <div className={`mobile-dropdown ${isMobileMenuOpen ? "mobile-dropdown--open" : ""}`}>
-        <div className="mobile-dropdown__header">
-          <span>Jump to section</span>
+      {/* Mobile overlay backdrop */}
+      <div
+        className={`mobile-backdrop ${isMobileMenuOpen ? "mobile-backdrop--open" : ""}`}
+        onClick={() => setMobileMenuOpen(false)}
+      ></div>
+
+      {/* Mobile bottom sheet menu */}
+      <div className={`mobile-sheet ${isMobileMenuOpen ? "mobile-sheet--open" : ""}`}>
+        <div className="mobile-sheet__handle"></div>
+
+        <div className="mobile-sheet__header">
+          <span className="mobile-sheet__title">Navigation</span>
+          <button
+            className="mobile-sheet__close"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <HiX />
+          </button>
         </div>
-        <div className="mobile-dropdown__list">
-          {navItems.map((item) => (
+
+        <div className="mobile-sheet__list">
+          {navItems.map((item, i) => (
             <button
-              key={`dropdown-${item.to}`}
-              className={`mobile-dropdown__option ${
-                item.label === "Contact" ? "mobile-dropdown__option--cta" : ""
-              }`}
+              key={`mobile-${item.to}`}
+              className="mobile-sheet__item"
               onClick={() => handleMobileSelect(item.to)}
+              style={{ animationDelay: isMobileMenuOpen ? `${i * 60 + 100}ms` : "0ms" }}
             >
-              <div className="mobile-dropdown__copy">
-                <span className="mobile-dropdown__icon">{item.icon}</span>
-                <span>{item.label}</span>
-              </div>
-              <HiOutlineArrowNarrowRight />
+              <span className="mobile-sheet__icon">{item.icon}</span>
+              <span className="mobile-sheet__label">{item.label}</span>
+              <span className="mobile-sheet__arrow">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M6 4L10 8L6 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
             </button>
           ))}
+        </div>
+
+        <div className="mobile-sheet__footer">
+          <button
+            className="mobile-sheet__cta"
+            onClick={() => handleMobileSelect("Contact")}
+          >
+            <MdMail />
+            <span>Get In Touch</span>
+          </button>
         </div>
       </div>
     </>

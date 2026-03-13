@@ -1,41 +1,36 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+/* ========== CSS CUSTOM PROPERTIES ========== */
+:root {
+  --white: #ffffff;
+  --off-white: #fafafd;
+  --light-gray: #f3f4f8;
+  --border: #e4e6ef;
+  --text-primary: #141525;
+  --text-secondary: #5b6080;
+  --text-tertiary: #8b92ad;
+  --purple-50: #f5f0ff;
+  --purple-100: #ede5ff;
+  --purple-200: #d4c0ff;
+  --purple-400: #a87aff;
+  --purple-500: #8b5cf6;
+  --purple-600: #7c3aed;
+  --purple-700: #6d28d9;
+  --blue-50: #f0f5ff;
+  --blue-100: #e0ecff;
+  --blue-200: #b8d4ff;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --success: #22c55e;
+  --shadow-sm: 0 1px 3px rgb(100 100 180 / 6%), 0 1px 2px rgb(0 0 0 / 4%);
+  --shadow-md: 0 4px 12px rgb(100 100 180 / 8%), 0 2px 4px rgb(0 0 0 / 4%);
+  --shadow-lg: 0 12px 32px rgb(100 100 180 / 10%), 0 4px 8px rgb(0 0 0 / 4%);
+}
 
-/* Unified dark background across entire app */
 .app {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   position: relative;
-  background:
-    radial-gradient(ellipse at 20% 10%, rgb(139 92 246 / 15%) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 30%, rgb(168 85 247 / 15%) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 60%, rgb(109 40 217 / 10%) 0%, transparent 50%),
-    radial-gradient(ellipse at 30% 90%, rgb(139 92 246 / 12%) 0%, transparent 50%),
-    linear-gradient(135deg, #0a0612 0%, #1a0f2e 25%, #2d1b4e 50%, #1a0f2e 75%, #0f0617 100%);
-  background-size: 100% 100%;
-  background-attachment: scroll;
+  background: var(--white);
   min-height: 100vh;
-}
-
-/* Grid overlay across entire app */
-.app::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image:
-    repeating-linear-gradient(0deg, rgb(139 92 246 / 3%) 0, transparent 1px, transparent 40px),
-    repeating-linear-gradient(90deg, rgb(139 92 246 / 3%) 0, transparent 1px, transparent 40px);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Noise texture overlay */
-.app::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.5;
 }
 
 .app-content {
@@ -47,38 +42,43 @@
   width: 100%;
   overflow: hidden;
   position: relative;
-  z-index: 1;
 }
 
-/* ========== MOBILE PERFORMANCE OPTIMIZATIONS ========== */
-@media (width <= 768px) {
-  .app {
-    /* CRITICAL: Remove fixed background attachment - very expensive on mobile */
-    background-attachment: scroll;
-    /* Keep nice gradient background */
-    background:
-      radial-gradient(ellipse at 20% 10%, rgb(139 92 246 / 12%) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 30%, rgb(168 85 247 / 10%) 0%, transparent 50%),
-      linear-gradient(135deg, #0a0612 0%, #1a0f2e 25%, #2d1b4e 50%, #1a0f2e 75%, #0f0617 100%);
-  }
-
-  /* Simplified grid overlay - static, reduced opacity */
-  .app::before {
-    position: absolute;
-    background-image:
-      repeating-linear-gradient(0deg, rgb(139 92 246 / 2%) 0, transparent 1px, transparent 50px),
-      repeating-linear-gradient(90deg, rgb(139 92 246 / 2%) 0, transparent 1px, transparent 50px);
-    opacity: 0.5;
-  }
-
-  /* Simplified noise texture - reduced opacity */
-  .app::after {
-    position: absolute;
-    opacity: 0.25;
-  }
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue-500), var(--purple-500));
+  z-index: 9999;
+  transition: width 50ms linear;
 }
 
-/* ========== DESKTOP PERFORMANCE OPTIMIZATIONS ========== */
+/* Section heading reveal animation */
+.section-title {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Focus visible states for accessibility */
+.cta-button:focus-visible,
+.social-button:focus-visible,
+.founder-card:focus-visible {
+  outline: 2px solid var(--blue-500);
+  outline-offset: 2px;
+}
+
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -88,26 +88,4 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-}
-
-/* Global performance hints */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Optimize scrolling performance */
-.app-content {
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Ensure GPU acceleration for animated elements */
-.gradient-orb,
-.shape,
-.bg-shape,
-.particle,
-.experience-orb,
-.contact-shape,
-.certifications-orbit {
-  backface-visibility: hidden;
-  perspective: 1000px;
 }
