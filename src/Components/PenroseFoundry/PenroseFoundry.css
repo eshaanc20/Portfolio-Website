@@ -283,10 +283,6 @@
 }
 
 /* ========== PENROSE STAIRCASE ========== */
-.penrose-scene--2d {
-  display: none;
-}
-
 .penrose-scene {
   display: flex;
   align-items: center;
@@ -295,6 +291,10 @@
   perspective: 700px;
   position: relative;
   margin-bottom: -8px;
+}
+
+.penrose-scene.penrose-scene--2d {
+  display: none;
 }
 
 .penrose-glow {
