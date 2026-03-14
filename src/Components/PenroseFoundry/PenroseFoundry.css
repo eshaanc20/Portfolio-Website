@@ -995,9 +995,10 @@
   }
 
   .penrose-staircase {
-    width: 140px;
-    height: 140px;
-    animation: penroseRotate 24s linear infinite;
+    width: 150px;
+    height: 150px;
+    animation: none;
+    transform: rotateX(-35deg) rotateY(35deg);
   }
 
   .penrose-glow {
@@ -1242,8 +1243,10 @@
   }
 
   .penrose-staircase {
-    width: 115px;
-    height: 115px;
+    width: 120px;
+    height: 120px;
+    animation: none;
+    transform: rotateX(-35deg) rotateY(35deg);
   }
 
   .penrose-glow {

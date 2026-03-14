@@ -123,23 +123,23 @@
   animation: introWrapInner 1.8s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
 }
 
-/* After intro — rings expand, blur, become subtle background */
+/* After intro — rings expand, blur, become visible background */
 .homepage--revealed .intro-ring-wrap--outer {
-  opacity: 0.06;
-  transform: translate(-50%, -50%) scale(3.5);
-  filter: blur(40px);
+  opacity: 0.12;
+  transform: translate(-50%, -50%) scale(2.8);
+  filter: blur(18px);
 }
 
 .homepage--revealed .intro-ring-wrap--mid {
-  opacity: 0.05;
-  transform: translate(-50%, -50%) scale(3);
-  filter: blur(32px);
+  opacity: 0.1;
+  transform: translate(-50%, -50%) scale(2.2);
+  filter: blur(14px);
 }
 
 .homepage--revealed .intro-ring-wrap--inner {
-  opacity: 0.05;
-  transform: translate(-50%, -50%) scale(2.5);
-  filter: blur(24px);
+  opacity: 0.1;
+  transform: translate(-50%, -50%) scale(1.8);
+  filter: blur(10px);
 }
 
 /* ========== RINGS — rotation only ========== */
@@ -975,7 +975,7 @@
 
 /* ========== SCROLL INDICATOR ========== */
 .scroll-indicator {
-  position: absolute;
+  position: fixed;
   bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
@@ -989,6 +989,12 @@
 
 .homepage--revealed .scroll-indicator {
   animation: scrollFadeIn 1s 1.8s ease-out both;
+}
+
+.scroll-indicator--hidden {
+  opacity: 0 !important;
+  pointer-events: none;
+  transition: opacity 0.4s ease-out;
 }
 
 @keyframes scrollFadeIn {
@@ -1090,7 +1096,14 @@
     background: linear-gradient(170deg, #e8eeff 0%, #f0ecff 40%, #f8f6ff 70%, #eef4ff 100%);
   }
 
-  /* Mobile intro sizing */
+  /* Mobile intro — shift everything higher */
+  .intro-ring-wrap,
+  .intro-glow,
+  .intro-particles,
+  .intro-line {
+    top: 35%;
+  }
+
   .intro-ring--outer {
     width: 240px;
     height: 240px;
@@ -1245,22 +1258,24 @@
   }
 
   .profile-image {
-    width: 140px;
-    max-width: 140px;
-    height: 140px;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    border: 3px solid transparent;
-    background-image:
-      linear-gradient(white, white),
-      linear-gradient(135deg, var(--blue-400), var(--purple-500), var(--blue-400));
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-    box-shadow:
-      0 8px 32px rgb(59 130 246 / 15%),
-      0 0 0 6px rgb(255 255 255 / 80%);
+    width: 200px;
+    max-width: 200px;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    border-radius: 16px;
+    border: none;
+    background-image: none;
+    background-origin: initial;
+    background-clip: initial;
+    box-shadow: var(--shadow-lg);
     position: relative;
     z-index: 1;
+  }
+
+  /* Hide circular ring/glow pseudo-elements for rectangle photo */
+  .homepage-photo::before,
+  .homepage-photo::after {
+    display: none !important;
   }
 
   /* -- Content: tight mobile stack with staggered reveal -- */
@@ -1293,7 +1308,7 @@
 
   .homepage .role-container {
     font-size: 15px;
-    min-height: 24px;
+    min-height: 48px;
     color: var(--text-tertiary);
     max-width: 320px;
   }
@@ -1347,17 +1362,19 @@
   }
 
   .cta-buttons {
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row;
+    width: auto;
     gap: 10px;
+    margin: 0 12px;
   }
 
   .cta-button {
-    width: 100%;
+    flex: 1;
     justify-content: center;
-    padding: 14px 24px;
+    padding: 14px 12px;
     border-radius: 14px;
-    font-size: 15px;
+    font-size: 14px;
+    box-sizing: border-box;
   }
 
   .cta-button--primary {
@@ -1432,13 +1449,9 @@
     font-size: 16px;
   }
 
-  /* -- Scroll indicator: delayed entrance -- */
+  /* -- Scroll indicator: hide on mobile -- */
   .scroll-indicator {
-    bottom: 16px;
-  }
-
-  .homepage--revealed .scroll-indicator {
-    animation: contentSlideUp 0.5s ease-out 2.4s both;
+    display: none;
   }
 
   .scroll-mouse {
@@ -1564,19 +1577,9 @@
   }
 
   .profile-image {
-    width: 120px;
-    max-width: 120px;
-    height: 120px;
-  }
-
-  .homepage-photo::before {
-    width: 148px;
-    height: 148px;
-  }
-
-  .homepage-photo::after {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    max-width: 160px;
+    height: auto;
   }
 
   .name {
@@ -1585,6 +1588,7 @@
 
   .role-container {
     font-size: 14px;
+    min-height: 44px;
   }
 
   .stat-number {
@@ -1596,8 +1600,8 @@
   }
 
   .cta-button {
-    padding: 13px 20px;
-    font-size: 14px;
+    padding: 12px 8px;
+    font-size: 13px;
   }
 
   .founder-card {

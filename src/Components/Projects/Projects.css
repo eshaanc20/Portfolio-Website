@@ -355,6 +355,7 @@
 @media (width <= 768px) {
   .projects-section {
     padding: 70px 16px 60px;
+    overflow-x: hidden;
     background:
       radial-gradient(ellipse at 50% 0%, rgb(59 130 246 / 4%) 0%, transparent 60%),
       linear-gradient(180deg, #f5f8ff 0%, #ffffff 50%, #fafafd 100%);
@@ -383,8 +384,10 @@
 
   /* Cards */
   .project-card {
-    padding: 18px;
+    padding: 16px;
     border-radius: 16px;
+    max-width: 100%;
+    overflow: hidden;
     background: rgb(255 255 255 / 80%);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -440,14 +443,10 @@
     overflow: hidden;
   }
 
-  /* Demo carousel — edge-to-edge on mobile */
+  /* Demo carousel — contained within card */
   .demo-carousel {
     margin-bottom: 14px;
-    margin-left: -18px;
-    margin-right: -18px;
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
+    border-radius: 10px;
   }
 
   .demo-carousel-slide {
@@ -550,18 +549,23 @@
     background: rgb(255 255 255 / 70%);
   }
 
-  /* Links — full width buttons */
+  /* Links — side by side, contained */
   .project-links {
-    flex-direction: column;
+    flex-direction: row;
     gap: 8px;
   }
 
   .project-button {
-    width: 100%;
+    flex: 1;
+    min-width: 0;
     justify-content: center;
-    padding: 12px 20px;
+    padding: 11px 10px;
     border-radius: 12px;
-    font-size: 14px;
+    font-size: 13px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .project-button--solid {
@@ -633,8 +637,8 @@
   }
 
   .demo-carousel {
-    margin-left: -14px;
-    margin-right: -14px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .demo-carousel-slide {

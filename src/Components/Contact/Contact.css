@@ -372,9 +372,11 @@
     font-size: 13px;
   }
 
-  /* ---- LinkedIn — full width ---- */
+  /* ---- LinkedIn — inset from edges ---- */
   .contact-linkedin {
-    width: 100%;
+    width: auto;
+    align-self: stretch;
+    margin: 0 8px;
     justify-content: center;
     padding: 13px 20px;
     border-radius: 12px;

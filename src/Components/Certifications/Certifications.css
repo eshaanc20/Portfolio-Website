@@ -213,6 +213,7 @@
 @media (width <= 768px) {
   .certifications-section {
     padding: 70px 16px 60px;
+    overflow-x: hidden;
     background:
       radial-gradient(ellipse at 50% 20%, rgb(59 130 246 / 3%) 0%, transparent 60%),
       var(--off-white);
@@ -279,8 +280,10 @@
   .cert-card {
     grid-template-columns: 72px 1fr;
     gap: 14px;
-    padding: 16px;
+    padding: 14px;
     border-radius: 16px;
+    max-width: 100%;
+    overflow: hidden;
     background: rgb(255 255 255 / 80%);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -315,15 +318,17 @@
   .cert-card__details {
     gap: 6px;
     min-width: 0;
+    overflow: hidden;
   }
 
   .cert-card__title {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.3;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+    word-break: break-word;
   }
 
   /* Hide summary on mobile — title is enough */
@@ -331,13 +336,18 @@
     display: none;
   }
 
-  /* Meta — inline */
+  /* Meta — inline compact */
   .cert-card__meta {
-    gap: 8px;
+    gap: 4px 6px;
+    flex-wrap: wrap;
   }
 
   .cert-card__meta span {
-    font-size: 12px;
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 
   /* Separator dots between meta items */

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./Homepage.css";
 import ProfilePicture from "../../Assets/ProfilePicture.jpg";
 import PenroseLogo from "../../Assets/PenroseFoundryLogo.png";
@@ -11,12 +11,20 @@ import Resume from "../../Assets/Eshaan_Chaudhari_Resume.pdf";
 import { Typewriter } from "react-simple-typewriter";
 
 const Homepage = ({ introComplete }) => {
+  const [showScroll, setShowScroll] = useState(true);
+
   useEffect(() => {
     AOS.init({
       duration: 600,
       once: true,
       easing: "ease-out",
     });
+
+    const handleScroll = () => {
+      setShowScroll(window.scrollY < 100);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -180,7 +188,7 @@ const Homepage = ({ introComplete }) => {
         </div>
       </div>
 
-      <div className="scroll-indicator">
+      <div className={`scroll-indicator ${showScroll ? "" : "scroll-indicator--hidden"}`}>
         <div className="scroll-mouse">
           <div className="scroll-wheel"></div>
         </div>
