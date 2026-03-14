@@ -38,6 +38,12 @@ Each component has its own `.jsx` and `.css` file in a co-located folder.
 - `npm run build` — Production build to `dist/`
 - `npm run preview` — Preview production build
 
+## Git Commit Rules
+
+- **Do NOT push.** Never run `git push`.
+- **Do NOT include anything about Claude** in commit messages — no `Co-Authored-By`, no mentions of Claude or AI.
+- **Keep commands simple:** use `git add` and `git commit -m "message"` only.
+
 ## Important Rules
 
 - **Do NOT run npm commands.** The user will handle all npm operations themselves.
