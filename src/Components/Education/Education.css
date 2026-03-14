@@ -407,9 +407,7 @@
   .edu-card {
     padding: 20px;
     border-radius: 16px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background: rgb(255 255 255 / 80%);
+    background: rgb(255 255 255 / 92%);
     box-shadow:
       0 1px 8px rgb(0 0 0 / 3%),
       inset 0 1px 0 rgb(255 255 255 / 60%);

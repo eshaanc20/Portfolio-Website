@@ -133,7 +133,7 @@ const statHighlights = [
   },
   {
     label: "Focus Tracks",
-    value: "AI / Frontend / Cloud",
+    value: "AI / Cloud",
   },
 ];
 

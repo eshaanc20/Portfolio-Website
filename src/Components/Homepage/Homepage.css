@@ -1096,27 +1096,27 @@
     background: linear-gradient(170deg, #e8eeff 0%, #f0ecff 40%, #f8f6ff 70%, #eef4ff 100%);
   }
 
-  /* Mobile intro — shift everything higher */
+  /* Mobile intro — position */
   .intro-ring-wrap,
   .intro-glow,
   .intro-particles,
   .intro-line {
-    top: 35%;
+    top: 42%;
   }
 
   .intro-ring--outer {
-    width: 240px;
-    height: 240px;
+    width: 320px;
+    height: 320px;
   }
 
   .intro-ring--mid {
-    width: 170px;
-    height: 170px;
+    width: 230px;
+    height: 230px;
   }
 
   .intro-ring--inner {
-    width: 110px;
-    height: 110px;
+    width: 150px;
+    height: 150px;
   }
 
   .intro-glow {
@@ -1134,41 +1134,38 @@
     height: 280px;
   }
 
-  /* -- Background: simplified for performance, gated by --revealed -- */
+  /* -- Background: simplified for mobile performance -- */
   .hero-mesh::before {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     top: -15%;
     right: -20%;
-    filter: blur(60px);
+    filter: blur(40px);
+    animation: none;
   }
 
   .homepage--revealed .hero-mesh::before {
     animation: deskFadeIn 1s ease-out 0.1s both;
-    opacity: 0.8;
+    opacity: 0.6;
   }
 
   .hero-mesh::after {
-    width: 350px;
-    height: 350px;
+    width: 280px;
+    height: 280px;
     bottom: -10%;
     left: -15%;
-    filter: blur(60px);
+    filter: blur(40px);
+    animation: none;
   }
 
   .homepage--revealed .hero-mesh::after {
     animation: deskFadeIn 1s ease-out 0.2s both;
-    opacity: 0.7;
+    opacity: 0.5;
   }
 
-  /* Gradient arc — gated */
+  /* Gradient arc — disable on mobile for performance */
   .hero-gradient-arc {
-    display: block;
-    filter: blur(4px);
-  }
-
-  .homepage--revealed .hero-gradient-arc {
-    animation: arcMobileIntro 2.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+    display: none;
   }
 
   .hero-grid {
@@ -1451,6 +1448,44 @@
   /* -- Scroll indicator: hide on mobile -- */
   .scroll-indicator {
     display: none;
+  }
+
+  /* -- Mobile performance: remove backdrop-filter, simplify shadows -- */
+  .greeting-badge {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgb(255 255 255 / 85%);
+  }
+
+  .stats-row {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgb(255 255 255 / 80%);
+  }
+
+  .cta-button--secondary {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgb(255 255 255 / 85%);
+  }
+
+  .cta-button--primary {
+    box-shadow: 0 4px 12px rgb(59 130 246 / 18%);
+  }
+
+  .social-button {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgb(255 255 255 / 85%);
+  }
+
+  /* GPU acceleration for animated elements */
+  .intro-ring-wrap,
+  .intro-glow,
+  .homepage-photo,
+  .homepage-content {
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   .scroll-mouse {

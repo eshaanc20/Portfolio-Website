@@ -167,20 +167,25 @@
 .demo-carousel-track {
   overflow: hidden;
   touch-action: pan-y;
+  width: 100%;
 }
 
 .demo-carousel-slider {
   display: flex;
   will-change: transform;
+  width: 100%;
 }
 
 .demo-carousel-slide {
   flex: 0 0 100%;
+  width: 100%;
+  min-width: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 12px;
   min-height: 200px;
+  box-sizing: border-box;
 }
 
 .demo-carousel-img {
@@ -188,6 +193,7 @@
   max-height: 320px;
   object-fit: contain;
   border-radius: 6px;
+  display: block;
 }
 
 .demo-carousel-controls {
@@ -390,8 +396,6 @@
     overflow-x: hidden;
     overflow-y: visible;
     background: rgb(255 255 255 / 80%);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgb(228 230 239 / 50%);
     box-shadow:
       0 1px 8px rgb(0 0 0 / 3%),
@@ -453,14 +457,17 @@
   .demo-carousel-slide {
     padding: 8px;
     min-height: auto;
+    box-sizing: border-box;
   }
 
   .demo-carousel-img {
     width: 100%;
+    max-width: 100%;
     max-height: none;
     height: auto;
     object-fit: contain;
     border-radius: 6px;
+    display: block;
   }
 
   .demo-carousel-controls {
@@ -649,12 +656,15 @@
   .demo-carousel-slide {
     padding: 6px;
     min-height: auto;
+    box-sizing: border-box;
   }
 
   .demo-carousel-img {
     width: 100%;
+    max-width: 100%;
     max-height: none;
     height: auto;
+    display: block;
   }
 
   .demo-carousel-controls {

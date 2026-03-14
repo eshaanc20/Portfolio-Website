@@ -251,8 +251,8 @@
     background: rgb(255 255 255 / 70%);
     border: 1px solid rgb(228 230 239 / 50%);
     border-radius: 14px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     box-shadow:
       0 1px 8px rgb(0 0 0 / 3%),
       inset 0 1px 0 rgb(255 255 255 / 60%);
@@ -285,8 +285,8 @@
     max-width: 100%;
     overflow: hidden;
     background: rgb(255 255 255 / 80%);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     border: 1px solid rgb(228 230 239 / 50%);
     box-shadow:
       0 1px 8px rgb(0 0 0 / 3%),
@@ -336,18 +336,20 @@
     display: none;
   }
 
-  /* Meta — inline compact */
+  /* Meta — inline compact, single line */
   .cert-card__meta {
     gap: 4px 6px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow: hidden;
   }
 
   .cert-card__meta span {
-    font-size: 10px;
+    font-size: 9px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 100%;
+    flex-shrink: 1;
+    min-width: 0;
   }
 
   /* Separator dots between meta items */

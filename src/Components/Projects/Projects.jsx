@@ -66,7 +66,7 @@ const DemoCarousel = ({ images }) => {
   };
 
   const handleTouchEnd = () => {
-    if (Math.abs(touchDelta) > 50) {
+    if (Math.abs(touchDelta) > 30) {
       if (touchDelta < 0 && current < images.length - 1) {
         goTo(current + 1);
       } else if (touchDelta > 0 && current > 0) {

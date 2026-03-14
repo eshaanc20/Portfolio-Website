@@ -91,12 +91,12 @@ const Homepage = ({ introComplete }) => {
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
-              <span className="stat-number">20+</span>
+              <span className="stat-number">10+</span>
               <span className="stat-label">Projects Built</span>
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
-              <span className="stat-number">10+</span>
+              <span className="stat-number">20+</span>
               <span className="stat-label">Tech Skills</span>
             </div>
           </div>
