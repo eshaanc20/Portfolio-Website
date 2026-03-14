@@ -12,11 +12,39 @@ import Contact from "./Components/Contact/Contact.jsx";
 import "./App.css";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { introComplete: false };
+  }
+
+  componentDidMount() {
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReduced) {
+      this.setState({ introComplete: true });
+      return;
+    }
+
+    document.body.style.overflow = "hidden";
+    this.introTimer = setTimeout(() => {
+      this.setState({ introComplete: true });
+      document.body.style.overflow = "";
+    }, 3500);
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.introTimer);
+    document.body.style.overflow = "";
+  }
+
   render() {
+    const { introComplete } = this.state;
+
     return (
       <div className="app">
-        <Navigation />
-        <Homepage />
+        <Navigation introComplete={introComplete} />
+        <Homepage introComplete={introComplete} />
         <div className="app-content">
           <Experience />
           <PenroseFoundry />

@@ -23,6 +23,12 @@
   }
 }
 
+/* ======== INTRO GATE — hidden until intro completes ======== */
+.nav.nav--intro-waiting {
+  opacity: 0;
+  animation: none;
+}
+
 /* ======== ANIMATED GLOW BEHIND NAV ======== */
 .nav__glow {
   position: absolute;

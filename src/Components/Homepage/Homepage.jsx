@@ -10,7 +10,7 @@ import { Link } from "react-scroll";
 import Resume from "../../Assets/Eshaan_Chaudhari_Resume.pdf";
 import { Typewriter } from "react-simple-typewriter";
 
-const Homepage = () => {
+const Homepage = ({ introComplete }) => {
   useEffect(() => {
     AOS.init({
       duration: 600,
@@ -20,11 +20,31 @@ const Homepage = () => {
   }, []);
 
   return (
-    <div className="homepage" name="Homepage">
+    <div className={`homepage ${introComplete ? "homepage--revealed" : "homepage--intro"}`} name="Homepage">
       {/* Background — few bold elements */}
       <div className="hero-mesh"></div>
       <div className="hero-gradient-arc"></div>
       <div className="hero-grid"></div>
+
+      {/* Intro animation — becomes subtle background */}
+      <div className="intro-glow"></div>
+      <div className="intro-glow intro-glow--secondary"></div>
+      <div className="intro-ring-wrap intro-ring-wrap--outer">
+        <div className="intro-ring intro-ring--outer"></div>
+      </div>
+      <div className="intro-ring-wrap intro-ring-wrap--mid">
+        <div className="intro-ring intro-ring--mid"></div>
+      </div>
+      <div className="intro-ring-wrap intro-ring-wrap--inner">
+        <div className="intro-ring intro-ring--inner"></div>
+      </div>
+      <div className="intro-line intro-line--left"></div>
+      <div className="intro-line intro-line--right"></div>
+      <div className="intro-particles">
+        {[...Array(8)].map((_, i) => (
+          <span key={i} className="intro-particle" style={{ "--i": i }}></span>
+        ))}
+      </div>
 
       <div className="homepage-layout">
         <div className="homepage-content" data-aos="fade-up">

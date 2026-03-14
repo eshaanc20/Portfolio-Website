@@ -8,7 +8,437 @@
   background: linear-gradient(180deg, #eef2ff 0%, #f8faff 35%, #ffffff 70%, #fafaff 100%);
   position: relative;
   overflow: hidden;
+  transition: background 1.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* ========== OVERRIDE AOS — custom intro animations ========== */
+.homepage [data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* ========== INTRO PHASE — soft light background ========== */
+.homepage--intro {
+  background: linear-gradient(160deg, #e8eeff 0%, #f0ecff 30%, #f8f6ff 60%, #eef4ff 100%);
+}
+
+/* During intro: hide ALL regular bg + content */
+.homepage--intro .hero-mesh,
+.homepage--intro .hero-mesh::before,
+.homepage--intro .hero-mesh::after,
+.homepage--intro .hero-gradient-arc,
+.homepage--intro .hero-grid,
+.homepage--intro .homepage-photo,
+.homepage--intro .homepage-photo::before,
+.homepage--intro .homepage-photo::after,
+.homepage--intro .homepage-layout,
+.homepage--intro .scroll-indicator {
+  animation: none !important;
+  opacity: 0 !important;
+}
+
+/* ========== INTRO ANIMATION ELEMENTS (background layer) ========== */
+
+/* Primary glow — warm soft bloom */
+.intro-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgb(59 130 246 / 20%) 0%,
+    rgb(139 92 246 / 14%) 25%,
+    rgb(96 165 250 / 8%) 50%,
+    transparent 70%
+  );
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.4);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.homepage--intro .intro-glow {
+  animation:
+    introGlowIn 2.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both,
+    introGlowBreath 4s ease-in-out 2.5s infinite alternate;
+}
+
+.homepage--revealed .intro-glow {
+  opacity: 0 !important;
+  transform: translate(-50%, -50%) scale(2);
+}
+
+/* Secondary glow — shifted lavender, floats slightly offset */
+.intro-glow--secondary {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(
+    circle,
+    rgb(168 122 255 / 16%) 0%,
+    rgb(244 114 182 / 8%) 30%,
+    rgb(96 165 250 / 6%) 50%,
+    transparent 65%
+  );
+}
+
+.homepage--intro .intro-glow--secondary {
+  animation:
+    introGlowIn 2.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both,
+    introGlowDrift 5s ease-in-out 3s infinite alternate;
+}
+
+/* ========== RING WRAPPERS — scale/opacity/blur transitions ========== */
+.intro-ring-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9;
+  transform: translate(-50%, -50%) scale(1);
+  filter: blur(0) drop-shadow(0 0 12px rgb(59 130 246 / 15%));
+  transition:
+    opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 2.5s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.intro-ring-wrap--outer {
+  animation: introWrapOuter 2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.intro-ring-wrap--mid {
+  animation: introWrapMid 2s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+}
+
+.intro-ring-wrap--inner {
+  animation: introWrapInner 1.8s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
+}
+
+/* After intro — rings expand, blur, become subtle background */
+.homepage--revealed .intro-ring-wrap--outer {
+  opacity: 0.06;
+  transform: translate(-50%, -50%) scale(3.5);
+  filter: blur(40px);
+}
+
+.homepage--revealed .intro-ring-wrap--mid {
+  opacity: 0.05;
+  transform: translate(-50%, -50%) scale(3);
+  filter: blur(32px);
+}
+
+.homepage--revealed .intro-ring-wrap--inner {
+  opacity: 0.05;
+  transform: translate(-50%, -50%) scale(2.5);
+  filter: blur(24px);
+}
+
+/* ========== RINGS — rotation only ========== */
+.intro-ring {
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.intro-ring--outer {
+  width: 360px;
+  height: 360px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgb(59 130 246 / 65%) 30deg,
+    rgb(139 92 246 / 85%) 100deg,
+    rgb(244 114 182 / 50%) 170deg,
+    rgb(96 165 250 / 60%) 230deg,
+    transparent 280deg
+  );
+  mask-image: radial-gradient(farthest-side, transparent 91%, black 92%, black 97%, transparent 98%);
+  -webkit-mask-image: radial-gradient(farthest-side, transparent 91%, black 92%, black 97%, transparent 98%);
+  animation: introSpinCW 28s linear infinite;
+}
+
+.intro-ring--mid {
+  width: 250px;
+  height: 250px;
+  background: conic-gradient(
+    from 120deg,
+    transparent 0deg,
+    rgb(168 122 255 / 70%) 40deg,
+    rgb(59 130 246 / 60%) 100deg,
+    rgb(52 211 153 / 35%) 160deg,
+    transparent 210deg
+  );
+  mask-image: radial-gradient(farthest-side, transparent 89%, black 90%, black 96%, transparent 97%);
+  -webkit-mask-image: radial-gradient(farthest-side, transparent 89%, black 90%, black 96%, transparent 97%);
+  animation: introSpinCCW 22s linear infinite;
+}
+
+.intro-ring--inner {
+  width: 150px;
+  height: 150px;
+  background: conic-gradient(
+    from 240deg,
+    transparent 0deg,
+    rgb(96 165 250 / 70%) 45deg,
+    rgb(139 92 246 / 65%) 110deg,
+    rgb(244 114 182 / 40%) 165deg,
+    transparent 220deg
+  );
+  mask-image: radial-gradient(farthest-side, transparent 83%, black 84%, black 94%, transparent 95%);
+  -webkit-mask-image: radial-gradient(farthest-side, transparent 83%, black 84%, black 94%, transparent 95%);
+  animation: introSpinCW 18s linear infinite;
+}
+
+/* ========== HORIZONTAL SWEEP LINES ========== */
+.intro-line {
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 1px;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(59 130 246 / 30%),
+    rgb(139 92 246 / 45%),
+    rgb(244 114 182 / 30%),
+    transparent
+  );
+  transition: opacity 1s ease-out;
+}
+
+.intro-line--left {
+  right: 50%;
+  transform: translateY(-50%);
+  transform-origin: right center;
+}
+
+.intro-line--right {
+  left: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.homepage--intro .intro-line--left {
+  animation: introLineSweep 2.2s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
+}
+
+.homepage--intro .intro-line--right {
+  animation: introLineSweep 2.2s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
+}
+
+.homepage--revealed .intro-line {
+  opacity: 0;
+}
+
+/* ========== FLOATING PARTICLES ========== */
+.intro-particles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease-out;
+}
+
+.homepage--revealed .intro-particles {
+  opacity: 0;
+}
+
+.intro-particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgb(139 92 246 / 60%);
+  box-shadow: 0 0 8px rgb(59 130 246 / 30%);
+  opacity: 0;
+}
+
+.intro-particle:nth-child(even) {
+  width: 3px;
+  height: 3px;
+  background: rgb(96 165 250 / 50%);
+  box-shadow: 0 0 6px rgb(139 92 246 / 25%);
+}
+
+.intro-particle:nth-child(3n) {
+  width: 5px;
+  height: 5px;
+  background: rgb(244 114 182 / 40%);
+  box-shadow: 0 0 10px rgb(244 114 182 / 20%);
+}
+
+.homepage--intro .intro-particle {
+  animation: introParticleOut 3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(1.1s + var(--i) * 0.15s);
+}
+
+/* ========== INTRO KEYFRAMES ========== */
+@keyframes introGlowIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes introGlowBreath {
+  from {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.55;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes introGlowDrift {
+  from {
+    transform: translate(-50%, -50%) translate(-20px, 15px) scale(0.95);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translate(-50%, -50%) translate(20px, -15px) scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+@keyframes introWrapOuter {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.05);
+  }
+
+  55% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  100% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes introWrapMid {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.08);
+  }
+
+  50% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.07);
+  }
+
+  100% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes introWrapInner {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.1);
+  }
+
+  45% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  100% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes introSpinCW {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes introSpinCCW {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes introLineSweep {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.8;
+  }
+
+  60% {
+    opacity: 0.4;
+  }
+
+  100% {
+    width: 48%;
+    opacity: 0;
+  }
+}
+
+/* Particle positions — radial burst from center */
+.intro-particle:nth-child(1) { --tx: 175px; --ty: 0; }
+.intro-particle:nth-child(2) { --tx: 124px; --ty: 124px; }
+.intro-particle:nth-child(3) { --tx: 0; --ty: 175px; }
+.intro-particle:nth-child(4) { --tx: -124px; --ty: 124px; }
+.intro-particle:nth-child(5) { --tx: -175px; --ty: 0; }
+.intro-particle:nth-child(6) { --tx: -124px; --ty: -124px; }
+.intro-particle:nth-child(7) { --tx: 0; --ty: -175px; }
+.intro-particle:nth-child(8) { --tx: 124px; --ty: -124px; }
+
+@keyframes introParticleOut {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0);
+  }
+
+  20% {
+    opacity: 0.7;
+    transform: translate(calc(var(--tx) * 0.25), calc(var(--ty) * 0.25)) scale(1);
+  }
+
+  70% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx), var(--ty)) scale(0.2);
+  }
+}
+
 
 /* ========== ANIMATED MESH — single bold element ========== */
 .hero-mesh {
@@ -39,6 +469,11 @@
   border-radius: 40% 60% 55% 45% / 50% 40% 60% 50%;
   filter: blur(80px);
   animation: meshBlob1 20s ease-in-out infinite;
+  opacity: 0;
+}
+
+.homepage--revealed .hero-mesh::before {
+  animation: meshBlob1 20s ease-in-out infinite, deskFadeIn 1s ease-out 0.1s both;
 }
 
 .hero-mesh::after {
@@ -60,6 +495,11 @@
   border-radius: 55% 45% 40% 60% / 45% 55% 50% 50%;
   filter: blur(80px);
   animation: meshBlob2 25s ease-in-out infinite;
+  opacity: 0;
+}
+
+.homepage--revealed .hero-mesh::after {
+  animation: meshBlob2 25s ease-in-out infinite, deskFadeIn 1s ease-out 0.2s both;
 }
 
 @keyframes meshBlob1 {
@@ -139,6 +579,11 @@
   );
   filter: blur(12px);
   animation: arcSpin 30s linear infinite;
+  opacity: 0;
+}
+
+.homepage--revealed .hero-gradient-arc {
+  animation: arcSpin 30s linear infinite, deskFadeIn 1.5s ease-out 0.3s both;
 }
 
 @keyframes arcSpin {
@@ -158,6 +603,11 @@
   background-size: 40px 40px;
   mask-image: radial-gradient(ellipse 55% 50% at 50% 50%, black 10%, transparent 65%);
   -webkit-mask-image: radial-gradient(ellipse 55% 50% at 50% 50%, black 10%, transparent 65%);
+  opacity: 0;
+}
+
+.homepage--revealed .hero-grid {
+  animation: deskFadeIn 1.5s ease-out 0.6s both;
 }
 
 /* ========== LAYOUT ========== */
@@ -458,11 +908,58 @@
   transform: translateX(2px);
 }
 
+/* ========== DESKTOP — content hidden until revealed ========== */
+.homepage .greeting-badge,
+.homepage .name,
+.homepage .role-container,
+.homepage .stats-row,
+.homepage .cta-buttons,
+.homepage .social-links,
+.homepage .founder-card {
+  opacity: 0;
+}
+
+/* ========== DESKTOP — staggered content from left on reveal ========== */
+.homepage--revealed .greeting-badge {
+  animation: deskSlideFromLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.homepage--revealed .name {
+  animation:
+    deskSlideFromLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both,
+    nameShimmer 6s ease-in-out 1.15s infinite alternate;
+}
+
+.homepage--revealed .role-container {
+  animation: deskSlideFromLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+}
+
+.homepage--revealed .stats-row {
+  animation: deskSlideFromLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both;
+}
+
+.homepage--revealed .cta-buttons {
+  animation: deskSlideFromLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
+}
+
+.homepage--revealed .social-links {
+  animation: deskSlideFromLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.05s both;
+}
+
+.homepage--revealed .founder-card {
+  animation: deskSlideFromLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
+}
+
 /* ========== RIGHT: PHOTO ========== */
 .homepage-photo {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+}
+
+.homepage--revealed .homepage-photo {
+  animation: deskPhotoIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
 }
 
 .profile-image {
@@ -487,7 +984,11 @@
   align-items: center;
   gap: 8px;
   z-index: 2;
-  animation: scrollFadeIn 1s 1.5s ease-out both;
+  opacity: 0;
+}
+
+.homepage--revealed .scroll-indicator {
+  animation: scrollFadeIn 1s 1.8s ease-out both;
 }
 
 @keyframes scrollFadeIn {
@@ -540,6 +1041,41 @@
   color: var(--text-tertiary);
 }
 
+/* ========== DESKTOP INTRO KEYFRAMES ========== */
+@keyframes deskFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes deskSlideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-36px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes deskPhotoIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
 /* ========== MOBILE REDESIGN ========== */
 @media (width <= 768px) {
   .homepage {
@@ -549,14 +1085,53 @@
     background: linear-gradient(170deg, #f0f4ff 0%, #ffffff 40%, #f8f6ff 70%, #f0f4ff 100%);
   }
 
-  /* -- Background: simplified for performance -- */
+  /* -- Intro: soft light background on mobile too -- */
+  .homepage--intro {
+    background: linear-gradient(170deg, #e8eeff 0%, #f0ecff 40%, #f8f6ff 70%, #eef4ff 100%);
+  }
+
+  /* Mobile intro sizing */
+  .intro-ring--outer {
+    width: 240px;
+    height: 240px;
+  }
+
+  .intro-ring--mid {
+    width: 170px;
+    height: 170px;
+  }
+
+  .intro-ring--inner {
+    width: 110px;
+    height: 110px;
+  }
+
+  .intro-glow {
+    width: 300px;
+    height: 300px;
+  }
+
+  .intro-glow--secondary {
+    width: 250px;
+    height: 250px;
+  }
+
+  .intro-particles {
+    width: 280px;
+    height: 280px;
+  }
+
+  /* -- Background: simplified for performance, gated by --revealed -- */
   .hero-mesh::before {
     width: 400px;
     height: 400px;
     top: -15%;
     right: -20%;
     filter: blur(60px);
-    animation: none;
+  }
+
+  .homepage--revealed .hero-mesh::before {
+    animation: deskFadeIn 1s ease-out 0.1s both;
     opacity: 0.8;
   }
 
@@ -566,19 +1141,39 @@
     bottom: -10%;
     left: -15%;
     filter: blur(60px);
-    animation: none;
+  }
+
+  .homepage--revealed .hero-mesh::after {
+    animation: deskFadeIn 1s ease-out 0.2s both;
     opacity: 0.7;
   }
 
+  /* Gradient arc — gated */
   .hero-gradient-arc {
-    display: none;
+    display: block;
+    filter: blur(4px);
+  }
+
+  .homepage--revealed .hero-gradient-arc {
+    animation: arcMobileIntro 2.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
   }
 
   .hero-grid {
     background-size: 32px 32px;
     mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 0%, transparent 70%);
     -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 0%, transparent 70%);
-    opacity: 0.7;
+  }
+
+  .homepage--revealed .hero-grid {
+    animation: gridFadeIn 1s ease-out 1.4s both;
+  }
+
+  /* -- Override AOS on mobile homepage -- */
+  .homepage .homepage-content[data-aos],
+  .homepage .homepage-photo[data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 
   /* -- Layout: single column, centered -- */
@@ -588,10 +1183,65 @@
     text-align: center;
   }
 
-  /* -- Photo: circular with gradient ring, top of page -- */
+  /* -- Photo: circular with animated intro, gated -- */
   .homepage-photo {
     order: -1;
     margin-bottom: 28px;
+    position: relative;
+  }
+
+  .homepage--revealed .homepage-photo {
+    animation: photoEntrance 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+  }
+
+  /* Spinning gradient ring around photo */
+  .homepage-photo::before {
+    content: "";
+    position: absolute;
+    width: 168px;
+    height: 168px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background: conic-gradient(
+      from 0deg,
+      var(--blue-400),
+      var(--purple-500),
+      var(--blue-400),
+      transparent 270deg
+    );
+    mask-image: radial-gradient(farthest-side, transparent 78%, black 79%, black 94%, transparent 95%);
+    -webkit-mask-image: radial-gradient(farthest-side, transparent 78%, black 79%, black 94%, transparent 95%);
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .homepage--revealed .homepage-photo::before {
+    animation:
+      ringSpin 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both,
+      ringFadeOut 0.6s ease-out 1.4s both;
+  }
+
+  /* Subtle glow pulse behind photo */
+  .homepage-photo::after {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgb(59 130 246 / 20%) 0%, rgb(139 92 246 / 15%) 40%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .homepage--revealed .homepage-photo::after {
+    animation: glowPulse 1.5s ease-out 0.3s both;
   }
 
   .profile-image {
@@ -609,34 +1259,54 @@
     box-shadow:
       0 8px 32px rgb(59 130 246 / 15%),
       0 0 0 6px rgb(255 255 255 / 80%);
+    position: relative;
+    z-index: 1;
   }
 
-  /* -- Content: tight mobile stack -- */
+  /* -- Content: tight mobile stack with staggered reveal -- */
   .homepage-content {
     align-items: center;
     gap: 18px;
   }
 
-  .greeting-badge {
+  .homepage .greeting-badge {
     font-size: 13px;
     padding: 5px 14px;
     margin-bottom: 0;
   }
 
-  .name {
+  .homepage--revealed .greeting-badge {
+    animation: contentSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
+  }
+
+  .homepage .name {
     font-size: 34px;
     line-height: 1.15;
     letter-spacing: -0.04em;
   }
 
-  .role-container {
+  .homepage--revealed .name {
+    animation:
+      contentSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.35s both,
+      nameShimmer 6s ease-in-out 1.95s infinite alternate;
+  }
+
+  .homepage .role-container {
     font-size: 15px;
     min-height: 24px;
     color: var(--text-tertiary);
     max-width: 320px;
   }
 
+  .homepage--revealed .role-container {
+    animation: contentSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.5s both;
+  }
+
   /* -- Stats: horizontal glass card, compact -- */
+  .homepage--revealed .stats-row {
+    animation: contentSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.65s both;
+  }
+
   .stats-row {
     width: 100%;
     justify-content: center;
@@ -672,6 +1342,10 @@
   }
 
   /* -- CTA: full width stacked -- */
+  .homepage--revealed .cta-buttons {
+    animation: contentSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.8s both;
+  }
+
   .cta-buttons {
     flex-direction: column;
     width: 100%;
@@ -699,6 +1373,10 @@
   }
 
   /* -- Social: icon-only circles -- */
+  .homepage--revealed .social-links {
+    animation: contentSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.95s both;
+  }
+
   .social-links {
     gap: 10px;
     justify-content: center;
@@ -725,6 +1403,10 @@
   }
 
   /* -- Founder card: centered, auto width -- */
+  .homepage--revealed .founder-card {
+    animation: contentSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 2.1s both;
+  }
+
   .founder-card {
     margin-top: 16px;
     padding: 10px 16px 10px 10px;
@@ -750,9 +1432,13 @@
     font-size: 16px;
   }
 
-  /* -- Scroll indicator: swipe chevron for mobile -- */
+  /* -- Scroll indicator: delayed entrance -- */
   .scroll-indicator {
     bottom: 16px;
+  }
+
+  .homepage--revealed .scroll-indicator {
+    animation: contentSlideUp 0.5s ease-out 2.4s both;
   }
 
   .scroll-mouse {
@@ -771,6 +1457,106 @@
   }
 }
 
+/* ========== MOBILE INTRO KEYFRAMES ========== */
+@keyframes arcMobileIntro {
+  0% {
+    opacity: 1;
+    filter: blur(3px);
+    transform: translate(-50%, -50%) scale(0.2) rotate(0deg);
+  }
+
+  50% {
+    opacity: 0.7;
+    filter: blur(6px);
+    transform: translate(-50%, -50%) scale(0.4) rotate(180deg);
+  }
+
+  100% {
+    opacity: 0.2;
+    filter: blur(14px);
+    transform: translate(-50%, -50%) scale(0.6) rotate(360deg);
+  }
+}
+
+@keyframes photoEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ringSpin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(400deg);
+    opacity: 1;
+  }
+}
+
+@keyframes ringFadeOut {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(400deg) scale(1.15);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+@keyframes contentSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gridFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.7;
+  }
+}
+
 /* ========== SMALL MOBILE (≤ 380px) ========== */
 @media (width <= 380px) {
   .homepage {
@@ -781,6 +1567,16 @@
     width: 120px;
     max-width: 120px;
     height: 120px;
+  }
+
+  .homepage-photo::before {
+    width: 148px;
+    height: 148px;
+  }
+
+  .homepage-photo::after {
+    width: 140px;
+    height: 140px;
   }
 
   .name {

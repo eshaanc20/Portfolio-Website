@@ -23,7 +23,7 @@ const navItems = [
   { to: "Certifications", label: "Certifications", icon: <MdVerified /> },
 ];
 
-const Navigation = () => {
+const Navigation = ({ introComplete }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -60,7 +60,7 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className={`nav ${isScrolled ? "nav--scrolled" : ""}`}>
+      <nav className={`nav ${isScrolled ? "nav--scrolled" : ""} ${introComplete ? "" : "nav--intro-waiting"}`}>
         <div className="nav__glow"></div>
         <div className="nav__bar">
           <Link to="Homepage" smooth={true} className="nav__brand" style={{ cursor: "pointer" }}>
