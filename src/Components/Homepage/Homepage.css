@@ -123,23 +123,23 @@
   animation: introWrapInner 1.8s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
 }
 
-/* After intro — rings expand, blur, become visible background */
+/* After intro — rings expand, become visible background */
 .homepage--revealed .intro-ring-wrap--outer {
-  opacity: 0.12;
-  transform: translate(-50%, -50%) scale(2.8);
-  filter: blur(18px);
+  opacity: 0.3;
+  transform: translate(-50%, -50%) scale(2.2);
+  filter: blur(4px);
 }
 
 .homepage--revealed .intro-ring-wrap--mid {
-  opacity: 0.1;
-  transform: translate(-50%, -50%) scale(2.2);
-  filter: blur(14px);
+  opacity: 0.25;
+  transform: translate(-50%, -50%) scale(1.8);
+  filter: blur(3px);
 }
 
 .homepage--revealed .intro-ring-wrap--inner {
-  opacity: 0.1;
-  transform: translate(-50%, -50%) scale(1.8);
-  filter: blur(10px);
+  opacity: 0.22;
+  transform: translate(-50%, -50%) scale(1.4);
+  filter: blur(2px);
 }
 
 /* ========== RINGS — rotation only ========== */
@@ -1363,15 +1363,14 @@
 
   .cta-buttons {
     flex-direction: row;
-    width: auto;
+    width: 100%;
     gap: 10px;
-    margin: 0 12px;
   }
 
   .cta-button {
     flex: 1;
     justify-content: center;
-    padding: 14px 12px;
+    padding: 14px 16px;
     border-radius: 14px;
     font-size: 14px;
     box-sizing: border-box;

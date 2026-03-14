@@ -387,7 +387,8 @@
     padding: 16px;
     border-radius: 16px;
     max-width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
     background: rgb(255 255 255 / 80%);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -450,13 +451,16 @@
   }
 
   .demo-carousel-slide {
-    padding: 10px 16px;
-    min-height: 160px;
+    padding: 8px;
+    min-height: auto;
   }
 
   .demo-carousel-img {
-    max-height: 240px;
-    border-radius: 8px;
+    width: 100%;
+    max-height: none;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
   }
 
   .demo-carousel-controls {
@@ -528,6 +532,7 @@
     scrollbar-width: none;
     gap: 8px;
     padding-bottom: 2px;
+    touch-action: pan-x;
   }
 
   .tech-stack-icons::-webkit-scrollbar {
@@ -642,12 +647,14 @@
   }
 
   .demo-carousel-slide {
-    padding: 8px 12px;
-    min-height: 130px;
+    padding: 6px;
+    min-height: auto;
   }
 
   .demo-carousel-img {
-    max-height: 200px;
+    width: 100%;
+    max-height: none;
+    height: auto;
   }
 
   .demo-carousel-controls {

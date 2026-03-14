@@ -283,6 +283,10 @@
 }
 
 /* ========== PENROSE STAIRCASE ========== */
+.penrose-scene--2d {
+  display: none;
+}
+
 .penrose-scene {
   display: flex;
   align-items: center;
@@ -987,32 +991,30 @@
     font-size: 14px;
   }
 
-  /* Staircase */
-  .penrose-scene {
-    height: 170px;
-    margin-bottom: -4px;
-    perspective: 550px;
+  /* Staircase — hide 3D, show 2D on mobile */
+  .penrose-scene--3d {
+    display: none;
   }
 
-  .penrose-staircase {
-    width: 150px;
-    height: 150px;
-    animation: none;
-    transform: rotateX(-35deg) rotateY(35deg);
+  .penrose-scene--2d {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 180px;
+    margin-bottom: 8px;
   }
 
-  .penrose-glow {
-    width: 220px;
-    height: 220px;
+  .penrose-scene--2d .penrose-glow {
+    width: 200px;
+    height: 200px;
   }
 
-  .penrose-glow--secondary {
-    width: 150px;
-    height: 150px;
-  }
-
-  .penrose-step {
-    animation: none;
+  .penrose-svg {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    z-index: 1;
   }
 
   /* Mission */
@@ -1236,17 +1238,13 @@
     font-size: 11px;
   }
 
-  .penrose-scene {
-    height: 140px;
-    margin-bottom: -4px;
-    perspective: 450px;
+  .penrose-scene--2d {
+    height: 150px;
   }
 
-  .penrose-staircase {
-    width: 120px;
-    height: 120px;
-    animation: none;
-    transform: rotateX(-35deg) rotateY(35deg);
+  .penrose-svg {
+    width: 130px;
+    height: 130px;
   }
 
   .penrose-glow {
