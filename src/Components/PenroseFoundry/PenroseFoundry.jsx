@@ -2,6 +2,16 @@ import React, { useEffect, useState } from "react";
 import "./PenroseFoundry.css";
 import PenroseLogo from "../../Assets/PenroseFoundryLogo.png";
 import TravitaLogo from "../../Assets/TravitaAppLogo.png";
+import TravitaName from "../../Assets/TravitaAppName.svg";
+import shotOpener from "../../Assets/travita-app-store-opener_1242x2688.png";
+import shotItinerary from "../../Assets/travita_app_store_itinerary_1242x2688.png";
+import shotFinances from "../../Assets/travita_app_store_finances_1242x2688.png";
+import shotGroupInsights from "../../Assets/travita_app_store_group_insights_1242x2688.png";
+import shotPolls from "../../Assets/travita_app_store_polls_1242x2688.png";
+import shotTasks from "../../Assets/travita_app_store_tasks_1242x2688.png";
+import shotDocs from "../../Assets/travita_app_store_docs_1242x2688.png";
+import shotIdeas from "../../Assets/travita_app_store_ideas_1242x2688.png";
+import shotCaptainPicks from "../../Assets/travita_app_store_captain_picks_1242x2688.png";
 import {
   MdAutoAwesome,
   MdRocketLaunch,
@@ -55,6 +65,21 @@ for (let side = 0; side < 4; side++) {
     });
   }
 }
+
+/* Live App Store listing */
+const APP_STORE_URL = "https://apps.apple.com/app/id6761736495";
+
+const travitaScreens = [
+  { src: shotOpener, label: "Overview" },
+  { src: shotItinerary, label: "AI Itinerary" },
+  { src: shotCaptainPicks, label: "Captain Picks" },
+  { src: shotGroupInsights, label: "Group Insights" },
+  { src: shotFinances, label: "Finances" },
+  { src: shotPolls, label: "Polls" },
+  { src: shotTasks, label: "Tasks" },
+  { src: shotDocs, label: "Documents" },
+  { src: shotIdeas, label: "Ideas" },
+];
 
 const PenroseFoundry = () => {
   const [reduceMotion, setReduceMotion] = useState(false);
@@ -257,12 +282,12 @@ const PenroseFoundry = () => {
               <img src={TravitaLogo} alt="Travita" className="pf-product-logo" />
             </div>
             <div className="pf-product-hero-text">
-              <h3 className="pf-product-name">Travita</h3>
+              <img src={TravitaName} alt="Travita" className="pf-product-name" />
               <p className="pf-product-subtitle">AI-Powered Collaborative Travel Planning</p>
             </div>
-            <span className="pf-coming-soon">
+            <span className="pf-coming-soon pf-coming-soon--live">
               <span className="pf-coming-soon__dot"></span>
-              Coming Soon
+              Live on the App Store
             </span>
           </div>
 
@@ -286,16 +311,37 @@ const PenroseFoundry = () => {
             ))}
           </div>
 
+          {/* App Store screenshots */}
+          <div className="pf-screens">
+            <div className="pf-screens-track">
+              {travitaScreens.map((s, i) => (
+                <figure key={i} className="pf-screen">
+                  <img
+                    src={s.src}
+                    alt={`Travita — ${s.label}`}
+                    className="pf-screen-img"
+                    loading="lazy"
+                  />
+                </figure>
+              ))}
+            </div>
+          </div>
+
           {/* Footer — App Store + highlights */}
           <div className="pf-product-footer">
             <div className="pf-product-footer-inner">
-              <div className="pf-app-store-btn">
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pf-app-store-btn"
+              >
                 <FaApple className="pf-app-store-icon" />
                 <div className="pf-app-store-text">
-                  <span className="pf-app-store-label">Coming soon on the</span>
+                  <span className="pf-app-store-label">Download on the</span>
                   <span className="pf-app-store-title">App Store</span>
                 </div>
-              </div>
+              </a>
               <div className="pf-product-highlights">
                 <span className="pf-highlight">AI-powered</span>
                 <span className="pf-highlight">No research needed</span>

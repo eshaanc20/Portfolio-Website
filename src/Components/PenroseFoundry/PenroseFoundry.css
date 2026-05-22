@@ -712,11 +712,10 @@
 }
 
 .pf-product-name {
-  font-size: 32px;
-  font-weight: 800;
-  color: #ffffff;
-  margin: 0 0 6px;
-  letter-spacing: -0.03em;
+  display: block;
+  height: 32px;
+  width: auto;
+  margin: 0 auto 6px;
 }
 
 .pf-product-subtitle {
@@ -740,12 +739,35 @@
   color: var(--purple-400);
 }
 
+.pf-coming-soon--live {
+  background: rgb(34 197 94 / 12%);
+  border-color: rgb(34 197 94 / 30%);
+  color: #4ade80;
+}
+
 .pf-coming-soon__dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: var(--purple-400);
   animation: pfDotPulse 2s ease-in-out infinite;
+}
+
+.pf-coming-soon--live .pf-coming-soon__dot {
+  background: #4ade80;
+  animation: pfDotPulseLive 2s ease-in-out infinite;
+}
+
+@keyframes pfDotPulseLive {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 4px rgb(34 197 94 / 60%);
+  }
+
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 8px rgb(34 197 94 / 80%);
+  }
 }
 
 @keyframes pfDotPulse {
@@ -835,6 +857,61 @@
 }
 
 /* Footer */
+/* App Store screenshots gallery */
+.pf-screens {
+  position: relative;
+  z-index: 1;
+  margin: 4px 0 28px;
+}
+
+.pf-screens-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 6px 2px 18px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(139 92 246 / 40%) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pf-screens-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.pf-screens-track::-webkit-scrollbar-thumb {
+  background: rgb(139 92 246 / 40%);
+  border-radius: 999px;
+}
+
+.pf-screen {
+  flex: 0 0 auto;
+  width: 196px;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.pf-screen-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1242 / 2688;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  box-shadow:
+    0 14px 40px rgb(0 0 0 / 45%),
+    inset 0 1px 0 rgb(255 255 255 / 6%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pf-screen-img:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 48px rgb(0 0 0 / 55%),
+    0 0 0 1px rgb(139 92 246 / 30%);
+}
+
 .pf-product-footer {
   position: relative;
   z-index: 1;
@@ -857,7 +934,8 @@
   padding: 10px 22px 10px 16px;
   border-radius: 12px;
   background: #ffffff;
-  cursor: default;
+  cursor: pointer;
+  text-decoration: none;
   flex-shrink: 0;
   transition: all 0.3s ease;
   box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
@@ -1120,7 +1198,7 @@
   }
 
   .pf-product-name {
-    font-size: 24px;
+    height: 26px;
   }
 
   .pf-coming-soon {
@@ -1177,6 +1255,22 @@
   }
 
   /* Footer — stack on mobile */
+  .pf-screens {
+    margin: 2px 0 22px;
+  }
+
+  .pf-screens-track {
+    gap: 12px;
+  }
+
+  .pf-screen {
+    width: 152px;
+  }
+
+  .pf-screen-img {
+    border-radius: 14px;
+  }
+
   .pf-product-footer {
     padding-top: 18px;
   }
@@ -1278,7 +1372,7 @@
   }
 
   .pf-product-name {
-    font-size: 21px;
+    height: 23px;
   }
 
   .pf-product-desc {
