@@ -14,6 +14,13 @@ import {
   FaNodeJs,
   FaCloud,
   FaCode,
+  FaDatabase,
+  FaServer,
+  FaShieldAlt,
+  FaNetworkWired,
+  FaRobot,
+  FaChartLine,
+  FaSitemap,
 } from "react-icons/fa";
 import {
   SiDotnet,
@@ -22,6 +29,15 @@ import {
   SiTeamcity,
   SiJavascript,
   SiCss3,
+  SiTerraform,
+  SiDatabricks,
+  SiGithubactions,
+  SiJenkins,
+  SiApachegroovy,
+  SiNewrelic,
+  SiRedis,
+  SiMui,
+  SiSharp,
 } from "react-icons/si";
 import AOS from "aos";
 
@@ -32,13 +48,37 @@ const Experience = () => {
 
   const experiences = [
     {
+      id: 5,
+      title: "Platform Solution Architect",
+      company: "Manulife",
+      location: "Toronto, ON",
+      date: "01/2026 - Present",
+      type: "Full-Time",
+      current: true,
+      description: [
+        "Designed observability architecture for RAG-based chatbot platform, owning telemetry via Application Insights and Log Analytics, and an LLM evaluation harness using Databricks and ADF to measure response reliability",
+        "Architected three-tier self-serve infrastructure platform for cross-segment provisioning via centralized Terraform modules, GitHub Actions, and segment-specific repositories, standardizing deployments",
+        "Stood up production environment for segregated RAG chatbot instance, configuring networking, RBAC, and security; restructured Cosmos DB schema to isolate confidential data, enabling granular access controls",
+      ],
+      technologies: [
+        { name: "Azure", icon: <FaCloud />, color: "#0078D4" },
+        { name: "Terraform", icon: <SiTerraform />, color: "#844FBA" },
+        { name: "GitHub Actions", icon: <SiGithubactions />, color: "#2088FF" },
+        { name: "Databricks", icon: <SiDatabricks />, color: "#FF3621" },
+        { name: "Data Factory", icon: <FaServer />, color: "#0078D4" },
+        { name: "Cosmos DB", icon: <FaDatabase />, color: "#0078D4" },
+        { name: "App Insights", icon: <FaChartLine />, color: "#f59e0b" },
+        { name: "RAG / LLM", icon: <FaRobot />, color: "#a855f7" },
+        { name: "RBAC / Security", icon: <FaShieldAlt />, color: "#34d399" },
+      ],
+    },
+    {
       id: 0,
       title: "DevOps Engineer",
       company: "Manulife",
       location: "Toronto, ON",
-      date: "06/2025 - Present",
+      date: "06/2025 - 01/2026",
       type: "Full-Time",
-      current: true,
       description: [
         "Built 20+ Jenkins pipelines with Terraform to provision Azure resources (Key Vault, ADLS, Web Apps, Cosmos, AI Foundry) following THR networking/security standards with VNets, NSGs, Private Endpoints, and RBAC.",
         "Standardized pipeline setup via a centralized Groovy-based shared library to manage az cli authentication and shared environment configuration for consistent provisioning.",
@@ -48,10 +88,13 @@ const Experience = () => {
       ],
       technologies: [
         { name: "Azure", icon: <FaCloud />, color: "#0078D4" },
-        { name: "Terraform", icon: <FaCode />, color: "#844FBA" },
-        { name: "Jenkins", icon: <SiTeamcity />, color: "#25a6e2" },
-        { name: "Groovy", icon: <FaCode />, color: "#E64A19" },
+        { name: "Terraform", icon: <SiTerraform />, color: "#844FBA" },
+        { name: "Jenkins", icon: <SiJenkins />, color: "#D24939" },
+        { name: "Groovy", icon: <SiApachegroovy />, color: "#4298B8" },
         { name: "az cli", icon: <FaCode />, color: "#00A4EF" },
+        { name: "Cosmos DB", icon: <FaDatabase />, color: "#0078D4" },
+        { name: "Networking", icon: <FaNetworkWired />, color: "#38bdf8" },
+        { name: "Security / RBAC", icon: <FaShieldAlt />, color: "#34d399" },
       ],
     },
     {
@@ -69,13 +112,15 @@ const Experience = () => {
       ],
       technologies: [
         { name: ".NET", icon: <SiDotnet />, color: "#512bd4" },
+        { name: "C#", icon: <SiSharp />, color: "#9B4F96" },
         { name: "React", icon: <FaReact />, color: "#2fc2f7" },
         { name: "JavaScript", icon: <SiJavascript />, color: "#f0cf13" },
-        { name: "Azure", icon: <FaCloud />, color: "#0078D4" },
+        { name: "Node.js", icon: <FaNodeJs />, color: "#339933" },
         { name: "HTML5", icon: <FaHtml5 />, color: "#f54c0f" },
         { name: "CSS3", icon: <SiCss3 />, color: "#0f99f5" },
-        { name: "Node.js", icon: <FaNodeJs />, color: "#339933" },
-        { name: "Postman", icon: <SiPostman />, color: "#FF6C37" },
+        { name: "Azure", icon: <FaCloud />, color: "#0078D4" },
+        { name: "Redis", icon: <SiRedis />, color: "#DC382D" },
+        { name: "New Relic", icon: <SiNewrelic />, color: "#1CE783" },
       ],
     },
     {
@@ -95,6 +140,8 @@ const Experience = () => {
       technologies: [
         { name: "Java", icon: <FaJava />, color: "#f89820" },
         { name: "Spring Boot", icon: <SiSpringboot />, color: "#6DB33F" },
+        { name: "REST API", icon: <FaServer />, color: "#38bdf8" },
+        { name: "Microservices", icon: <FaSitemap />, color: "#7c93ff" },
         { name: "TeamCity", icon: <SiTeamcity />, color: "#25a6e2" },
         { name: "Postman", icon: <SiPostman />, color: "#FF6C37" },
         { name: "Git", icon: <FaGitSquare />, color: "#F05032" },
@@ -137,6 +184,7 @@ const Experience = () => {
       ],
       technologies: [
         { name: "React", icon: <FaReact />, color: "#2fc2f7" },
+        { name: "Material-UI", icon: <SiMui />, color: "#007FFF" },
         { name: "JavaScript", icon: <SiJavascript />, color: "#f0cf13" },
         { name: "HTML5", icon: <FaHtml5 />, color: "#f54c0f" },
         { name: "CSS3", icon: <SiCss3 />, color: "#0f99f5" },
