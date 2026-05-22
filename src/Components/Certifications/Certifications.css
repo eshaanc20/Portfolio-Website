@@ -336,20 +336,15 @@
     display: none;
   }
 
-  /* Meta — inline compact, single line */
+  /* Meta — compact, wraps gracefully (each item stays whole) */
   .cert-card__meta {
     gap: 4px 6px;
-    flex-wrap: nowrap;
-    overflow: hidden;
+    flex-wrap: wrap;
   }
 
   .cert-card__meta span {
-    font-size: 9px;
+    font-size: 10px;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    flex-shrink: 1;
-    min-width: 0;
   }
 
   /* Separator dots between meta items */
