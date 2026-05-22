@@ -908,6 +908,85 @@
   transform: translateX(2px);
 }
 
+/* ========== TRAVITA — App Store card ========== */
+.travita-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px 10px 10px;
+  margin-top: 12px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgb(139 92 246 / 6%), rgb(59 130 246 / 4%));
+  border: 1px solid rgb(139 92 246 / 15%);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  align-self: flex-start;
+  width: auto;
+}
+
+.travita-card:hover {
+  background: linear-gradient(135deg, rgb(139 92 246 / 12%), rgb(59 130 246 / 8%));
+  border-color: rgb(139 92 246 / 28%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgb(139 92 246 / 10%);
+}
+
+.travita-card__logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+}
+
+.travita-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.travita-card__label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--purple-500, #8b5cf6);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.travita-card__title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.travita-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: 6px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #000000;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 18%);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.travita-card__btn-icon {
+  font-size: 17px;
+  color: #000000;
+}
+
+.travita-card:hover .travita-card__btn {
+  transform: translateX(2px);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 25%);
+}
+
 /* ========== DESKTOP — content hidden until revealed ========== */
 .homepage .greeting-badge,
 .homepage .name,
@@ -915,7 +994,8 @@
 .homepage .stats-row,
 .homepage .cta-buttons,
 .homepage .social-links,
-.homepage .founder-card {
+.homepage .founder-card,
+.homepage .travita-card {
   opacity: 0;
 }
 
@@ -948,6 +1028,10 @@
 
 .homepage--revealed .founder-card {
   animation: deskSlideFromLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
+}
+
+.homepage--revealed .travita-card {
+  animation: deskSlideFromLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.35s both;
 }
 
 /* ========== RIGHT: PHOTO ========== */
@@ -1445,6 +1529,36 @@
     font-size: 16px;
   }
 
+  /* -- Travita card: centered, wrap if needed -- */
+  .homepage--revealed .travita-card {
+    animation: contentSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 2.25s both;
+  }
+
+  .travita-card {
+    margin-top: 12px;
+    padding: 10px 12px 10px 10px;
+    border-radius: 12px;
+    align-self: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .travita-card__logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+  }
+
+  .travita-card__label {
+    font-size: 10px;
+  }
+
+  .travita-card__title {
+    font-size: 14px;
+    text-align: center;
+  }
+
   /* -- Scroll indicator: hide on mobile -- */
   .scroll-indicator {
     display: none;
@@ -1651,6 +1765,26 @@
 
   .founder-card__company {
     font-size: 13px;
+  }
+
+  .travita-card {
+    gap: 10px;
+    padding: 8px 10px 8px 8px;
+  }
+
+  .travita-card__logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+  }
+
+  .travita-card__title {
+    font-size: 13px;
+  }
+
+  .travita-card__btn {
+    padding: 7px 12px;
+    font-size: 12px;
   }
 
   .scroll-indicator {
