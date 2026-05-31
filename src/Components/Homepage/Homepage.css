@@ -845,6 +845,11 @@
   box-shadow: 0 4px 12px rgb(59 130 246 / 8%);
 }
 
+/* Cards row — transparent on desktop, side-by-side on mobile */
+.hero-cards-row {
+  display: contents;
+}
+
 /* Founder card */
 .founder-card {
   display: inline-flex;
@@ -1390,7 +1395,8 @@
   .homepage .role-container {
     font-size: 15px;
     min-height: 48px;
-    color: var(--text-tertiary);
+    color: var(--text-primary);
+    font-weight: 600;
     max-width: 320px;
   }
 
@@ -1475,13 +1481,13 @@
   }
 
   .social-links {
-    gap: 10px;
+    gap: 14px;
     justify-content: center;
   }
 
   .social-button {
-    width: 44px;
-    height: 44px;
+    width: 56px;
+    height: 56px;
     padding: 0;
     border-radius: 50%;
     justify-content: center;
@@ -1495,68 +1501,107 @@
   }
 
   .social-button svg {
-    font-size: 20px;
+    font-size: 26px;
     color: var(--text-secondary);
   }
 
-  /* -- Founder card: centered, auto width -- */
+  /* -- Founder + Travita cards: side by side, 50% each -- */
+  .hero-cards-row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+    margin-top: 16px;
+    align-self: center;
+  }
+
   .homepage--revealed .founder-card {
     animation: contentSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 2.1s both;
   }
 
-  .founder-card {
-    margin-top: 16px;
-    padding: 10px 16px 10px 10px;
-    border-radius: 12px;
-    align-self: center;
+  .homepage--revealed .travita-card {
+    animation: contentSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 2.25s both;
   }
 
-  .founder-card__logo {
-    width: 32px;
-    height: 32px;
-    border-radius: 9px;
+  .founder-card,
+  .travita-card {
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+    max-width: none;
+    margin-top: 0;
+    align-self: stretch;
+    box-sizing: border-box;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    padding: 14px 10px;
+    border-radius: 14px;
+  }
+
+  .founder-card__logo,
+  .travita-card__logo {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+  }
+
+  /* Travita logo reads as the app icon — slightly larger */
+  .travita-card__logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+  }
+
+  .founder-card__text,
+  .travita-card__text {
+    align-items: center;
   }
 
   .founder-card__role {
     font-size: 10px;
   }
 
-  .founder-card__company {
-    font-size: 14px;
-  }
-
-  .founder-card__arrow {
-    font-size: 16px;
-  }
-
-  /* -- Travita card: centered, wrap if needed -- */
-  .homepage--revealed .travita-card {
-    animation: contentSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 2.25s both;
-  }
-
-  .travita-card {
-    margin-top: 12px;
-    padding: 10px 12px 10px 10px;
-    border-radius: 12px;
-    align-self: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 100%;
-  }
-
-  .travita-card__logo {
-    width: 32px;
-    height: 32px;
-    border-radius: 9px;
-  }
-
+  /* "Now on iOS" eyebrow removed on mobile to keep the tile clean */
   .travita-card__label {
-    font-size: 10px;
+    display: none;
   }
 
+  .founder-card__company,
   .travita-card__title {
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.25;
     text-align: center;
+  }
+
+  /* "AI-Powered Trip Planning" reads as a muted subtitle */
+  .travita-card__title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0;
+  }
+
+  /* Rocket accent doesn't fit the stacked card */
+  .founder-card__arrow {
+    display: none;
+  }
+
+  .travita-card__btn {
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 8px;
+    font-size: 12px;
+  }
+
+  .travita-card__btn-icon {
+    font-size: 15px;
   }
 
   /* -- Scroll indicator: hide on mobile -- */
@@ -1752,39 +1797,42 @@
     font-size: 13px;
   }
 
-  .founder-card {
-    gap: 10px;
-    padding: 8px 14px 8px 8px;
+  .hero-cards-row {
+    gap: 8px;
   }
 
-  .founder-card__logo {
-    width: 28px;
-    height: 28px;
-    border-radius: 8px;
-  }
-
-  .founder-card__company {
-    font-size: 13px;
-  }
-
+  .founder-card,
   .travita-card {
-    gap: 10px;
-    padding: 8px 10px 8px 8px;
+    gap: 6px;
+    padding: 12px 8px;
+  }
+
+  .founder-card__logo,
+  .travita-card__logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
   }
 
   .travita-card__logo {
-    width: 28px;
-    height: 28px;
-    border-radius: 8px;
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
   }
 
+  .founder-card__company,
   .travita-card__title {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .travita-card__btn {
-    padding: 7px 12px;
-    font-size: 12px;
+    gap: 5px;
+    padding: 8px 6px;
+    font-size: 11px;
+  }
+
+  .travita-card__btn-icon {
+    font-size: 14px;
   }
 
   .scroll-indicator {

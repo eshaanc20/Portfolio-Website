@@ -158,44 +158,46 @@ const Homepage = ({ introComplete }) => {
             </a>
           </div>
 
-          <a
-            className="founder-card"
-            href="https://penrosefoundry.ca"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src={PenroseLogo}
-              alt="Penrose Foundry"
-              className="founder-card__logo"
-            />
-            <div className="founder-card__text">
-              <span className="founder-card__role">Founder</span>
-              <span className="founder-card__company">Penrose Foundry</span>
-            </div>
-            <MdRocketLaunch className="founder-card__arrow" />
-          </a>
+          <div className="hero-cards-row">
+            <a
+              className="founder-card"
+              href="https://penrosefoundry.ca"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={PenroseLogo}
+                alt="Penrose Foundry"
+                className="founder-card__logo"
+              />
+              <div className="founder-card__text">
+                <span className="founder-card__role">Founder</span>
+                <span className="founder-card__company">Penrose Foundry</span>
+              </div>
+              <MdRocketLaunch className="founder-card__arrow" />
+            </a>
 
-          <a
-            className="travita-card"
-            href="https://apps.apple.com/app/id6761736495"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src={TravitaLogo}
-              alt="Travita"
-              className="travita-card__logo"
-            />
-            <div className="travita-card__text">
-              <span className="travita-card__label">Now on iOS</span>
-              <span className="travita-card__title">AI-Powered Trip Planning</span>
-            </div>
-            <span className="travita-card__btn">
-              <FaApple className="travita-card__btn-icon" />
-              <span>Get on App Store</span>
-            </span>
-          </a>
+            <a
+              className="travita-card"
+              href="https://apps.apple.com/app/id6761736495"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={TravitaLogo}
+                alt="Travita"
+                className="travita-card__logo"
+              />
+              <div className="travita-card__text">
+                <span className="travita-card__label">Now on iOS</span>
+                <span className="travita-card__title">AI-Powered Trip Planning</span>
+              </div>
+              <span className="travita-card__btn">
+                <FaApple className="travita-card__btn-icon" />
+                <span>Get on App Store</span>
+              </span>
+            </a>
+          </div>
         </div>
 
         <div
